@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------
+  10. Video
+----------------------------------------------------------------*/
+
+.video-section {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    .video-section-bg-img {
+        position: absolute;
+        width: 100%;
+        height: 110%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .video-section {
+        height: 220px;
+    }
+}

@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+  15. Food Item
+----------------------------------------------------------------*/
+
+.ak-card.ak-style-1 {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transition: all 0.5s ease;
+    .ak-card-img {
+        width: 100%;
+    }
+    .card-info {
+        position: absolute;
+        margin: 0px 30px 37px 30px;
+        left: 5%;
+        bottom: -60px;
+        opacity: 0;
+        background-color: #040D10;
+        transition: all 0.3s ease-in-out;
+        .card-text {
+            padding: 45px 50px 45px 30px;
+            .card-title {
+                color: $yellow;
+            }
+            .card-subtitle {
+                color: $white;
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+    }
+    &:hover>.card-info {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .ak-card.ak-style-1 {
+        .card-info {
+            left: 0%;
+            margin: 0px 37px 37px 37px;
+            .card-text {
+                padding: 38px 20px 38px 19px;
+                .card-title {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

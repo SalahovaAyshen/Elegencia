@@ -1,0 +1,25 @@
+.sidebar-hero-3 {
+    .sidebar-hero-3-bg {
+        background-color: #051114;
+    }
+    .sidebar-contain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        height: 100vh;
+        color: $white;
+        border-right: 1px solid rgba(255, 210, 141, 0.20);
+        .section-link {
+            ul {
+                list-style: none;
+                padding: 0px;
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+}

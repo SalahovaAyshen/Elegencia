@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Thememarch" />
+    <!-- Favicon Icon -->
+    <link rel="icon" href="~/assets/img/favicon.svg" />
+    <!-- Site Title -->
+    <title>Elegencia - Royale Restaurant HTML Template</title>
+    <link rel="stylesheet" href="~/assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/assets/css/plugins/lightgallery.min.css" />
+    <link rel="stylesheet" href="~/assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="~/assets/sass/style.css" />
+</head>
+
+<body>
+    <div id="minicircle"></div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="ak-preloader" class="ak-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+
+                    <span data-text-preloader="L" class="letters-loading">
+                        L
+                    </span>
+
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+
+                    <span data-text-preloader="G" class="letters-loading">
+                        G
+                    </span>
+
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+
+                    <span data-text-preloader="N" class="letters-loading">
+                        N
+                    </span>
+
+                    <span data-text-preloader="C" class="letters-loading">
+                        C
+                    </span>
+                    <span data-text-preloader="I" class="letters-loading">
+                        I
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                </div>
+            </div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+    </div>
+    <!-- Start Header Section -->
+    <header class="ak-site_header ak-style1 ak-sticky_header ak-site_header_full_width">
+        <div class="header-top">
+            <div class="wrapper">
+                <div class="header-logo">
+                    <a href="reservations.html" class="logo">Reservation</a>
+                </div>
+                <div class="center-log">
+                    <a asp-controller="home"><img src="~/assets/img/logo.png" alt="..."></a>
+                </div>
+                <button class="ak-menu-toggle" id="akMenuToggle" type="button">
+                    <svg viewBox="0 0 20 15" width="40px" height="30px" class="ak-menu-icon">
+                        <path d="M20,2 L2,2" class="bar-1"></path>
+                        <path d="M2,7 L20,7" class="bar-2"></path>
+                        <path d="M30,12 L2,12" class="bar-3"></path>
+                    </svg>
+                </button>
+                <ul class="top-main-menu">
+                    <li class="top-main-menu-li">
+                        <a asp-controller="home">Home</a>
+                        <img class="top-main-menu-img" src="~/assets/img/fullWM_1.jpg" alt="...">
+                    </li>
+                    <li class="top-main-menu-li">
+                        <a href="about.html">About</a>
+                        <img class="top-main-menu-img" src="~/assets/img/fullWM_about.jpg" alt="...">
+                    </li>
+                    <li class="top-main-menu-li">
+                        <a href="menu.html">Menu</a>
+                        <img class="top-main-menu-img menu-img" src="~/assets/img/fullWM_menu.jpg" alt="...">
+                    </li>
+                    <li class="top-main-menu-li">
+                        <a href="chef.html">Chef</a>
+                        <img class="top-main-menu-img" src="~/assets/img/fullWM_chef.jpg" alt="...">
+                    </li>
+                    <li class="top-main-menu-li">
+                        <a href="contact.html">Contact</a>
+                        <img class="top-main-menu-img" src="~/assets/img/fullWM_contact.jpg" alt="...">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-bar-border"></div>
+        <div class="ak-main_header">
+            <div class="container">
+                <div class="ak-main_header_in">
+                    <div class="ak-main_header_left">
+                        <a class="ak-site_branding" href="index.html">
+                            <img src="~/assets/img/logo.png" alt="...">
+                        </a>
+                    </div>
+                    <div class="ak-main_header_right">
+                        <div class="ak-nav ak-medium">
+                            <ul class="ak-nav_list">
+                                <li class="menu-item-has-children">
+                                    <a asp-controller="home">Home</a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="menu.html">Menu</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="chef.html">Chef</a>
+                                    <ul>
+                                        <li>
+                                            <a href="chef.html">Chef</a>
+                                        </li>
+                                        <li>
+                                            <a href="meet-the-chef.html">Meet The Chef</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="portfolio.html">Portfolio</a>
+                                    <ul>
+                                        <li>
+                                            <a href="portfolio.html">Portfolio</a>
+                                        </li>
+                                        <li>
+                                            <a href="portfolio-details.html">Portfolio Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="blog.html">Blog</a>
+                                    <ul>
+                                        <li>
+                                            <a href="blog.html">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">Blog Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li>
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                        <li>
+                                            <a href="reservations.html">Reservations</a>
+                                        </li>
+                                        <li>
+                                            <a href="gallery.html">Gallery</a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="404.html">404 Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="comming.html">Comming Soon</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- End Header Section -->
+
+        @RenderBody()
+   
+    <!-- Start Footer -->
+    <footer>
+        <div class="ak-footer ak-style-1">
+            <div class="ak-bg footer-bg-img" data-src="~/assets/img/footer_bg.png"></div>
+
+            <div class="container ak-hr-container">
+
+                <div class="ak-braner-logo type-color-1 footer-logo">
+                    <div class="footer-log-elem">
+                        <div class="footer-log-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="13" viewBox="0 0 30 13"
+                                 fill="none">
+                                <path d="M28.991 12.2063L14.8322 1L0.67334 12.2063" stroke="white"
+                                      stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <img src="~/assets/img/Elegencia.png" alt="...">
+                    </div>
+                </div>
+                <div class="ak-height-100 ak-height-lg-60"></div>
+                <div class="ak-footer-hr-top"></div>
+
+                <div class="footer-main">
+                    <div class="footer-eamil-menu">
+                        <div class="footer-email">
+                            <a href="mailto:info@example.com">
+                                info@example.com
+                            </a>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a asp-controller="home">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="menu.html">Menu</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="chef.html">Chef</a></li>
+                                <li><a href="contact.html">Conatct</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ak-height-75 ak-height-lg-5"></div>
+                    <div class="footer-info">
+                        <div class="fooer-phn">
+                            <a href="tel:1-800-915-6271">1-800-915-6271</a>
+                            <br>
+                            <a href="tel:1-800-915-6271">1-800-915-6271</a>
+                        </div>
+                        <div class="footer-address">
+                            <a href="https://maps.app.goo.gl/gAd1JdfRW5d6eHkn7" target="_blank">
+                                2726 Av. PapineauMontreal,<br>QC H2K 4J6, Canada
+                            </a>
+                        </div>
+                        <div class="footer-time">
+                            <p>SUNDAY - THURSDAY: 11:30AM - 11PM</p>
+                            <div class="footer-time-border my-1"></div>
+                            <p>FRIDAY & SATURDAY: 11:30AM - 12AM</p>
+                        </div>
+                        <div class="footer-btn">
+                            <a href="reservations.html">
+                                <div class="ak-btn style-5 color-yellow-bg">
+                                    Reservations
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-footer-hr-bottom qodef-grid-item"></div>
+                <div class="ak-height-130 ak-height-lg-30"></div>
+
+                <div class="copy-right-section">
+                    <p class="text-uppercase text-md-center text-white">
+                        &copy; 2024 Elegencia
+                    </p>
+                </div>
+
+                <div class="ak-height-45 ak-height-lg-30"></div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <div class="loading-overlap"></div>
+    <!-- End Footer -->
+    <span class="ak-scrollup">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z"
+                  fill="currentColor" />
+        </svg>
+    </span>
+    <!-- Start Video Popup -->
+    <div class="ak-video-popup">
+        <div class="ak-video-popup-overlay"></div>
+        <div class="ak-video-popup-content">
+            <div class="ak-video-popup-layer"></div>
+            <div class="ak-video-popup-container">
+                <div class="ak-video-popup-align">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="~/about:blank"></iframe>
+                    </div>
+                </div>
+                <div class="ak-video-popup-close"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Video Popup -->
+    <!-- Script -->
+    <script src="~/assets/js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="~/assets/js/plugins/isotope.pkg.min.js"></script>
+    <script src="~/assets/js/plugins/swiper.min.js"></script>
+    <script src="~/assets/js/plugins/lightgallery.min.js"></script>
+    <script src="~/assets/js/plugins/ScrollSmoother.min.js"></script>
+    <script src="~/assets/js/plugins/SplitText.min.js"></script>
+    <script src="~/assets/js/plugins/ScrollTrigger.min.js"></script>
+    <script src="~/assets/js/plugins/ScrollToPlugin.min.js"></script>
+    <script src="~/assets/js/plugins/gsap.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+
+</html>

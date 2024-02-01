@@ -1,0 +1,467 @@
+/*--------------------------------------------------------------
+  6. Slider
+----------------------------------------------------------------*/
+
+.btn-style-2.button-prev-next-2 {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: auto;
+    width: max-content;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+    overflow: hidden;
+    &>svg {
+        flex-shrink: 0;
+        transition: .2s;
+        overflow: hidden;
+    }
+    &>svg {
+        width: 20px;
+        height: 13px;
+        overflow: hidden;
+    }
+    &.btn-size {
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        overflow: hidden;
+        transition: .2s;
+        &.rotate-svg {
+            transform: rotate(180deg);
+        }
+    }
+    &.btn-style-round.btn-size:hover {
+        background-color: #BA9774;
+    }
+    &.btn-style-round {
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid #BA9774;
+        border-radius: 50%;
+    }
+    &.btn-size svg:first-child {
+        transform: translateX(-167%);
+        transition: .2s;
+    }
+    &.btn-size:hover svg:first-child {
+        transform: translateX(51%);
+    }
+    &.btn-size svg:last-child {
+        transform: translateX(-68%);
+        transition: .2s;
+    }
+    &.btn-size:hover>svg:last-child {
+        transform: translateX(178%);
+        background-color: #BA9774;
+    }
+}
+
+.ak-slider {
+    position: relative;
+}
+
+.ak-slider-1 {
+    overflow: hidden;
+    width: 50%;
+    .swiper-slide {
+        width: 100%;
+    }
+}
+
+.ak-slider-hero-2 {
+    overflow: hidden;
+    width: 50%;
+    &.ak-width {
+        width: 100%;
+    }
+    .swiper-slide {
+        width: 100%;
+    }
+}
+
+.ak-swiper-controll {
+    z-index: 10;
+    position: absolute;
+    bottom: 25vh;
+    text-align: center;
+    left: 46%;
+    .ak-swiper-navigation-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin-right: 372px;
+        .hero-swiper-next {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 55px;
+                width: 56px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover>.btn-cricle {
+                border: 1px solid $yellow;
+                border-radius: 100%;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(10px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                svg {
+                    width: 40px;
+                    height: 55px;
+                }
+            }
+        }
+        .hero-swiper-prev {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 55px;
+                width: 56px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+                transform: rotate(180deg);
+            }
+            &:hover>.btn-cricle {
+                border-radius: 100%;
+                border: 1px solid $yellow;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(0px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                transform: translateX(10px);
+                svg {
+                    width: 40px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
+.ak-swiper-controll-hero-2 {
+    z-index: 100;
+    position: absolute;
+    top: 40vh;
+    right: 2.5%;
+    .ak-swiper-navigation-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 130px;
+        .hero-swiper-next {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+                transform: rotate(180deg);
+            }
+            &:hover>.btn-cricle {
+                border-radius: 100%;
+                border: 1px solid $yellow;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(0px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                transform: translateX(10px);
+                svg {
+                    width: 40px;
+                    height: 100px;
+                }
+            }
+        }
+        .hero-swiper-prev {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+                transform: rotate(180deg);
+            }
+            &:hover>.btn-cricle {
+                border-radius: 100%;
+                border: 1px solid $yellow;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(20px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                transform: translateX(10px);
+                svg {
+                    width: 40px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+.ak-slider-2 {
+    overflow: hidden;
+    width: 100vw;
+    .swiper-slide {
+        width: 23%;
+        left: 13%;
+    }
+}
+
+.ak-pagination-2.ak-style1 {
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+    width: 20%;
+    .swiper-pagination-bullet {
+        height: 16px;
+        width: 16px;
+        background-color: transparent;
+        border: 1px solid $border;
+        &.swiper-pagination-bullet-active {
+            border: 1px solid $yellow;
+            background-color: $yellow;
+        }
+        border-radius: 50%;
+        margin: 30px 10px;
+        cursor: pointer;
+        position: relative;
+        opacity: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $primary;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        &.swiper-pagination-bullet-active {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.ak-next-prev-2 {
+    margin-top: 30px;
+    position: relative;
+    &.ak-style-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        gap: 36px;
+        @media screen and (max-width: 767px) {
+            gap: 25px;
+        }
+    }
+}
+
+.ak-slider-3 {
+    overflow: hidden;
+    .swiper-slide {
+        width: 100%;
+    }
+}
+
+.ak-swiper-controll-3 {
+    margin-top: 60px;
+    .ak-swiper-navigation-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-left: 10px;
+        .ak-swiper-button-prev-3,
+        .ak-swiper-button-next-3 {
+            transition: all 0.8s;
+            border-radius: 50%;
+        }
+    }
+}
+
+.ak-slider-4 {
+    overflow: hidden;
+    width: 100vw;
+    .swiper-slide {
+        width: 100%;
+        position: relative;
+        z-index: -9;
+    }
+}
+
+.ak-swiper-controll-4 {
+    position: absolute;
+    bottom: 50px;
+    z-index: 10;
+    .ak-swiper-navigation-wrap-4 {
+        display: flex;
+        gap: 100px;
+        padding: 30px;
+        .ak-swiper-button-next-4 {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 55px;
+                width: 56px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover>.btn-cricle {
+                border: 1px solid $yellow;
+                border-radius: 100%;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(10px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                svg {
+                    width: 40px;
+                    height: 55px;
+                }
+            }
+        }
+        .ak-swiper-button-prev-4 {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            .btn-cricle {
+                position: absolute;
+                height: 55px;
+                width: 56px;
+                border-radius: 50% 50% 50% 50%;
+                border-right: 1px solid $yellow;
+                transition: all 0.3s ease-in-out;
+                transform: rotate(180deg);
+            }
+            &:hover>.btn-cricle {
+                border-radius: 100%;
+                border: 1px solid $yellow;
+            }
+            &:hover>.btn-arrow {
+                transform: translateX(0px);
+            }
+            .btn-arrow {
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                transform: translateX(10px);
+                svg {
+                    width: 40px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
+.ak-slider-5 {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    .swiper-slide {
+        width: 100%;
+    }
+    .ak-swiper-controll {
+        left: 40%;
+        bottom: 9vh;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .ak-slider-1 {
+        width: 100%;
+    }
+    .ak-swiper-controll {
+        margin: 0px;
+        bottom: 13vh;
+        left: 0;
+        margin-left: 43px;
+        .ak-swiper-navigation-wrap {
+            margin-right: 58px;
+        }
+    }
+    .ak-slider-2 {
+        width: 97vw;
+        .swiper-slide {
+            width: 48%;
+            left: 0;
+        }
+    }
+    .ak-pagination-2.ak-style1 {
+        width: 25%;
+    }
+    .ak-swiper-controll-3 {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ak-slider-1 {
+        width: 100%;
+    }
+    .ak-slider-2 {
+        width: 100vw;
+        .swiper-slide {
+            width: 93%;
+            left: 0px;
+            padding: 5px;
+        }
+    }
+    .ak-swiper-controll {
+        margin: 0px;
+        margin-left: 13px;
+        .ak-swiper-navigation-wrap {
+            margin-right: 0px;
+            justify-content: start;
+        }
+    }
+    .ak-swiper-controll-3 {
+        margin-top: 30px;
+        .ak-swiper-navigation-wrap {
+            margin-right: 0px;
+        }
+    }
+    .ak-pagination-2.ak-style1 {
+        width: 60%;
+    }
+    .ak-swiper-controll-hero-2 {
+        right: 10%;
+    }
+}

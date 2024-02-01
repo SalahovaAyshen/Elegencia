@@ -1,0 +1,112 @@
+/*--------------------------------------------------------------
+  24. Portfolio
+----------------------------------------------------------------*/
+
+.ak-portfolio-details-border {
+    @include ak-hr;
+    max-width: 250px;
+    margin-top: 125px;
+    position: absolute;
+}
+
+.portfolio-section {
+    display: flex;
+    gap: 108px;
+    align-content: center;
+    .portfolio-info {
+        flex-shrink: 0;
+        h2 {
+            margin-top: 85px;
+            margin-bottom: 85px;
+        }
+        h6 {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid $border;
+            word-spacing: 10px;
+            span {
+                color: $white;
+                text-transform: capitalize;
+                font-family: Prompt;
+            }
+        }
+    }
+    .portfolio-slider {
+        overflow: hidden;
+    }
+}
+
+.portfolio-details {
+    display: flex;
+    align-items: center;
+    .portfolio-details-text {
+        padding-right: 30px;
+        border-right: 1px solid $border;
+    }
+    .portfolio-details-icon {
+        padding-left: 40px;
+        display: flex;
+        gap: 15px;
+        h6 {
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+        a:hover>svg>path {
+            fill: $yellow;
+        }
+    }
+}
+
+@media screen and (max-width: 1740px) {
+    .ak-portfolio-details-border {
+        position: relative;
+        display: none;
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ak-portfolio-details-border {
+        position: relative;
+        display: none;
+        margin-top: 0px;
+    }
+    .portfolio-section {
+        flex-wrap: wrap;
+        gap: 60px;
+        .portfolio-info {
+            flex-shrink: 0;
+            h2 {
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-section {
+        flex-wrap: wrap;
+        gap: 30px;
+        .portfolio-info {
+            flex-shrink: 1;
+            .anim-title-3 {
+                margin-top: 0px;
+                margin-bottom: 30px;
+                font-size: 32px;
+            }
+        }
+    }
+    .portfolio-details {
+        flex-wrap: wrap;
+        .portfolio-details-text {
+            padding: 0px;
+            border: none;
+        }
+        .portfolio-details-icon {
+            margin-top: 30px;
+            padding: 0px;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/* 
+|......................................................................
+| Template Name: Elegencia
+| Author: Thememarch
+| Version: 1.0.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+| 3. Preloader
+| 4. Spacing
+| 5. General
+| 6. Slider
+| 7. Video Popup
+| 8. Header
+| 9. Footer
+| 10. Video
+| 11. Hero
+| 12. Slider Text
+| 13. About
+| 14. Opening Hour
+| 15. Food Item
+| 16. Food Menu List
+| 17. Best Item
+| 18. Chef
+| 19. Gallery
+| 20. Testimonial
+| 21. Booking System
+| 22. Blog
+| 23. Comment
+| 24. Location
+| 25. Portfolio
+| 26. Contact
+ ................................................................*/
+
+@import "default/color_variable";
+@import "default/typography";
+@import "common/preloader";
+@import "common/spacing";
+@import "common/general";
+@import "common/slider";
+@import "common/video-modal";
+@import "common/header";
+@import "common/footer";
+@import "shortcode/video";
+@import "shortcode/hero";
+@import "shortcode/sliding_text";
+@import "shortcode/about";
+@import "shortcode/opening_hour";
+@import "shortcode/food_item";
+@import "shortcode/food_menu_list";
+@import "shortcode/best_item";
+@import "shortcode/chef";
+@import "shortcode/gallery";
+@import "shortcode/testimonial";
+@import "shortcode/booking_system";
+@import "shortcode/blog";
+@import "shortcode/comment";
+@import "shortcode/location";
+@import "shortcode/portfolio";
+@import "shortcode/contact";
+@import "common/sidebar";
