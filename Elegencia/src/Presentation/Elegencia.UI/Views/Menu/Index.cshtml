@@ -1,0 +1,203 @@
+﻿
+@model MenuVM
+
+<div id="scrollsmoother-container">
+    <!-- Start Hero -->
+    <Section>
+        <div class="ak-commmon-hero ak-style1 ak-bg" >
+            <img class="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg"/>
+            <div class="ak-commmon-heading">
+                <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                    <div class="ak-section-subtitle">
+                        <a asp-controller="home">Home</a> / Our Menu
+                    </div>
+                    <h2 class="ak-section-title page-title-anim">Our Menu</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- End Hero -->
+    <!-- Start Food Menu  Appetizers-->
+    <section class="set-bg-img-section">
+        <img src="~/assets/img/main-menu.jpeg" alt="..." data-speed="1.1" class="imagesZoom bg-img ak-bg">
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="ak-section-heading ak-style-1 ak-type-1">
+                <div class="ak-section-subtitle">
+                    Main Course
+                </div>
+                <h2 class="ak-section-title anim-title">Main Course</h2>
+            </div>
+            <div class="ak-height-65 ak-height-lg-30"></div>
+            <div class="ak-menu-list">
+               @foreach (Meal meal in Model.MainDishes)
+                    {
+                    <div class="ak-menu-list-section-1">
+                        <img src="~/assets/img/@meal.MealImages.FirstOrDefault()?.Image" alt="@meal.Name">
+                        <div class="food-menu style-1">
+                            <div class="food-menu-section-1">
+                                <div class="food-menu-title">
+                                    <p>@meal.Name</p>
+                                </div>
+                                <div class="food-menu-hr">
+                                    <div class="food-menu-hr style-1"></div>
+                                    <div class="food-menu-hr style-1"></div>
+                                </div>
+                                <div class="food-menu-price">
+                                    <p>$@meal.Price</p>
+                                </div>
+                            </div>
+                            <div class="food-menu-section-2">
+                                <div class="food-menu-subsitle">
+                                    <p>@meal.Category.Name</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="ak-height-150 ak-height-lg-0"></div>
+    </section>
+    <!-- End Food Menu Appetizers-->
+    <!-- Start Salad Menu  -->
+    <section class="set-bg-img-section">
+        <img src="~/assets/img/salad.jpeg" alt="..." data-speed="1.1" class="imagesZoom bg-img ak-bg">
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="ak-section-heading ak-style-1 ak-type-1">
+                <div class="ak-section-subtitle">
+                    Soups And Salads
+                </div>
+                <h2 class="ak-section-title anim-title">Soups And Salads</h2>
+            </div>
+            <div class="ak-height-65 ak-height-lg-30"></div>
+            <div class="ak-menu-list">
+              @foreach (Salad salad in Model.Salads)
+                    {
+                    <div class="ak-menu-list-section-1">
+                        <img src="~/assets/img/@salad.Image" alt="@salad.Name">
+                        <div class="food-menu style-1">
+                            <div class="food-menu-section-1">
+                                <div class="food-menu-title">
+                                    <p>@salad.Name</p>
+                                </div>
+                                <div class="food-menu-hr">
+                                    <div class="food-menu-hr style-1"></div>
+                                    <div class="food-menu-hr style-1"></div>
+                                </div>
+                                <div class="food-menu-price">
+                                    <p>$@salad.Price</p>
+                                </div>
+                            </div>
+                            <div class="food-menu-section-2">
+                                <div class="food-menu-subsitle">
+                                    <p>@salad.Category.Name</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="ak-height-150 ak-height-lg-0"></div>
+    </section>
+    <!-- End Salad Menu -->
+    <!-- Start Food Menu Desserts-->
+    <section class="set-bg-img-section">
+        <img src="~/assets/img/desserts.jpeg" alt="..." data-speed="1.1" class="bg-img ak-bg imagesZoom">
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="ak-section-heading ak-style-1 ak-type-1">
+                <div class="ak-section-subtitle">
+                    Sweet dreams
+                </div>
+                <h2 class="ak-section-title anim-title">Desserts</h2>
+            </div>
+            <div class="ak-height-65 ak-height-lg-30"></div>
+            <div class="ak-menu-list">
+              @foreach (Dessert dessert in Model.Desserts)
+                    {
+                    <div class="ak-menu-list-section-1">
+                        <img src="~/assets/img/@dessert.DessertImages.FirstOrDefault()?.Image" alt="@dessert.Name">
+                        <div class="food-menu style-1">
+                            <div class="food-menu-section-1">
+                                <div class="food-menu-title">
+                                    <p>@dessert.Name</p>
+                                </div>
+                                <div class="food-menu-hr">
+                                    <div class="food-menu-hr style-1 anim-2"></div>
+                                    <div class="food-menu-hr style-1 anim-2"></div>
+                                </div>
+                                <div class="food-menu-price">
+                                    <p>$@dessert.Price</p>
+                                </div>
+                            </div>
+                            <div class="food-menu-section-2">
+                                <div class="food-menu-subsitle">
+                                    <p>@dessert.DessertCategory.Name</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="ak-height-150 ak-height-lg-0"></div>
+    </section>
+    <!-- End Food Menu Desserts-->
+    <!-- Start Food Menu Bar Items-->
+    <section class="set-bg-img-section">
+        <img src="~/assets/img/drink.jpeg" alt="..." data-speed="1.1" class="bg-img ak-bg imagesZoom">
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="ak-section-heading ak-style-1 ak-type-1">
+                <div class="ak-section-subtitle">
+                    Juice Bar
+                </div>
+                <h2 class="ak-section-title anim-title">Bar Items</h2>
+            </div>
+            <div class="ak-height-65 ak-height-lg-30"></div>
+            <div class="ak-menu-list">
+            @foreach (Drink drink in Model.Drinks)
+                    {
+                    <div class="ak-menu-list-section-1">
+                        <img src="~/assets/img/@drink.Image" alt="@drink.Name">
+                        <div class="food-menu style-1">
+                            <div class="food-menu-section-1">
+                                <div class="food-menu-title">
+                                    <p>@drink.Name</p>
+                                </div>
+                                <div class="food-menu-hr">
+                                    <div class="food-menu-hr style-1 anim-3"></div>
+                                    <div class="food-menu-hr style-1 anim-3"></div>
+                                </div>
+                                <div class="food-menu-price">
+                                    <p>$@drink.Price</p>
+                                </div>
+                            </div>
+                            <div class="food-menu-section-2">
+                                <div class="food-menu-subsitle">
+                                    <p>@drink.DrinkCategory.Name</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="ak-height-150 ak-height-lg-0"></div>
+    </section>
+    <!-- End Food Menu Bar Items-->

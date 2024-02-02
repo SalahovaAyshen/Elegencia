@@ -22,6 +22,16 @@ namespace Elegencia.Persistence.Contexts
         public DbSet<Meal> Meals { get; set; }
         public DbSet<MealImages> MealImages { get; set; }
         public DbSet<MealTags> MealTags { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Dessert> Desserts { get; set; }
+        public DbSet<DessertCategory> DessertCategories{ get; set; }
+        public DbSet<DessertImage> DessertImages { get; set; }
+        public DbSet<DessertTag> DessertTags { get; set; }
+        public DbSet<Salad> Salads { get; set; }
+        public DbSet<Drink> Drinks { get; set; }
+        public DbSet<DrinkCategory> DrinkCategories { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

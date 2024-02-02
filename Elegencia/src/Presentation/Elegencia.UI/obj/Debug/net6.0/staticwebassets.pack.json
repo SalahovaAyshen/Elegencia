@@ -101,8 +101,8 @@
       "PackagePath": "staticwebassets\\assets\\img\\bestItem2.jpg"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-1(slider).jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\bg-1(slider).jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-1(slider).jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-1(slider).jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-2(slider).jpg",
@@ -123,6 +123,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-6(slider).jpg",
       "PackagePath": "staticwebassets\\assets\\img\\bg-6(slider).jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-menu.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-menu.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\blog_1.jpg",
@@ -201,12 +205,24 @@
       "PackagePath": "staticwebassets\\assets\\img\\chef_6.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\coca-cola.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\coca-cola.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\commingBg.png",
       "PackagePath": "staticwebassets\\assets\\img\\commingBg.png"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\commmon_banner_top.png",
       "PackagePath": "staticwebassets\\assets\\img\\commmon_banner_top.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\desserts.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\desserts.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\drink.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\drink.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\errorBg.png",
@@ -325,8 +341,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\logo.png"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\main-menu.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-menu.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\meetAbout.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\meetAbout.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\menu-bg-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-bg-3.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\menuBg.png",
@@ -405,6 +429,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\robert.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\salad.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\salad.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\shashlik-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\shashlik-1.jpg"
     },
@@ -459,6 +487,14 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\time-outline.svg",
       "PackagePath": "staticwebassets\\assets\\img\\time-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\treacle-tarte-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\treacle-tarte-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\treacle-tarte.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\treacle-tarte.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\js\\main.js",

@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@inject LayoutService service
+@{
+    Dictionary<string, string> settings = await service.GetSettingsAsync();
+}
+
+
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
@@ -91,7 +97,7 @@
                         <img class="top-main-menu-img" src="~/assets/img/fullWM_about.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
-                        <a href="menu.html">Menu</a>
+                        <a asp-controller="menu">Menu</a>
                         <img class="top-main-menu-img menu-img" src="~/assets/img/fullWM_menu.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
@@ -125,7 +131,7 @@
                                     <a href="about.html">About</a>
                                 </li>
                                 <li>
-                                    <a href="menu.html">Menu</a>
+                                    <a asp-controller="menu">Menu</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="chef.html">Chef</a>
@@ -220,15 +226,15 @@
                 <div class="footer-main">
                     <div class="footer-eamil-menu">
                         <div class="footer-email">
-                            <a href="mailto:info@example.com">
-                                info@example.com
+                            <a href="mailto:elegencea@gmail.com">
+                                @Html.Raw(settings["Email"])
                             </a>
                         </div>
                         <div class="footer-menu">
                             <ul>
                                 <li><a asp-controller="home">Home</a></li>
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="menu.html">Menu</a></li>
+                                <li><a asp-controller="menu">Menu</a></li>
                                 <li><a href="blog.html">Blog</a></li>
                                 <li><a href="chef.html">Chef</a></li>
                                 <li><a href="contact.html">Conatct</a></li>
@@ -238,19 +244,21 @@
                     <div class="ak-height-75 ak-height-lg-5"></div>
                     <div class="footer-info">
                         <div class="fooer-phn">
-                            <a href="tel:1-800-915-6271">1-800-915-6271</a>
+                            <a href="">@Html.Raw(settings["Phone#1"])</a>
                             <br>
-                            <a href="tel:1-800-915-6271">1-800-915-6271</a>
+                            <a href="">@Html.Raw(settings["Phone#2"])</a>
+
                         </div>
                         <div class="footer-address">
                             <a href="https://maps.app.goo.gl/gAd1JdfRW5d6eHkn7" target="_blank">
-                                2726 Av. PapineauMontreal,<br>QC H2K 4J6, Canada
+                                @Html.Raw(settings["Location#1"])<br>
+                                @Html.Raw(settings["Location#2"])
                             </a>
                         </div>
                         <div class="footer-time">
-                            <p>SUNDAY - THURSDAY: 11:30AM - 11PM</p>
+                            <p>MONDAY - FRIDAY: @Html.Raw(settings["Weekdays"])</p>
                             <div class="footer-time-border my-1"></div>
-                            <p>FRIDAY & SATURDAY: 11:30AM - 12AM</p>
+                            <p>SATURDAY & SUNDAY: @Html.Raw(settings["Weekend"])</p>
                         </div>
                         <div class="footer-btn">
                             <a href="reservations.html">
@@ -267,7 +275,7 @@
 
                 <div class="copy-right-section">
                     <p class="text-uppercase text-md-center text-white">
-                        &copy; 2024 Elegencia
+                        &copy; @Html.Raw(settings["Year"]) Elegencia
                     </p>
                 </div>
 

@@ -153,3 +153,6 @@ C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\obj\Debug\
 C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\obj\Debug\net6.0\Elegencia.UI.pdb
 C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\obj\Debug\net6.0\Elegencia.UI.genruntimeconfig.cache
 C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\obj\Debug\net6.0\ref\Elegencia.UI.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\obj\Debug\net6.0\Elegencia.UI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
