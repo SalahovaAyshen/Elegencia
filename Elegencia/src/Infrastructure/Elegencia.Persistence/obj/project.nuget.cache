@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4ODZNp+7vLPFSy4JMYykMFVGu9XKahR+ltwJ5Ksvxek+b9TIcBtPFnLgBEEMajeW8Jt55HRHlRHhEY81p4f+ZQ==",
+  "dgSpecHash": "Jf5zL5fDVGdOzhhHWc4/TWq3z/GH/IqpNMfPh2GcANQfd/3gc64SE7Zy+QxgZN7gTajIHlrxVDSYzz+PPPaJ7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",

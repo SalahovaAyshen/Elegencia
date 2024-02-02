@@ -1,4 +1,9 @@
-﻿<div id="scrollsmoother-container">
+﻿@using Elegencia.Application.ViewModels
+@using Elegencia.Domain.Entities
+
+@model HomeVM
+
+<div id="scrollsmoother-container">
     <main>
         <!-- Start Hero -->
         <section>
@@ -146,102 +151,29 @@
                 <div class="ak-height-65 ak-height-lg-30"></div>
                 <div class="ak-slider ak-slider-2">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="ak-card ak-style-1">
-                                <a href="portfolio-details.html" class="ak-card-img">
-                                    <img src="~/assets/img/food_item_1.jpg" alt="..." />
-                                </a>
-                                <div class="card-info">
-                                    <div class="card-text style-1">
-                                        <a href="portfolio-details.html">
-                                            <h5 class="card-title">
-                                                Spaghetti Carbonara
-                                            </h5>
-                                        </a>
-                                        <div class="card-subtitle">
-                                            Desserts
+                        @foreach (Meal showcase in Model.Meals)
+                        {
+                            <div class="swiper-slide">
+                                <div class="ak-card ak-style-1">
+                                    <a href="portfolio-details.html" class="ak-card-img">
+                                        <img src="assets/img/@showcase.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@showcase.Name" />
+                                    </a>
+                                    <div class="card-info">
+                                        <div class="card-text style-1">
+                                            <a href="portfolio-details.html">
+                                                <h5 class="card-title">
+                                                    @showcase.Name
+                                                </h5>
+                                            </a>
+                                            <div class="card-subtitle">
+                                                @showcase.Category.Name
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ak-card ak-style-1">
-                                <a href="portfolio-details.html" class="ak-card-img">
-                                    <img src="~/assets/img/food_item_2.jpg" alt="..." />
 
-                                </a>
-                                <div class="card-info">
-                                    <div class="card-text style-1">
-                                        <a href="portfolio-details.html">
-                                            <h5 class="card-title">
-                                                Spaghetti Carbonara
-                                            </h5>
-                                        </a>
-                                        <div class="card-subtitle">
-                                            Desserts
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ak-card ak-style-1">
-                                <a href="portfolio-details.html" class="ak-card-img">
-                                    <img src="~/assets/img/food_item_3.jpg" alt="..." />
-                                </a>
-                                <div class="card-info">
-                                    <div class="card-text style-1">
-                                        <a href="portfolio-details.html">
-                                            <h5 class="card-title">
-                                                Spaghetti Carbonara
-                                            </h5>
-                                        </a>
-                                        <div class="card-subtitle">
-                                            Desserts
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ak-card ak-style-1">
-                                <a href="portfolio-details.html" class="ak-card-img">
-                                    <img src="~/assets/img/food_item_5.jpg" alt="..." />
-                                </a>
-                                <div class="card-info">
-                                    <div class="card-text style-1">
-                                        <a href="portfolio-details.html">
-                                            <h5 class="card-title">
-                                                Spaghetti Carbonara
-                                            </h5>
-                                        </a>
-                                        <div class="card-subtitle">
-                                            Desserts
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ak-card ak-style-1">
-                                <a href="portfolio-details.html" class="ak-card-img">
-                                    <img src="~/assets/img/food_item_4.jpg" alt="..." />
-                                </a>
-                                <div class="card-info">
-                                    <div class="card-text style-1">
-                                        <a href="portfolio-details.html">
-                                            <h5 class="card-title">
-                                                Spaghetti Carbonara
-                                            </h5>
-                                        </a>
-                                        <div class="card-subtitle">
-                                            Desserts
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div class="container">
@@ -296,256 +228,35 @@
                 </div>
                 <div class="ak-height-65 ak-height-lg-30"></div>
                 <div class="ak-menu-list">
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
+                 @foreach (Meal menu in Model.Meals)
+                    {
+                        <div class="ak-menu-list-section-1">
+                            <img src="~/assets/img/@menu.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@menu.Name">
+                            <div class="food-menu style-1">
+                                <div class="food-menu-section-1">
+                                    <div class="food-menu-title">
+                                        <p>@menu.Name</p>
+                                    </div>
+                                    <div class="food-menu-hr">
+                                        <div class="food-menu-hr style-1"></div>
+                                        <div class="food-menu-hr style-1"></div>
+                                    </div>
+                                    <div class="food-menu-price">
+                                        <p>$@menu.Price</p>
+                                    </div>
                                 </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show_2.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
+                                <div class="food-menu-section-2">
+                                    <div class="food-menu-subsitle">
+                                        <p>Lorem passionate chefs masterfully</p>
+                                    </div>
+                                    <div class="food-menu-price-subsitle">
+                                        <p>Extra free juice</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show_2.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show_2.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show_2.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ak-menu-list-section-1">
-                        <img src="~/assets/img/item-show_2.png" alt="...">
-                        <div class="food-menu style-1">
-                            <div class="food-menu-section-1">
-                                <div class="food-menu-title">
-                                    <p>Spaghetti alla Carbonara</p>
-                                </div>
-                                <div class="food-menu-hr">
-                                    <div class="food-menu-hr style-1"></div>
-                                    <div class="food-menu-hr style-1"></div>
-                                </div>
-                                <div class="food-menu-price">
-                                    <p>$49</p>
-                                </div>
-                            </div>
-                            <div class="food-menu-section-2">
-                                <div class="food-menu-subsitle">
-                                    <p>Lorem passionate chefs masterfully</p>
-                                </div>
-                                <div class="food-menu-price-subsitle">
-                                    <p>Extra free juice</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    }
                 </div>
                 <div class="ak-height-20 ak-height-lg-20"></div>
                 <div class="text-md-center">

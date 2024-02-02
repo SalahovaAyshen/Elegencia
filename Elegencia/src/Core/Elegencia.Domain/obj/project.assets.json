@@ -825,11 +825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
       "projectName": "Elegencia.Domain",
-      "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
+      "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Domain\\obj\\",
+      "outputPath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

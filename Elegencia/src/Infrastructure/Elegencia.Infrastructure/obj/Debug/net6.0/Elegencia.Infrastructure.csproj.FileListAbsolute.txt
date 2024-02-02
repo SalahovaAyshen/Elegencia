@@ -9,3 +9,15 @@ C:\Users\hp\Desktop\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\De
 C:\Users\hp\Desktop\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\refint\Elegencia.Infrastructure.dll
 C:\Users\hp\Desktop\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.pdb
 C:\Users\hp\Desktop\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\ref\Elegencia.Infrastructure.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\bin\Debug\net6.0\Elegencia.Infrastructure.deps.json
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\bin\Debug\net6.0\Elegencia.Infrastructure.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\bin\Debug\net6.0\Elegencia.Infrastructure.pdb
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.AssemblyInfo.cs
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.sourcelink.json
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\refint\Elegencia.Infrastructure.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\Elegencia.Infrastructure.pdb
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Infrastructure\Elegencia.Infrastructure\obj\Debug\net6.0\ref\Elegencia.Infrastructure.dll

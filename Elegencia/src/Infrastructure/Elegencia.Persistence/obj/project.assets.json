@@ -2229,11 +2229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
       "projectName": "Elegencia.Persistence",
-      "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
+      "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\Elegencia.Persistence.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\obj\\",
+      "outputPath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Infrastructure\\Elegencia.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2254,8 +2254,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Application\\Elegencia.Application.csproj": {
-              "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Application\\Elegencia.Application.csproj"
+            "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Application\\Elegencia.Application.csproj": {
+              "projectPath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Application\\Elegencia.Application.csproj"
             }
           }
         }

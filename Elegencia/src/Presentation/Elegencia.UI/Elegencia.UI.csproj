@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\assets\css\.DS_Store" />
     <None Include="wwwroot\assets\css\plugins\.DS_Store" />
     <None Include="wwwroot\assets\fonts\.DS_Store" />

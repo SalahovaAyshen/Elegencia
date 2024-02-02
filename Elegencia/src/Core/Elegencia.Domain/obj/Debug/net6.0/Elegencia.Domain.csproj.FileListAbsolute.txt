@@ -10,3 +10,16 @@ C:\Users\hp\Desktop\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegenc
 C:\Users\hp\Desktop\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\refint\Elegencia.Domain.dll
 C:\Users\hp\Desktop\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.pdb
 C:\Users\hp\Desktop\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\ref\Elegencia.Domain.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\bin\Debug\net6.0\Elegencia.Domain.deps.json
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\bin\Debug\net6.0\Elegencia.Domain.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\bin\Debug\net6.0\Elegencia.Domain.pdb
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.AssemblyInfo.cs
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.sourcelink.json
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\refint\Elegencia.Domain.dll
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\Elegencia.Domain.pdb
+C:\Users\hp\Desktop\Elegencia\Elegencia\src\Core\Elegencia.Domain\obj\Debug\net6.0\ref\Elegencia.Domain.dll

@@ -10,11 +10,12 @@ namespace Elegencia.Application.Abstractions.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        Task<IQueryable<T>> GetAll(Expression<Func<T, bool>>? expression, params string[] includes);
-        Task<T> GetById(int id);
+        IQueryable<T> GetAll(Expression<Func<T, bool>>? expression=null, int skip = 0, int take = 0, params string[] includes);
+        IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes);
+        Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
-        Task Update(T entity);
-        Task Delete(T entity);
+        void Update(T entity);
+        void Delete(T entity);
         Task SaveChangesAsync();
 
 

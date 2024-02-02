@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2wVRTNW2thuaEc1fhkFDuFBwtWXOci5sOaFznAVyZUqzaFEsT0/y3giE0ARVegmn6/jDefNpLbP3pOG6Hu+9Fg==",
+  "dgSpecHash": "U3PC67QaPr5G8o8v1zJQIiUdAUfDwSYmVC2qcG0R/4NyR7PhavcOkyTxImZg9zfx6u/Tp/M/ss5KNlKSsZBt9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Domain\\Elegencia.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.25\\microsoft.aspnetcore.cryptography.keyderivation.6.0.25.nupkg.sha512",
