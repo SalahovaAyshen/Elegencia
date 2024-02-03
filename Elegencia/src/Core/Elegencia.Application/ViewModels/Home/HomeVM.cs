@@ -10,5 +10,6 @@ namespace Elegencia.Application.ViewModels
     public class HomeVM
     {
         public ICollection<Meal> Meals { get; set; }
+        public Dictionary<string,string> Service {  get; set; }
     }
 }

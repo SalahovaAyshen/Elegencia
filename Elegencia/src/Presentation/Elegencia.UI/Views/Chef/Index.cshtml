@@ -1,0 +1,50 @@
+﻿@model ChefVM
+
+<div id="scrollsmoother-container">
+    <!-- Start Hero -->
+    <Section>
+        <div class="ak-commmon-hero ak-style1 ak-bg">
+            <img class="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg" />
+            <div class="ak-commmon-heading">
+                <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                    <div class="ak-section-subtitle">
+                        <a asp-controller="home">Home</a> / Chefs
+                    </div>
+                    <h2 class="ak-section-title page-title-anim">Our Chefs</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- End Hero -->
+
+    <div class="ak-height-150 ak-height-lg-60"></div>
+    <!-- Start  all chef-->
+    <section class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+           @foreach (Chef chef in Model.Chefs)
+            {
+                <div class="col">
+                    <div class="chef ak-bg" >
+                        <img class="chef ak-bg" src="~/assets/img/@chef.Image" />
+                        <div class="chef-style-1">
+                            <div class="chef-info">
+                                <div class="chef-info-social">
+                                    <a href="@chef.Facebook">FACEBOOK</a>
+                                    <a href="@chef.Linkedin">LINKEDING</a>
+                                    <a href="@chef.Instagram">INSTAGRAM</a>
+                                </div>
+                                <div class="chef-title">
+                                    <a asp-controller="chef" asp-action="aboutchef" asp-route-id="@chef.Id">@chef.Name @chef.Surname</a>
+                                    <p>@chef.Position.Name</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+    </section>
+    <!-- End  all chef-->

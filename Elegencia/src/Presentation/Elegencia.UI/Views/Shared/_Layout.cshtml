@@ -78,7 +78,7 @@
                     <a href="reservations.html" class="logo">Reservation</a>
                 </div>
                 <div class="center-log">
-                    <a asp-controller="home"><img src="~/assets/img/logo.png" alt="..."></a>
+                    <a asp-controller="home" asp-action="index"><img src="~/assets/img/logo.png" alt="..."></a>
                 </div>
                 <button class="ak-menu-toggle" id="akMenuToggle" type="button">
                     <svg viewBox="0 0 20 15" width="40px" height="30px" class="ak-menu-icon">
@@ -88,12 +88,12 @@
                     </svg>
                 </button>
                 <ul class="top-main-menu">
-                    <li class="top-main-menu-li">
-                        <a asp-controller="home">Home</a>
+                   @*  <li class="top-main-menu-li">
+                        <a asp-controller="home" asp-action="index">Home</a>
                         <img class="top-main-menu-img" src="~/assets/img/fullWM_1.jpg" alt="...">
-                    </li>
+                    </li> *@
                     <li class="top-main-menu-li">
-                        <a href="about.html">About</a>
+                        <a asp-controller="about">About Us</a>
                         <img class="top-main-menu-img" src="~/assets/img/fullWM_about.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
@@ -101,7 +101,7 @@
                         <img class="top-main-menu-img menu-img" src="~/assets/img/fullWM_menu.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
-                        <a href="chef.html">Chef</a>
+                        <a asp-controller="chef">Chef</a>
                         <img class="top-main-menu-img" src="~/assets/img/fullWM_chef.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
@@ -128,21 +128,13 @@
                                    
                                 </li>
                                 <li>
-                                    <a href="about.html">About</a>
+                                    <a asp-controller="about">About Us</a>
                                 </li>
                                 <li>
                                     <a asp-controller="menu">Menu</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="chef.html">Chef</a>
-                                    <ul>
-                                        <li>
-                                            <a href="chef.html">Chef</a>
-                                        </li>
-                                        <li>
-                                            <a href="meet-the-chef.html">Meet The Chef</a>
-                                        </li>
-                                    </ul>
+                                    <a asp-controller="chef">Chef</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="portfolio.html">Portfolio</a>
@@ -227,38 +219,38 @@
                     <div class="footer-eamil-menu">
                         <div class="footer-email">
                             <a href="mailto:elegencea@gmail.com">
-                                @Html.Raw(settings["Email"])
+                                @settings["Email"]
                             </a>
                         </div>
                         <div class="footer-menu">
                             <ul>
-                                <li><a asp-controller="home">Home</a></li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a asp-controller="home" asp-action="index">Home</a></li>
+                                <li><a asp-controller="about">About</a></li>
                                 <li><a asp-controller="menu">Menu</a></li>
                                 <li><a href="blog.html">Blog</a></li>
-                                <li><a href="chef.html">Chef</a></li>
-                                <li><a href="contact.html">Conatct</a></li>
+                                <li><a asp-controller="chef">Chef</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="ak-height-75 ak-height-lg-5"></div>
                     <div class="footer-info">
                         <div class="fooer-phn">
-                            <a href="">@Html.Raw(settings["Phone#1"])</a>
+                            <a href="">@settings["Phone#1"]</a>
                             <br>
-                            <a href="">@Html.Raw(settings["Phone#2"])</a>
+                            <a href="">@settings["Phone#2"]</a>
 
                         </div>
                         <div class="footer-address">
                             <a href="https://maps.app.goo.gl/gAd1JdfRW5d6eHkn7" target="_blank">
-                                @Html.Raw(settings["Location#1"])<br>
-                                @Html.Raw(settings["Location#2"])
+                                @settings["Location#1"]<br>
+                                @settings["Location#2"]
                             </a>
                         </div>
                         <div class="footer-time">
                             <p>MONDAY - FRIDAY: @Html.Raw(settings["Weekdays"])</p>
                             <div class="footer-time-border my-1"></div>
-                            <p>SATURDAY & SUNDAY: @Html.Raw(settings["Weekend"])</p>
+                            <p>SATURDAY & SUNDAY: @settings["Weekend"]</p>
                         </div>
                         <div class="footer-btn">
                             <a href="reservations.html">
@@ -275,7 +267,7 @@
 
                 <div class="copy-right-section">
                     <p class="text-uppercase text-md-center text-white">
-                        &copy; @Html.Raw(settings["Year"]) Elegencia
+                        &copy; @settings["Year"] Elegencia
                     </p>
                 </div>
 

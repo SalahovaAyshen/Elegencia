@@ -181,6 +181,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\caesar-4.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\chef-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\chef-1.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\chef_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\chef_1.jpg"
     },
@@ -495,6 +499,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\treacle-tarte.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\treacle-tarte.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\video.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\video.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\js\\main.js",

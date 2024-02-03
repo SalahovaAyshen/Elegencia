@@ -8,6 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Elegencia.Persistence.Implementations.Repositories
 {
@@ -56,10 +57,18 @@ namespace Elegencia.Persistence.Implementations.Repositories
             return query; 
 
         }
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id, params string[] includes)
         {
-            T item = await _table.FirstOrDefaultAsync(i => i.Id == id);
-            return item;
+            IQueryable<T> query =  _table.Where(i => i.Id == id);
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+
+            return query.FirstOrDefault();
         }
         public async Task AddAsync(T item)
         {

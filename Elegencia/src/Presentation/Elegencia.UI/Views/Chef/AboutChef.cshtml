@@ -1,0 +1,55 @@
+﻿@model Chef
+<div id="scrollsmoother-container">
+    <!-- Start Hero -->
+    <Section>
+        <div class="ak-commmon-hero ak-style1 ak-bg">
+            <img class="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg" />
+            <div class="ak-commmon-heading">
+                <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                    <div class="ak-section-subtitle">
+                        <a asp-controller="home">Home</a> / About Chef
+                    </div>
+                    <h2 class="ak-section-title page-title-anim">About Chef</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- End Hero -->
+    <!-- Start About Content -->
+    <section>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="meet-the-content-about-section">
+
+                <div class="about-info">
+                    <div class="ak-section-heading ak-style-1 ak-color-1">
+                        <p>@Model.Position.Name</p>
+                        <h2 class="ak-section-title anim-title-3">About @Model.Name @Model.Surname</h2>
+                    </div>
+                    <div class="ak-height-25 ak-height-lg-25"></div>
+                    <p>
+                       @Model.Info
+                    </p>
+                    
+                    <div class="ak-height-45 ak-height-lg-30"></div>
+                   @*  <div class="text-btn">
+                        <a href="https://www.youtube.com/watch?v=UsD1MhKBmD4" class="text-btn1 ak-video-open">
+                            View Expertise
+                        </a>
+                    </div> *@
+
+                </div>
+                <div class="about-img">
+                    <img style="width:400px;height:400px" src="~/assets/img/@Model.Image" class="imagesZoom" data-speed="1.1" alt="meetAbout">
+                </div>
+                <div class="about-social">
+                    <a href="@Model.Facebook">FACEBOOK</a>
+                    <a href="@Model.Linkedin">LINKEDING</a>
+                    <a href="@Model.Instagram">INSTAGRAM</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Content -->

@@ -14,19 +14,23 @@ namespace Elegencia.Persistence.Implementations.Services
     internal class HomeService : IHomeService
     {
         private readonly IMealRepository _repository;
+        private readonly LayoutService _service;
 
-        public HomeService(IMealRepository repository)
+        public HomeService(IMealRepository repository, LayoutService service)
         {
             _repository = repository;
+            _service = service;
         }
         public async Task<HomeVM> GetAll()
         {
-            ICollection<Meal> meals = await _repository.GetAllWithOrder(orderExpression: m=>m.Id).Take(4)
-                .Include(m=>m.MealImages.Where(mi=>mi.IsPrimary==true))
-                .Include(m=>m.Category).ToListAsync();
+            ICollection<Meal> meals = await _repository.GetAllWithOrder(orderExpression: m=>m.Id, includes:nameof(Meal.Category)).Take(4)
+                .Include(m=>m.MealImages.Where(mi=>mi.IsPrimary==true)).ToListAsync();
+            Dictionary<string,string> service = await _service.GetSettingsAsync();
+
             HomeVM home = new HomeVM
             {
-                Meals = meals
+                Meals = meals,
+                Service = service
             };
             return home;
         }

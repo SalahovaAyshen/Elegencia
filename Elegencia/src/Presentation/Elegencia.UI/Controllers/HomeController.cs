@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.ViewModels;
 using Elegencia.Domain.Entities;
+using Elegencia.Persistence.Implementations.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Controllers

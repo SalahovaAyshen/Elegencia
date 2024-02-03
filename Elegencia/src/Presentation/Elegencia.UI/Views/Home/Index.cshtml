@@ -1,6 +1,4 @@
-﻿
-
-@model HomeVM
+﻿@model HomeVM
 
 <div id="scrollsmoother-container">
     <main>
@@ -83,18 +81,17 @@
                             <div class="ak-height-35 ak-height-lg-30"></div>
                             <p class="about-subtext">
                                 Welcome to our restaurant, where culinary artistry meets
-                                exceptional dining experiences. At, we strive to create a gastronomic haven that
-                                tantalizes your taste buds and leaves you with unforgettable memories.
+                                exceptional dining experiences. Elegencia specializes in delicious food featuring fresh ingredients and masterful preparation by the Elegencia culinary team.
+                                Whether you’re ordering a multi-course meal or grabbing a drink and pizza at the bar, 
+                                Elegencia’s lively, 
+                                casual yet upscale atmosphere makes it perfect for dining with friends, family, 
+                                clients and business associates.
                             </p>
-                            <div class="ak-height-30 ak-height-lg-30"></div>
-                            <p class="about-subtext">
-                                Lorem to our restaurant, where culinary artistry meets
-                                exceptional dining experiences. At, we strive to create a gastronomic haven that.
-                            </p>
+                           
                             <div class="ak-height-50 ak-height-lg-30"></div>
                             <div class="text-btn">
-                                <a href="about.html" class="text-btn1">
-                                    Discover The Kitchen
+                                <a asp-controller="about" class="text-btn1">
+                                    About Us
                                 </a>
                             </div>
                         </div>
@@ -121,9 +118,9 @@
                     </p>
                     <div class="ak-height-30 ak-height-lg-30"></div>
                     <div class="opening-hour-date">
-                        <p>SUNDAY - THURSDAY: 11:30AM - 11PM</p>
+                        <p>MONDAY-FRIDAY: @Model.Service["Weekdays"]</p>
                         <div class="opening-hour-hr"></div>
-                        <p> FRIDAY & SATURDAY: 11:30AM - 12AM</p>
+                        <p>SATURDAY & SUNDAY: @Model.Service["Weekend"]</p>
                     </div>
                     <div class="ak-height-70 ak-height-lg-30"></div>
                     <div class="text-btn">
@@ -155,7 +152,7 @@
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
                                     <a href="portfolio-details.html" class="ak-card-img">
-                                        <img src="assets/img/@showcase.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@showcase.Name" />
+                                        <img src="assets/img/@showcase.MealImages.FirstOrDefault()?.Image" alt="@showcase.Name" />
                                     </a>
                                     <div class="card-info">
                                         <div class="card-text style-1">
@@ -227,10 +224,10 @@
                 </div>
                 <div class="ak-height-65 ak-height-lg-30"></div>
                 <div class="ak-menu-list">
-                 @foreach (Meal menu in Model.Meals)
+                    @foreach (Meal menu in Model.Meals)
                     {
                         <div class="ak-menu-list-section-1">
-                            <img src="~/assets/img/@menu.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@menu.Name">
+                            <img src="~/assets/img/@menu.MealImages.FirstOrDefault()?.Image" alt="@menu.Name">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
@@ -245,11 +242,9 @@
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Lorem passionate chefs masterfully</p>
-                                    </div>
+                                   
                                     <div class="food-menu-price-subsitle">
-                                        <p>Extra free juice</p>
+                                        <p>@menu.Category.Name</p>
                                     </div>
                                 </div>
                             </div>
