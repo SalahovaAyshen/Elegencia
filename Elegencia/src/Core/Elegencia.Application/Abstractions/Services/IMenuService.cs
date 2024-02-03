@@ -9,6 +9,6 @@ namespace Elegencia.Application.Abstractions.Services
 {
     public interface IMenuService
     {
-        Task<MenuVM> GetAll();
+        Task<MenuVM> GetAll(string? search);
     }
 }

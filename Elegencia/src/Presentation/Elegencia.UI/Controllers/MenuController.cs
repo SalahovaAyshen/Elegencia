@@ -12,9 +12,9 @@ namespace Elegencia.UI.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search)
         {
-            MenuVM menu = await _service.GetAll();
+            MenuVM menu = await _service.GetAll(search);
             return View(menu);
         }
     }

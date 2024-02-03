@@ -12,7 +12,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Elegencia.Persistence.Implementations.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity, new()
+    public class Repository<T> : IRepository<T> where T : BaseNameableEntity, new()
     {
         private readonly AppDbContext _context;
         private readonly DbSet<T> _table;
@@ -23,11 +23,15 @@ namespace Elegencia.Persistence.Implementations.Repositories
         }
 
         public IQueryable<T> GetAll(
+            string? search,
             Expression<Func<T, bool>>? expression = null,
              int skip = 0, int take = 0,
             params string[] includes)
         {
             IQueryable<T> query = _table;
+            if (!string.IsNullOrEmpty(search))
+                query = query.Where(q => q.Name.ToLower().Contains(search.ToLower()));
+
             if (expression is not null) query = query.Where(expression);
             if (includes is not null)
             {
