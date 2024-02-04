@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elegencia.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+664b28379ec6c49e4795cf70b153bf1848dfce28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1bb95fcc3f3ced4321f1a34095ba8dd2ab1b24b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elegencia.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elegencia.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

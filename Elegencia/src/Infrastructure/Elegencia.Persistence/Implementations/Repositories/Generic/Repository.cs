@@ -22,7 +22,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
             _table = _context.Set<T>();
         }
 
-        public IQueryable<T> GetAll(
+        public IQueryable<T> GetAllWithSearch(
             string? search,
             Expression<Func<T, bool>>? expression = null,
              int skip = 0, int take = 0,
@@ -42,7 +42,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
             }
             if (skip != 0) query = query.Skip(skip);
             if (take != 0) query = query.Take(take);
-            return query; ;
+            return query; 
         }
         public IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes)
         {
@@ -60,6 +60,18 @@ namespace Elegencia.Persistence.Implementations.Repositories
             }
             return query; 
 
+        }
+        public IQueryable<T> GetAll(params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            return query;
         }
         public async Task<T> GetByIdAsync(int id, params string[] includes)
         {

@@ -32,15 +32,15 @@ namespace Elegencia.Persistence.Implementations.Services
         }
         public async Task<MenuVM> GetAll(string? search)
         {
-            ICollection<Meal> meals = await _mealRepository.GetAll(includes:nameof(Meal.Category), search: search)
+            ICollection<Meal> meals = await _mealRepository.GetAllWithSearch(includes:nameof(Meal.Category), search: search)
                  .Include(m => m.MealImages.Where(mi => mi.IsPrimary == true)).ToListAsync();
 
-            ICollection<Salad> salads = await _saladRepository.GetAll(search: search,includes: nameof(Salad.Category)).ToListAsync();
+            ICollection<Salad> salads = await _saladRepository.GetAllWithSearch(search: search,includes: nameof(Salad.Category)).ToListAsync();
 
-            ICollection<Dessert> desserts = await _dessertRepository.GetAll(search: search,includes: nameof(Dessert.DessertCategory)).
+            ICollection<Dessert> desserts = await _dessertRepository.GetAllWithSearch(search: search,includes: nameof(Dessert.DessertCategory)).
                 Include(d => d.DessertImages.Where(di => di.IsPrimary==true)).ToListAsync();
 
-            ICollection<Drink> drinks = await _drinkRepository.GetAll(search: search, includes: nameof(Drink.DrinkCategory)).ToListAsync();
+            ICollection<Drink> drinks = await _drinkRepository.GetAllWithSearch(search: search, includes: nameof(Drink.DrinkCategory)).ToListAsync();
 
             MenuVM menu = new MenuVM
             {

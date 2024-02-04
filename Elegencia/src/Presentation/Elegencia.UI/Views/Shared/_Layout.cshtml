@@ -88,25 +88,18 @@
                     </svg>
                 </button>
                 <ul class="top-main-menu">
-                   @*  <li class="top-main-menu-li">
-                        <a asp-controller="home" asp-action="index">Home</a>
-                        <img class="top-main-menu-img" src="~/assets/img/fullWM_1.jpg" alt="...">
-                    </li> *@
+                
                     <li class="top-main-menu-li">
                         <a asp-controller="about" asp-action="index">About Us</a>
-                        <img class="top-main-menu-img" src="~/assets/img/fullWM_about.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
                         <a asp-controller="menu" asp-action="index"> Menu</a>
-                        <img class="top-main-menu-img menu-img" src="~/assets/img/fullWM_menu.jpg" alt="...">
                     </li>
                     <li class="top-main-menu-li">
-                        <a asp-controller="chef" asp-action="index">Chef</a>
-                        <img class="top-main-menu-img" src="~/assets/img/fullWM_chef.jpg" alt="...">
+                        <a asp-controller="chef" asp-action="index">Our Chefs</a>
                     </li>
                     <li class="top-main-menu-li">
-                        <a href="contact.html">Contact</a>
-                        <img class="top-main-menu-img" src="~/assets/img/fullWM_contact.jpg" alt="...">
+                        <a asp-controller="contact" asp-action="index">Contacts</a>
                     </li>
                 </ul>
             </div>
@@ -123,10 +116,7 @@
                     <div class="ak-main_header_right">
                         <div class="ak-nav ak-medium">
                             <ul class="ak-nav_list">
-                                <li class="menu-item-has-children">
-                                    <a asp-controller="home" asp-action="index">Home</a>
-                                   
-                                </li>
+                               
                                 <li>
                                     <a asp-controller="about" asp-action="index">About Us</a>
                                 </li>
@@ -134,51 +124,14 @@
                                     <a asp-controller="menu" asp-action="index">Menu</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a asp-controller="chef" asp-action="index">Chef</a>
+                                    <a asp-controller="chef" asp-action="index">Our Chefs</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="portfolio.html">Portfolio</a>
-                                    <ul>
-                                        <li>
-                                            <a href="portfolio.html">Portfolio</a>
-                                        </li>
-                                        <li>
-                                            <a href="portfolio-details.html">Portfolio Details</a>
-                                        </li>
-                                    </ul>
+                                    <a asp-controller="news" asp-action="index">News</a>
                                 </li>
+                                
                                 <li class="menu-item-has-children">
-                                    <a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Pages</a>
-                                    <ul>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
-                                        </li>
-                                        <li>
-                                            <a href="reservations.html">Reservations</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">Gallery</a>
-                                        </li>
-
-
-                                        <li>
-                                            <a href="404.html">404 Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="comming.html">Comming Soon</a>
-                                        </li>
-                                    </ul>
+                                    <a asp-controller="contact" asp-action="index">Contacts</a>
                                 </li>
                             </ul>
                         </div>
@@ -227,9 +180,9 @@
                                 <li><a asp-controller="home" asp-action="index">Home</a></li>
                                 <li><a asp-controller="about" asp-action="index">About</a></li>
                                 <li><a asp-controller="menu" asp-action="index">Menu</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a asp-controller="chef" asp-action="index">Chef</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a asp-controller="chef" asp-action="index">Our Chefs</a></li>
+                                <li><a asp-controller="news" asp-action="index">News</a></li>
+                                <li><a asp-controller="contact" asp-action="index">Contacts</a></li>
                             </ul>
                         </div>
                     </div>
@@ -263,12 +216,20 @@
                 </div>
 
                 <div class="ak-footer-hr-bottom qodef-grid-item"></div>
-                <div class="ak-height-130 ak-height-lg-30"></div>
-
+                
+               
                 <div class="copy-right-section">
+                   
+                    <div class="d-flex justify-content-center pt-2 ">
+                        <img style="width:150px;height:150px" src="~/assets/img/qr-code.jpg" />
+
+                    </div>
+
                     <p class="text-uppercase text-md-center text-white">
+                        
                         &copy; @settings["Year"] Elegencia
                     </p>
+
                 </div>
 
                 <div class="ak-height-45 ak-height-lg-30"></div>

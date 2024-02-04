@@ -421,6 +421,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\portfolio_details.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\qr#22.png",
+      "PackagePath": "staticwebassets\\assets\\img\\qr#22.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\qr-code.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\qr-code.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\reservation-2.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\reservation-2.jpeg"
     },

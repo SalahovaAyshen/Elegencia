@@ -30,7 +30,7 @@ namespace Elegencia.Persistence.Contexts
         public DbSet<Salad> Salads { get; set; }
         public DbSet<Drink> Drinks { get; set; }
         public DbSet<DrinkCategory> DrinkCategories { get; set; }
-
+        public DbSet<Contact> Contacts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

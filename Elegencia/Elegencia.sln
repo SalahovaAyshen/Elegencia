@@ -9,19 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AC9746AD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DDBE0AFD-FE59-4635-9287-23B33F44DFC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elegencia.Domain", "src\Core\Elegencia.Domain\Elegencia.Domain.csproj", "{A6060069-653D-4271-9F12-D249849C2B85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elegencia.Domain", "src\Core\Elegencia.Domain\Elegencia.Domain.csproj", "{A6060069-653D-4271-9F12-D249849C2B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elegencia.Application", "src\Core\Elegencia.Application\Elegencia.Application.csproj", "{F35A7233-48A1-4DB4-8CE4-60933C39DA94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elegencia.Application", "src\Core\Elegencia.Application\Elegencia.Application.csproj", "{F35A7233-48A1-4DB4-8CE4-60933C39DA94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8CB1774E-7D8B-48FD-9099-D28747904730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elegencia.Persistence", "src\Infrastructure\Elegencia.Persistence\Elegencia.Persistence.csproj", "{D32BCB38-5B47-45C2-8F4D-FD73CBFA44AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elegencia.Persistence", "src\Infrastructure\Elegencia.Persistence\Elegencia.Persistence.csproj", "{D32BCB38-5B47-45C2-8F4D-FD73CBFA44AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elegencia.Infrastructure", "src\Infrastructure\Elegencia.Infrastructure\Elegencia.Infrastructure.csproj", "{6B1DF177-238B-414A-AB30-D81AB557F205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elegencia.Infrastructure", "src\Infrastructure\Elegencia.Infrastructure\Elegencia.Infrastructure.csproj", "{6B1DF177-238B-414A-AB30-D81AB557F205}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7D244737-5D9C-4D5D-9D84-2D7168851317}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elegencia.UI", "src\Presentation\Elegencia.UI\Elegencia.UI.csproj", "{707D6CAE-5B8D-4744-847C-25A2460E18B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elegencia.UI", "src\Presentation\Elegencia.UI\Elegencia.UI.csproj", "{707D6CAE-5B8D-4744-847C-25A2460E18B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
