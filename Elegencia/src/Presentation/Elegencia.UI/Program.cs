@@ -12,6 +12,10 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapControllerRoute(
+    name: "manage",
+    pattern: "{area=exists}/{controller=dashboard}/{action=index}/{id?}");
+
 
 app.MapControllerRoute(
     name: "default",

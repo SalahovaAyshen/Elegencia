@@ -22,20 +22,23 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h2 class="contact-form-title anim-title-3">Contact Us</h2>
-                    <from method="post">
+                    <form method="post">
                         <div class="from-input">
                             <input placeholder="Name" asp-for="Name" class="col-md-5 col-12 rounded-pill" type="text" name="name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
                             <input placeholder="Email" asp-for="Email" class="col-md-5 col-12 rounded-pill" type="email" name="email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="col-md-12">
                             <textarea name="textarea" rows="5" asp-for="ContactUs" class="col-12 col-md-10"
                                       placeholder="Comment text"></textarea>
+                            <span asp-validation-for="ContactUs" class="text-danger"></span>
                         </div>
                         <div class="ak-height-40 ak-height-lg-20"></div>
                         <div class="ak-btn style-5 color-yellow-bg">
-                            <button type="submit">Contact US</button>
+                            <button type="submit" formmethod="post">Contact US</button>
                         </div>
-                    </from>
+                    </form>
 
                 </div>
                 <div class="contact-map">

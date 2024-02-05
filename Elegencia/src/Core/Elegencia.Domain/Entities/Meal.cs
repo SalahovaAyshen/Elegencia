@@ -14,7 +14,6 @@ namespace Elegencia.Domain.Entities
         //Relational properties
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
-        public List<MealTags>? MealTags { get; set; }
         public List<MealImages>? MealImages { get; set; }
 
     }

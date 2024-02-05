@@ -14,7 +14,6 @@ namespace Elegencia.Domain.Entities
         public int DessertCategoryId { get; set; }
         public DessertCategory? DessertCategory { get; set; }
         public List<DessertImage>? DessertImages { get; set; }
-        public List<DessertTag>? DessertTags { get; set; }
 
     }
 }
