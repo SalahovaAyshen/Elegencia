@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\assets\\fonts\\lg.woff"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\0993b44d-8825-43bd-93db-faf7efd8a1b5WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\0993b44d-8825-43bd-93db-faf7efd8a1b5WhatsApp Image 2022-09-04 at 00.27.25.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\643-700special.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\643-700special.jpg"
     },
@@ -235,6 +239,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\drink.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\drink.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\e943c459-e64a-4b2a-a173-fe71e8a6412bWhatsApp Image 2022-09-04 at 00.27.26.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\e943c459-e64a-4b2a-a173-fe71e8a6412bWhatsApp Image 2022-09-04 at 00.27.26.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\errorBg.png",
@@ -697,200 +705,36 @@
       "PackagePath": "staticwebassets\\assets\\sass\\style.scss"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\maps\\style.css.map",
-      "PackagePath": "staticwebassets\\manage\\css\\maps\\style.css.map"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\main.css",
+      "PackagePath": "staticwebassets\\manage\\css\\main.css"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\style.css",
-      "PackagePath": "staticwebassets\\manage\\css\\style.css"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\main.min.css",
+      "PackagePath": "staticwebassets\\manage\\css\\main.min.css"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\auth\\lockscreen-bg.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\auth\\lockscreen-bg.jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\manage\\images\\banner.jpg"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\auth\\login-bg.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\auth\\login-bg.jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\auth\\register-bg.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\auth\\register-bg.jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\jquery-3.7.0.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\jquery-3.7.0.min.js"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face1.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face1.jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\main.js",
+      "PackagePath": "staticwebassets\\manage\\js\\main.js"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face10.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face10.jpg"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\plugins\\chart.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\chart.js"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face11.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face11.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face12.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face12.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face13.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face13.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face14.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face14.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face15.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face15.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face16.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face16.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face17.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face17.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face18.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face18.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face19.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face19.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face2.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face20.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face20.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face21.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face21.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face22.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face22.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face23.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face23.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face24.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face24.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face25.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face25.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face26.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face26.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face27.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face27.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face3.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face4.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face5.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face6.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face7.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face8.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\faces\\face9.jpg",
-      "PackagePath": "staticwebassets\\manage\\images\\faces\\face9.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\favicon.ico",
-      "PackagePath": "staticwebassets\\manage\\images\\favicon.ico"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\favicon.png",
-      "PackagePath": "staticwebassets\\manage\\images\\favicon.png"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\logo-mini.svg",
-      "PackagePath": "staticwebassets\\manage\\images\\logo-mini.svg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\logo.svg",
-      "PackagePath": "staticwebassets\\manage\\images\\logo.svg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\Chart.min.js",
-      "PackagePath": "staticwebassets\\manage\\js\\Chart.min.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\chart.js",
-      "PackagePath": "staticwebassets\\manage\\js\\chart.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\dashboard.js",
-      "PackagePath": "staticwebassets\\manage\\js\\dashboard.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\data-table.js",
-      "PackagePath": "staticwebassets\\manage\\js\\data-table.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\dataTables.bootstrap4.js",
-      "PackagePath": "staticwebassets\\manage\\js\\dataTables.bootstrap4.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\documentation.js",
-      "PackagePath": "staticwebassets\\manage\\js\\documentation.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\file-upload.js",
-      "PackagePath": "staticwebassets\\manage\\js\\file-upload.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\hoverable-collapse.js",
-      "PackagePath": "staticwebassets\\manage\\js\\hoverable-collapse.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\jquery.cookie.js",
-      "PackagePath": "staticwebassets\\manage\\js\\jquery.cookie.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\jquery.dataTables.js",
-      "PackagePath": "staticwebassets\\manage\\js\\jquery.dataTables.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\off-canvas.js",
-      "PackagePath": "staticwebassets\\manage\\js\\off-canvas.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\tabs.js",
-      "PackagePath": "staticwebassets\\manage\\js\\tabs.js"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\template.js",
-      "PackagePath": "staticwebassets\\manage\\js\\template.js"
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\plugins\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\jquery.dataTables.min.js"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\vendors\\base\\bootstrap.min.js.map",

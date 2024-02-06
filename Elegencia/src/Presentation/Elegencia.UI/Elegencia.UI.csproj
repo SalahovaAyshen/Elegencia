@@ -25,10 +25,6 @@
     <None Include="wwwroot\assets\js\plugins\.DS_Store" />
     <None Include="wwwroot\assets\sass\.DS_Store" />
     <None Include="wwwroot\assets\sass\common\.DS_Store" />
-    <None Include="wwwroot\manage\images\.DS_Store" />
-    <None Include="wwwroot\manage\images\auth\.DS_Store" />
-    <None Include="wwwroot\manage\images\faces\.DS_Store" />
-    <None Include="wwwroot\manage\js\.DS_Store" />
     <None Include="wwwroot\manage\vendors\.DS_Store" />
   </ItemGroup>
 

@@ -17,7 +17,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         public async Task<IActionResult> Index(int page=1)
         {
           
-           PaginationVM<Meal> mainMeal = await _mainMealService.GetAll(page, take:2);
+           PaginationVM<Meal> mainMeal = await _mainMealService.GetAll(page, take:3);
             return View(mainMeal);
         }
         public async Task<IActionResult> Create()

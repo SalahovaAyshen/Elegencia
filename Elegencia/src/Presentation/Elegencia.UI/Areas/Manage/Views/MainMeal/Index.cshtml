@@ -2,33 +2,22 @@
 @{
     int count = 0;
 }
-<div class="card-body">
-    <h4 class="card-title">Main meals</h4>
-    <a class="btn btn-inverse-success btn-fw" asp-controller="mainmeal" asp-action="create"><i class="mdi mdi-library-plus"></i></a>
-    <div class="table-responsive">
+<main class="app-content">
+    <div class="tile">
+        <h3 class="tile-title">Main meals <a class="btn btn-inverse-success btn-fw" asp-controller="mainmeal" asp-action="create"><i class="mdi mdi-plus"></i></a></h3>
+        
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        Image
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                    <th > 
-                        Settings
-                    </th>
-                    
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Settings</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach (Meal meal in Model.Items)
+                @foreach (Meal meal in Model.Items)
                 {
                     count++;
                     <tr>
@@ -45,7 +34,7 @@
                             $@meal.Price
                         </td>
 
-                        <td >
+                        <td>
                             <a class="btn btn-inverse-secondary btn-fw" asp-controller="mainmeal" asp-action="detail" asp-route-id="@meal.Id"><i class="mdi mdi-book"></i></a>
                             <a class="btn btn-inverse-warning btn-fw" asp-controller="mainmeal" asp-action="update" asp-route-id="@meal.Id"><i class="mdi mdi-lead-pencil"></i></a>
                             <a class="btn btn-inverse-danger btn-fw" asp-controller="mainmeal" asp-action="delete" asp-route-id="@meal.Id"><i class="mdi mdi-delete"></i></a>
@@ -77,4 +66,6 @@
             </ul>
         </nav>
     </div>
-</div>
+    </div>
+    </main>
+
