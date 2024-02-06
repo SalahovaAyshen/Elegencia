@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Elegencia.Domain\Elegencia.Domain.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Manage\MainMeal\" />
+    <ProjectReference Include="..\Elegencia.Domain\Elegencia.Domain.csproj" />
   </ItemGroup>
 
 </Project>
