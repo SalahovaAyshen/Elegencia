@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Elegencia.Domain\Elegencia.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\Manage\MainMeal\" />
+  </ItemGroup>
+
 </Project>

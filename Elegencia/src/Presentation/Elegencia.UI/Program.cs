@@ -12,9 +12,14 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "manage",
-    pattern: "{area=exists}/{controller=dashboard}/{action=index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "area",
+        pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+        );
+});
+
 
 
 app.MapControllerRoute(

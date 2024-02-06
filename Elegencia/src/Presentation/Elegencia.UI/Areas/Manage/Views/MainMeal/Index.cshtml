@@ -1,0 +1,70 @@
+﻿@model PaginationVM<Meal>
+<div class="card-body">
+    <h4 class="card-title">Main meals</h4>
+   
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th class="d-flex align-items-center"> 
+                        Settings
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (Meal meal in Model.Items)
+                {
+                    <tr>
+                        <td class="py-1">
+                            <img style="width:150px; height:150px" src="~/assets/img/@meal.MealImages.FirstOrDefault()?.Image" alt="@meal.Name" />
+                        </td>
+                        <td>
+                            @meal.Name
+                        </td>
+                        <td>
+                            $@meal.Price
+                        </td>
+
+                        <td >
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="mainmeal" asp-action="detail" asp-route-id="@meal.Id"><i class="mdi mdi-book"></i></a>
+                            <a class="btn btn-inverse-warning btn-fw" asp-controller="mainmeal" asp-action="update" asp-route-id="@meal.Id"><i class="mdi mdi-lead-pencil"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="mainmeal" asp-action="delete" asp-route-id="@meal.Id"><i class="mdi mdi-delete"></i></a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item @(Model.CurrentPage<=1 ? "disabled" : "")">
+                    <a class="page-link" aria-label="Previous" asp-controller="mainmeal" asp-action="index" asp-route-page="@Model.CurrentPage-1">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                @for (int i = 0; i < Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage-1==i ? "disabled" : "")"><a class="page-link" asp-controller="mainmeal" asp-action="index" asp-route-page="@(i+1)">@(i + 1)</a></li>
+
+                }
+                <li class="page-item @(Model.CurrentPage>=Model.TotalPage ? "disabled" : "")">
+                    <a class="page-link" aria-label="Next" asp-controller="mainmeal" asp-action="index" asp-route-page="@(Model.CurrentPage+1)">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

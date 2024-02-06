@@ -1,4 +1,5 @@
-﻿using Elegencia.Domain.Entities;
+﻿using Elegencia.Application.ViewModels.Manage;
+using Elegencia.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace Elegencia.Application.Abstractions.Repositories
 {
     public interface IRepository<T> where T : BaseNameableEntity, new()
     {
-        IQueryable<T> GetAllWithSearch(string? search, Expression<Func<T, bool>>? expression=null, int skip = 0, int take = 0,params string[] includes);
+        IQueryable<T> GetAllWithSearch(string? search, Expression<Func<T, bool>>? expression=null, params string[] includes);
+        Task<IQueryable<T>> GetAllWithoutSearch( Expression<Func<T, bool>>? expression = null,params string[] includes);
+        Task<PaginationVM<T>> GetAllPagination(int page = 0, int take = 0, int count = 0, params string[] includes);
         IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes);
         IQueryable<T> GetAll(params string[] includes);
         Task<T> GetByIdAsync(int id, params string[] includes);

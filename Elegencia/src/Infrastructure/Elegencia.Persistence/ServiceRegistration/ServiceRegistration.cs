@@ -1,10 +1,11 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
-
+using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Contexts;
 using Elegencia.Persistence.Implementations.Repositories;
 using Elegencia.Persistence.Implementations.Services;
+using Elegencia.Persistence.Implementations.Services.Manage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -53,6 +54,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<LayoutService>();
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IChefService, ChefService>();
+            services.AddScoped<IMainMealService, MainMealService>();
 
             return services;
         }

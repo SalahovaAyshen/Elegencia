@@ -1,4 +1,5 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,6 @@ namespace Elegencia.Persistence.Implementations.Repositories
         public IQueryable<T> GetAllWithSearch(
             string? search,
             Expression<Func<T, bool>>? expression = null,
-             int skip = 0, int take = 0,
             params string[] includes)
         {
             IQueryable<T> query = _table;
@@ -40,8 +40,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
                     query = query.Include(includes[i]);
                 }
             }
-            if (skip != 0) query = query.Skip(skip);
-            if (take != 0) query = query.Take(take);
+           
             return query; 
         }
         public IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes)
@@ -107,6 +106,43 @@ namespace Elegencia.Persistence.Implementations.Repositories
             await _context.SaveChangesAsync();
         }
 
-       
+        public async  Task<IQueryable<T>> GetAllWithoutSearch(Expression<Func<T, bool>>? expression = null, params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            if (expression is not null) query = query.Where(expression);
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+           
+            return query;
+        }
+
+        public async Task<PaginationVM<T>> GetAllPagination(int page = 0, int take = 0, int count = 0, params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            count = await _table.CountAsync();
+            if (page > 0) query = query.Skip((page - 1) * take);
+            else throw new Exception("Page can't be zero or negative number");
+            if (take > 0) query = query.Take(take);
+            else throw new Exception("Take can't be zero or negative number");
+             if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            PaginationVM<T> paginationVM = new PaginationVM<T>
+            {
+                TotalPage = ((double)count / take),
+                CurrentPage = page,
+                Items = query
+            };
+            return paginationVM;
+        }
     }
 }
