@@ -36,7 +36,7 @@
                             @count
                         </td>
                         <td class="py-1">
-                            <img style="width:150px; height:150px" src="~/assets/img/@meal.MealImages.FirstOrDefault()?.Image" alt="@meal.Name" />
+                            <img style="width:100px; height:100px" src="~/assets/img/@meal.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@meal.Name" />
                         </td>
                         <td>
                             @meal.Name

@@ -23,7 +23,7 @@ namespace Elegencia.Persistence.Implementations.Services
         }
         public async Task<HomeVM> GetAll()
         {
-            ICollection<Meal> meals = await _repository.GetAllWithOrder(orderExpression: m=>m.Id, includes:nameof(Meal.Category)).Take(4)
+            ICollection<Meal> meals = await _repository.GetAllWithOrder(expression: m => m.IsDeleted == false, orderExpression: m=>m.Id, includes:nameof(Meal.Category)).Take(4)
                 .Include(m=>m.MealImages.Where(mi=>mi.IsPrimary==true)).ToListAsync();
             Dictionary<string,string> service = await _service.GetSettingsAsync();
 

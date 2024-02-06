@@ -43,10 +43,11 @@ namespace Elegencia.Persistence.Implementations.Repositories
            
             return query; 
         }
-        public IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes)
+        public IQueryable<T> GetAllWithOrder(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderExpression = null, params string[] includes)
         {
             IQueryable<T> query = _table;
-            if(orderExpression is not null)
+            if (expression is not null) query = query.Where(expression);
+            if (orderExpression is not null)
             {
                 query = query.OrderByDescending(orderExpression);
             }
@@ -121,9 +122,10 @@ namespace Elegencia.Persistence.Implementations.Repositories
             return query;
         }
 
-        public async Task<PaginationVM<T>> GetAllPagination(int page = 0, int take = 0, int count = 0, params string[] includes)
+        public async Task<PaginationVM<T>> GetAllPagination(Expression<Func<T, bool>>? expression = null, int page = 0, int take = 0, int count = 0, params string[] includes)
         {
             IQueryable<T> query = _table;
+            if (expression is not null) query = query.Where(expression);
             count = await _table.CountAsync();
             if (page > 0) query = query.Skip((page - 1) * take);
             else throw new Exception("Page can't be zero or negative number");

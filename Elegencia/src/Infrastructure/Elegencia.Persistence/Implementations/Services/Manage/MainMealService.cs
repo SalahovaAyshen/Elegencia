@@ -28,7 +28,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<PaginationVM<Meal>> GetAll(int page, int take)
         {
-            PaginationVM<Meal> meals = await _mealRepository.GetAllPagination(page: page, take: take, includes: nameof(Meal.MealImages));
+            PaginationVM<Meal> meals = await _mealRepository.GetAllPagination(expression: m=>m.IsDeleted==false,page: page, take: take, includes: nameof(Meal.MealImages));
             return meals;
 
         }
@@ -98,7 +98,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Price = mealVM.Price,
                 Ingredients = mealVM.Ingredients,
                 CategoryId = mealVM.CategoryId,
-                MealImages = new List<MealImages> { mainPhoto, hoverPhoto }
+                MealImages = new List<MealImages> { mainPhoto, hoverPhoto },
             };
             await _mealRepository.AddAsync(meal);
             await _mealRepository.SaveChangesAsync();

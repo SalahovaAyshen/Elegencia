@@ -13,8 +13,8 @@ namespace Elegencia.Application.Abstractions.Repositories
     {
         IQueryable<T> GetAllWithSearch(string? search, Expression<Func<T, bool>>? expression=null, params string[] includes);
         Task<IQueryable<T>> GetAllWithoutSearch( Expression<Func<T, bool>>? expression = null,params string[] includes);
-        Task<PaginationVM<T>> GetAllPagination(int page = 0, int take = 0, int count = 0, params string[] includes);
-        IQueryable<T> GetAllWithOrder(Expression<Func<T, object>>? orderExpression = null, params string[] includes);
+        Task<PaginationVM<T>> GetAllPagination(Expression<Func<T, bool>>? expression = null, int page = 0, int take = 0, int count = 0, params string[] includes);
+        IQueryable<T> GetAllWithOrder(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderExpression = null, params string[] includes);
         IQueryable<T> GetAll(params string[] includes);
         Task<T> GetByIdAsync(int id, params string[] includes);
         Task AddAsync(T entity);
