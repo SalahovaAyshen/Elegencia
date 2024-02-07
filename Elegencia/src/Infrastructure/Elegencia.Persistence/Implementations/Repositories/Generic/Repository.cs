@@ -76,6 +76,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
         public async Task<T> GetByIdAsync(int id, params string[] includes)
         {
             IQueryable<T> query =  _table.Where(i => i.Id == id);
+            if (query is null) throw new Exception("Not found id");
             if (includes is not null)
             {
                 for (int i = 0; i < includes.Length; i++)
@@ -140,7 +141,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
             }
             PaginationVM<T> paginationVM = new PaginationVM<T>
             {
-                TotalPage = ((double)count / take),
+                TotalPage = Math.Ceiling((double)count / take),
                 CurrentPage = page,
                 Items = query
             };

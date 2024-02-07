@@ -1,0 +1,49 @@
+﻿@model UpdateMainMealVM
+<main class="app-content">
+    <div class="card-body">
+        <div class="tile">
+            <h3 class="tile-title">Update</h3>
+            <div class="tile-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <img style="width:150px;height:150px" src="~/assets/img/@Model.MainImage"/>
+                        <label class="form-label" asp-for="MainPhoto">Change main image*</label>
+                        <input class="form-control" asp-for="MainPhoto" placeholder="image/*">
+                        <span asp-validation-for="MainPhoto" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <img style="width:150px;height:150px" src="~/assets/img/@Model.HoverImage" />
+                        <label class="form-label" asp-for="HoverPhoto">Change hover image*</label>
+                        <input class="form-control" asp-for="HoverPhoto" placeholder="image/*">
+                        <span asp-validation-for="HoverPhoto" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Name*</label>
+                        <input class="form-control" asp-for="Name" placeholder="Enter meal name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Price">Price*</label>
+                        <input class="form-control" asp-for="Price" placeholder="Enter price">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Ingredients">Ingredients*</label>
+                        <input class="form-control" asp-for="Ingredients" placeholder="Enter meal Ingredients">
+                        <span asp-validation-for="Ingredients" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="CategoryId">Category*</label>
+                        <select class="form-control" asp-for="CategoryId" asp-items="new SelectList(Model.Categories, nameof(Category.Id), nameof(Category.Name))">
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Register</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>

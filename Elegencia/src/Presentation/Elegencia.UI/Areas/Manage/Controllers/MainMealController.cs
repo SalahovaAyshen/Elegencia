@@ -32,5 +32,10 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             return RedirectToAction(nameof(Index));
            return View(mealVM);
         }
+        public async Task<IActionResult> Update(int id)
+        {
+            UpdateMainMealVM meal = await _mainMealService.GetUpdate(id);
+            return View(meal);
+        }
     }
 }

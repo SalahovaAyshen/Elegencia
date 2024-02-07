@@ -40,6 +40,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             return mainMealVM;
         }
 
+       
+
         public async Task<bool> PostCreate(CreateMainMealVM mealVM, ModelStateDictionary modelState)
         {
             mealVM.Categories = await _categoryRepository.GetAll().ToListAsync();
@@ -104,6 +106,23 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             await _mealRepository.SaveChangesAsync();
             return true;
 
+        }
+        public async Task<UpdateMainMealVM> GetUpdate(int id)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            Meal meal = await _mealRepository.GetByIdAsync(id, includes: nameof(Meal.MealImages));
+            UpdateMainMealVM updateMainMealVM = new UpdateMainMealVM
+            {
+                Name = meal.Name,
+                Price = meal.Price,
+                Ingredients = meal.Ingredients,
+                CategoryId = meal.CategoryId,
+                Categories = await _categoryRepository.GetAll().ToListAsync(),
+                MealImages = meal.MealImages,
+                MainImage = meal.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image,
+                HoverImage = meal.MealImages.FirstOrDefault(mi=>mi.IsPrimary==false)?.Image
+            };
+            return updateMainMealVM;
         }
     }
 }
