@@ -15,6 +15,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
         Task<CreateMainMealVM> GetCreate();
         Task<bool> PostCreate(CreateMainMealVM mealVM, ModelStateDictionary modelState);
         Task<UpdateMainMealVM> GetUpdate(int id);
+        Task<bool> PostUpdate(int id, UpdateMainMealVM mealVM, ModelStateDictionary modelState);
 
     }
 }

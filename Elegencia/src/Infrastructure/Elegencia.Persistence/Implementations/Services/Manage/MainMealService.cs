@@ -124,5 +124,93 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             };
             return updateMainMealVM;
         }
+
+        public async Task<bool> PostUpdate(int id, UpdateMainMealVM mealVM, ModelStateDictionary modelState)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            mealVM.Categories = await _categoryRepository.GetAll().ToListAsync();
+            Meal existed = await _mealRepository.GetByIdAsync(id, includes: nameof(Meal.MealImages));
+            if (existed == null) throw new Exception("Not found id");
+            mealVM.MealImages = existed.MealImages;
+            mealVM.MainImage = existed.MealImages.FirstOrDefault(mi => mi.IsPrimary == true)?.Image;
+            mealVM.HoverImage = existed.MealImages.FirstOrDefault(mi => mi.IsPrimary == false)?.Image;
+            if (!modelState.IsValid) return false;
+            if (await _mealRepository.GetAll().AnyAsync(c => c.Name.ToLower() == mealVM.Name.ToLower() && c.Id!=id))
+            {
+                modelState.AddModelError("Name", "The meal name is existed");
+                return false;
+            }
+            if (mealVM.Price <= 0)
+            {
+                modelState.AddModelError("Price", "Price can't be zero or negative number");
+                return false;
+            }
+            if (!await _categoryRepository.GetAll().AnyAsync(c => c.Id == mealVM.CategoryId))
+            {
+                modelState.AddModelError("CategoryId", "Wrong category id");
+                return false;
+            }
+
+            if (mealVM.MainPhoto != null)
+            {
+                if (!mealVM.MainPhoto.ValidateType("image/"))
+                {
+                    modelState.AddModelError("MainPhoto", "The entered photo type does not match the required one");
+                    return false;
+                }
+                if (!mealVM.MainPhoto.VaidateSize(500))
+                {
+                    modelState.AddModelError("MainPhoto", "The size of the photo is larger than required");
+                    return false;
+                }
+            }
+            if (mealVM.HoverPhoto != null)
+            {
+                if (!mealVM.HoverPhoto.ValidateType("image/"))
+                {
+                    modelState.AddModelError("HoverPhoto", "The entered photo type does not match the required one");
+                    return false;
+                }
+                if (!mealVM.HoverPhoto.VaidateSize(500))
+                {
+                    modelState.AddModelError("HoverPhoto", "The size of the photo is larger than required");
+                    return false;
+                }
+            }
+            if (mealVM.MainPhoto != null)
+            {
+                string main = await mealVM.MainPhoto.CreateFileAsync(_env.WebRootPath, "assets", "img");
+                MealImages exImage = existed.MealImages.FirstOrDefault(pi => pi.IsPrimary == true);
+                exImage.Image.DeleteFile(_env.WebRootPath, "assets", "img");
+                existed.MealImages.Remove(exImage);
+                existed.MealImages.Add(new MealImages
+                {
+                    IsPrimary = true,
+                    Image = main,
+                    Alternative = mealVM.Name
+                });
+            }
+            if (mealVM.HoverPhoto != null)
+            {
+                string hover = await mealVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, "assets", "img");
+                MealImages exImage = existed.MealImages.FirstOrDefault(pi => pi.IsPrimary == false);
+                exImage.Image.DeleteFile(_env.WebRootPath, "assets", "img");
+                existed.MealImages.Remove(exImage);
+                existed.MealImages.Add(new MealImages
+                {
+                    IsPrimary = false,
+                    Image = hover,
+                    Alternative = mealVM.Name
+                });
+            }
+            existed.Name = mealVM.Name;
+            existed.Price = mealVM.Price;
+            existed.Ingredients = mealVM.Ingredients;
+            existed.CategoryId = mealVM.CategoryId;
+             _mealRepository.Update(existed);
+            await _mealRepository.SaveChangesAsync();
+            return true;
+
+        }
     }
 }

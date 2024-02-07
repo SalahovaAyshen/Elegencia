@@ -29,13 +29,27 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         public async Task<IActionResult> Create(CreateMainMealVM mealVM)
         {
            if(await _mainMealService.PostCreate(mealVM, ModelState))
-            return RedirectToAction(nameof(Index));
-           return View(mealVM);
+            {
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully created {mealVM.Name} product\r\n</div>";
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View(mealVM);
         }
         public async Task<IActionResult> Update(int id)
         {
             UpdateMainMealVM meal = await _mainMealService.GetUpdate(id);
             return View(meal);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, UpdateMainMealVM mealVM)
+        {
+            if (await _mainMealService.PostUpdate(id, mealVM, ModelState))
+            {
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully updated {mealVM.Name} product\r\n</div>";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(mealVM);
         }
     }
 }
