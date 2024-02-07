@@ -212,5 +212,23 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             return true;
 
         }
+
+        public async Task Delete(int id)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            Meal meal = await _mealRepository.GetByIdAsync(id);
+            if (meal is null) throw new Exception("Not found id");
+            if (meal.MealImages != null)
+            {
+                foreach (MealImages item in meal.MealImages)
+                {
+                    item.Image.DeleteFile(_env.WebRootPath, "assets", "img");
+
+                }
+            }
+            _mealRepository.Delete(meal);
+            await _mealRepository.SaveChangesAsync();
+
+        }
     }
 }

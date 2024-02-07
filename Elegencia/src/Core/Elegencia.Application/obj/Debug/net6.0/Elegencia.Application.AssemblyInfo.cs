@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elegencia.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00d5749ef31919e1f0420719251422583b2edec6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f2d7511468d5ecce609c65a7c1c79b29b2c6ca3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elegencia.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elegencia.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

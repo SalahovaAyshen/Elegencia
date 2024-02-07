@@ -1,4 +1,5 @@
 ﻿using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,12 @@ namespace Elegencia.UI.Areas.Manage.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(mealVM);
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _mainMealService.Delete(id);
+            TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted product\r\n</div>";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
