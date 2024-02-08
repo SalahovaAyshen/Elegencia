@@ -11,12 +11,13 @@ namespace Elegencia.Application.ViewModels.Manage
 {
     public class UpdateMainMealVM
     {
-        [Required]
+        [Required(ErrorMessage = "The name can't be empty")]
         [MinLength(2)]
+        [MaxLength(100)]
         public string Name { get; set; }
         [Required]
         public decimal Price { get; set; }
-        [Required]
+        [Required(ErrorMessage = "The meal ingredients can't be empty")]
         public string Ingredients { get; set; }
         public string? MainImage { get; set; }
         public string? HoverImage { get; set; }

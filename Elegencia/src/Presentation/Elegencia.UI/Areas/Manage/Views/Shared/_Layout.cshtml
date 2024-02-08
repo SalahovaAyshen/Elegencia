@@ -122,7 +122,7 @@
             </div>
         </div>
         <ul class="app-menu">
-            <li><a class="app-menu__item active" asp-controller="dashboard"><i class="mdi mdi-home menu-icon"></i><span class="app-menu__label">Dashboard</span></a></li>
+            <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><i class="mdi mdi-home menu-icon"></i><span class="app-menu__label">Dashboard</span></a></li>
           
             <li class="treeview">
                 <a class ="app-menu__item" data-bs-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth">
@@ -132,10 +132,10 @@
                 </a>
                 <div class="collapse" id="auth1">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="mainmeal"> Main meals </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="soupandsalad"> Soups and salads </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessert"> Desserts </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drink"> Drinks  </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="mainmeal" asp-action="index"> Main meals </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="salad" asp-action="index"> Salads </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessert" asp-action="index"> Desserts </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drink" asp-action="index"> Drinks  </a></li>
                     </ul>
                 </div>
             </li>

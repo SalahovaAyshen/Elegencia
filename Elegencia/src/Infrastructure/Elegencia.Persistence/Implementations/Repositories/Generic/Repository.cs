@@ -22,7 +22,12 @@ namespace Elegencia.Persistence.Implementations.Repositories
             _context = context;
             _table = _context.Set<T>();
         }
-
+        public IQueryable<T> GetAll(params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            query = _addIncludes(query, includes);
+            return query;
+        }
         public IQueryable<T> GetAllWithSearch(
             string? search,
             Expression<Func<T, bool>>? expression = null,
@@ -33,17 +38,12 @@ namespace Elegencia.Persistence.Implementations.Repositories
                 query = query.Where(q => q.Name.ToLower().Contains(search.ToLower()));
 
             if (expression is not null) query = query.Where(expression);
-            if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
-           
-            return query; 
+            query = _addIncludes(query, includes);
+            return query;
         }
-        public IQueryable<T> GetAllWithOrder(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderExpression = null, params string[] includes)
+        public IQueryable<T> GetAllWithOrder(Expression<Func<T, bool>>? expression = null, 
+            Expression<Func<T, object>>? orderExpression = null,
+            params string[] includes)
         {
             IQueryable<T> query = _table;
             if (expression is not null) query = query.Where(expression);
@@ -51,79 +51,27 @@ namespace Elegencia.Persistence.Implementations.Repositories
             {
                 query = query.OrderByDescending(orderExpression);
             }
-            if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
-            return query; 
-
-        }
-        public IQueryable<T> GetAll(params string[] includes)
-        {
-            IQueryable<T> query = _table;
-            if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
+            query = _addIncludes(query, includes);
             return query;
+
         }
         public async Task<T> GetByIdAsync(int id, params string[] includes)
         {
-            IQueryable<T> query =  _table.Where(i => i.Id == id);
+            IQueryable<T> query = _table.Where(i => i.Id == id);
             if (query is null) throw new Exception("Not found id");
-            if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
-
+            query = _addIncludes(query, includes);
             return query.FirstOrDefault();
         }
-        public async Task AddAsync(T item)
-        {
-            await _table.AddAsync(item);
-        }
-
-
-        public void Update(T item)
-        {
-            _table.Update(item);
-        }
-
-        public void Delete(T item)
-        {
-            _table.Remove(item);
-        }
-
-        public async Task SaveChangesAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
-
-        public async  Task<IQueryable<T>> GetAllWithoutSearch(Expression<Func<T, bool>>? expression = null, params string[] includes)
+        public async Task<IQueryable<T>> GetAllWithoutSearch(Expression<Func<T, bool>>? expression = null, params string[] includes)
         {
             IQueryable<T> query = _table;
             if (expression is not null) query = query.Where(expression);
-            if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
-           
+            query = _addIncludes(query, includes);
             return query;
         }
-
-        public async Task<PaginationVM<T>> GetAllPagination(Expression<Func<T, bool>>? expression = null, int page = 0, int take = 0, int count = 0, params string[] includes)
+        public async Task<PaginationVM<T>> GetAllPagination(Expression<Func<T, bool>>? expression = null, 
+            int page = 0, int take = 0, int count = 0, 
+            params string[] includes)
         {
             IQueryable<T> query = _table;
             if (expression is not null) query = query.Where(expression);
@@ -132,13 +80,7 @@ namespace Elegencia.Persistence.Implementations.Repositories
             else throw new Exception("Page can't be zero or negative number");
             if (take > 0) query = query.Take(take);
             else throw new Exception("Take can't be zero or negative number");
-             if (includes is not null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]);
-                }
-            }
+            query = _addIncludes(query, includes);
             PaginationVM<T> paginationVM = new PaginationVM<T>
             {
                 TotalPage = Math.Ceiling((double)count / take),
@@ -146,6 +88,36 @@ namespace Elegencia.Persistence.Implementations.Repositories
                 Items = query
             };
             return paginationVM;
+        }
+        public async Task AddAsync(T item)
+        {
+            await _table.AddAsync(item);
+        }
+        public void Update(T item)
+        {
+            _table.Update(item);
+        }
+        public void Delete(T item)
+        {
+            _table.Remove(item);
+        }
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+
+        private IQueryable<T> _addIncludes(IQueryable<T> query, params string[] includes)
+        {
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            return query;
+
         }
     }
 }

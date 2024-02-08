@@ -101,6 +101,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Ingredients = mealVM.Ingredients,
                 CategoryId = mealVM.CategoryId,
                 MealImages = new List<MealImages> { mainPhoto, hoverPhoto },
+                CreatedAt = DateTime.Now,
             };
             await _mealRepository.AddAsync(meal);
             await _mealRepository.SaveChangesAsync();
@@ -207,6 +208,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             existed.Price = mealVM.Price;
             existed.Ingredients = mealVM.Ingredients;
             existed.CategoryId = mealVM.CategoryId;
+            existed.ModifiedAt = DateTime.Now;
+            existed.ModifiedBy = "aysh";
              _mealRepository.Update(existed);
             await _mealRepository.SaveChangesAsync();
             return true;
