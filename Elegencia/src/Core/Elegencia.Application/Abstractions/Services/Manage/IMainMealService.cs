@@ -17,6 +17,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
         Task<UpdateMainMealVM> GetUpdate(int id);
         Task<bool> PostUpdate(int id, UpdateMainMealVM mealVM, ModelStateDictionary modelState);
         Task Delete(int id);
+        Task<Meal> Detail(int id);
 
     }
 }

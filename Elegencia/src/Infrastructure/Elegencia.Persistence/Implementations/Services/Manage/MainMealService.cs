@@ -230,5 +230,11 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             await _mealRepository.SaveChangesAsync();
 
         }
+        public async Task<Meal> Detail(int id)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            Meal meal = await _mealRepository.GetByIdAsync(id, includes:nameof(Meal.MealImages));
+            return meal;
+        }
     }
 }

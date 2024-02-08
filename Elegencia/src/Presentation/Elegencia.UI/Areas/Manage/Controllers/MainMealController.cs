@@ -58,5 +58,10 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted product\r\n</div>";
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Detail(int id)
+        {
+            Meal meal = await _mainMealService.Detail(id);
+            return View(meal);
+        }
     }
 }
