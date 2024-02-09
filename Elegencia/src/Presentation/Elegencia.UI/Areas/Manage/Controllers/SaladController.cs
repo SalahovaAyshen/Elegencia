@@ -19,5 +19,10 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             PaginationVM<Salad> paginationVM = await _saladService.GetAll(page:page, take:3);
             return View(paginationVM);
         }
+        public async Task<IActionResult> Create()
+        {
+            CreateSaladVM createSaladVM = await _saladService.GetCreate();
+            return View(createSaladVM);
+        }
     }
 }

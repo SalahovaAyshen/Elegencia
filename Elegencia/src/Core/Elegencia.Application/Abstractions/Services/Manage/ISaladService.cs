@@ -11,5 +11,6 @@ namespace Elegencia.Application.Abstractions.Services.Manage
     public interface ISaladService
     {
         Task<PaginationVM<Salad>> GetAll(int page, int take);
+        Task<CreateSaladVM> GetCreate();
     }
 }
