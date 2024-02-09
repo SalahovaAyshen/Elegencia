@@ -1,5 +1,6 @@
 ﻿using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,8 @@ namespace Elegencia.Application.Abstractions.Services.Manage
     {
         Task<PaginationVM<Salad>> GetAll(int page, int take);
         Task<CreateSaladVM> GetCreate();
+        Task<bool> PostCreate(CreateSaladVM saladVM, ModelStateDictionary modelState);
+        Task<UpdateSaladVM> GetUpdate(int id);
+        Task<bool> PostUpdate(int id, UpdateSaladVM saladVM, ModelStateDictionary modelState);
     }
 }

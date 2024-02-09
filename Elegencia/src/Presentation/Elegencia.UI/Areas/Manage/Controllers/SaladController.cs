@@ -1,6 +1,8 @@
 ﻿using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Persistence.Implementations.Services.Manage;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -23,6 +25,32 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             CreateSaladVM createSaladVM = await _saladService.GetCreate();
             return View(createSaladVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateSaladVM saladVM)
+        {
+            if (await _saladService.PostCreate(saladVM, ModelState))
+            {
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully created {saladVM.Name} \r\n</div>";
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View(saladVM);
+        }
+        public async Task<IActionResult> Update(int id)
+        {
+            UpdateSaladVM updateSaladVM = await _saladService.GetUpdate(id);
+            return View(updateSaladVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, UpdateSaladVM saladVM)
+        {
+            if (await _saladService.PostUpdate(id, saladVM, ModelState))
+            {
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully updated {saladVM.Name}\r\n</div>";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(saladVM);
         }
     }
 }

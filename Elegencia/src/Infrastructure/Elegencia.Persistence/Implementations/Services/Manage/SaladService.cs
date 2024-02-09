@@ -1,8 +1,13 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Extensions;
+using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,11 +21,13 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
     {
         private readonly ISaladRepository _saladRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IWebHostEnvironment _env;
 
-        public SaladService(ISaladRepository saladRepository, ICategoryRepository categoryRepository)
+        public SaladService(ISaladRepository saladRepository, ICategoryRepository categoryRepository, IWebHostEnvironment env)
         {
             _saladRepository = saladRepository;
             _categoryRepository = categoryRepository;
+            _env = env;
         }
         public async Task<PaginationVM<Salad>> GetAll(int page, int take)
         {
@@ -33,6 +40,118 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             CreateSaladVM createSaladVM = new CreateSaladVM();
             createSaladVM.Categories = await _categoryRepository.GetAll().ToListAsync();
             return createSaladVM;
+        }
+
+        
+
+        public async Task<bool> PostCreate(CreateSaladVM saladVM, ModelStateDictionary modelState)
+        {
+            saladVM.Categories = _categoryRepository.GetAll().ToList();
+            if (!modelState.IsValid) return false;
+            if (await _saladRepository.GetAll().AnyAsync(c => c.Name.ToLower() == saladVM.Name.ToLower()))
+            {
+                modelState.AddModelError("Name", "The salad name is existed");
+                return false;
+            }
+            if (saladVM.Price <= 0)
+            {
+                modelState.AddModelError("Price", "Price can't be zero or negative number");
+                return false;
+            }
+            if (!await _categoryRepository.GetAll().AnyAsync(c => c.Id == saladVM.CategoryId))
+            {
+                modelState.AddModelError("CategoryId", "Wrong category id");
+                return false;
+            }
+            if (!saladVM.Photo.ValidateType("image/"))
+            {
+                modelState.AddModelError("Image", "The image type should be img");
+                return false;
+            }
+            if (!saladVM.Photo.VaidateSize(500))
+            {
+                modelState.AddModelError("Image", "The image size is too large");
+                return false;
+            }
+            await _saladRepository.AddAsync(new Salad
+            {
+                Name = saladVM.Name,
+                Price = saladVM.Price,
+                Ingredients = saladVM.Ingredients,
+                CategoryId = saladVM.CategoryId,
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = "ayshen",
+                Image = await saladVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
+                Alternative=saladVM.Name
+            });
+            await _saladRepository.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<UpdateSaladVM> GetUpdate(int id)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            UpdateSaladVM updateSaladVM = new UpdateSaladVM
+            {
+                Name = salad.Name,
+                Price = salad.Price,
+                Ingredients = salad.Ingredients,
+                CategoryId = salad.CategoryId,
+                Categories = await _categoryRepository.GetAll().ToListAsync(),
+                Image = salad.Image,
+            };
+            return updateSaladVM;
+        }
+
+        public async Task<bool> PostUpdate(int id, UpdateSaladVM saladVM, ModelStateDictionary modelState)
+        {
+            saladVM.Categories = await _categoryRepository.GetAll().ToListAsync();
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            saladVM.Image = salad.Image;
+            if (!modelState.IsValid) return false;
+            if (await _saladRepository.GetAll().AnyAsync(c => c.Name.ToLower() == saladVM.Name.ToLower() && c.Id != id))
+            {
+                modelState.AddModelError("Name", "The salad name is existed");
+                return false;
+            }
+            if (saladVM.Price <= 0)
+            {
+                modelState.AddModelError("Price", "Price can't be zero or negative number");
+                return false;
+            }
+            if (!await _categoryRepository.GetAll().AnyAsync(c => c.Id == saladVM.CategoryId))
+            {
+                modelState.AddModelError("CategoryId", "Wrong category id");
+                return false;
+            }
+            if(saladVM.Photo is not null)
+            {
+                if (!saladVM.Photo.ValidateType("image/"))
+                {
+                    modelState.AddModelError("Image", "The image type should be img");
+                    return false;
+                }
+                if (!saladVM.Photo.VaidateSize(500))
+                {
+                    modelState.AddModelError("Image", "The image size is too large");
+                    return false;
+                }
+                salad.Image.DeleteFile(_env.WebRootPath, "assets", "manage");
+                salad.Image = await saladVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img");
+            }
+            
+            salad.Name = saladVM.Name;
+            salad.Price = saladVM.Price;
+            salad.Ingredients  = saladVM.Ingredients;
+            salad.CategoryId = saladVM.CategoryId;
+            salad.Alternative = saladVM.Name;
+            salad.ModifiedAt = DateTime.UtcNow;
+            salad.ModifiedBy = "ayshen";
+            await _saladRepository.SaveChangesAsync();
+            return true;
+
         }
     }
 }

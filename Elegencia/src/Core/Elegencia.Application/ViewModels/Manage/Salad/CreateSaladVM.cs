@@ -14,12 +14,12 @@ namespace Elegencia.Application.ViewModels.Manage
         [Required(ErrorMessage = "The name can't be empty")]
         [MinLength(2)]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         public decimal Price { get; set; }
         [Required(ErrorMessage = "The salad ingredients can't be empty")]
         public string Ingredients { get; set; } = null!;
-        public IFormFile Image { get; set; }
-        public string Alternative { get; set; }
+        public IFormFile Photo { get; set; } = null!;
+        public string? Alternative { get; set; }
         public int CategoryId { get; set; }
         public ICollection<Category>? Categories { get; set; }
     }
