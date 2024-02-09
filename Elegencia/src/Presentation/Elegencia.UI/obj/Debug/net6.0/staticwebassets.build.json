@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rAG5Nh3k5Ac6QWRom3EhV93H0piwPFT1UkHNCX3dfFI=",
+  "Hash": "yXAZ8Wfo4G4dQ5NQMp+06Kg9Toa/vG8yUpv23D8ILSA=",
   "Source": "Elegencia.UI",
   "BasePath": "_content/Elegencia.UI",
   "Mode": "Default",
@@ -416,6 +416,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\62ade3b5-16df-4285-9a22-1281fc297db3WhatsApp Image 2022-09-04 at 00.26.37.jpeg"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\62fda0a8-d366-4a1a-a12a-3a2803893743WhatsApp Image 2022-09-04 at 00.27.21.jpeg",
+      "SourceId": "Elegencia.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\",
+      "BasePath": "_content/Elegencia.UI",
+      "RelativePath": "assets/img/62fda0a8-d366-4a1a-a12a-3a2803893743WhatsApp Image 2022-09-04 at 00.27.21.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\62fda0a8-d366-4a1a-a12a-3a2803893743WhatsApp Image 2022-09-04 at 00.27.21.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\643-700special.jpg",
       "SourceId": "Elegencia.UI",
       "SourceType": "Discovered",
@@ -775,6 +794,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\author.png"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\b96ee64b-ba04-4136-a382-b5de8b3c7e36WhatsApp Image 2022-09-04 at 00.27.23.jpeg",
+      "SourceId": "Elegencia.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\",
+      "BasePath": "_content/Elegencia.UI",
+      "RelativePath": "assets/img/b96ee64b-ba04-4136-a382-b5de8b3c7e36WhatsApp Image 2022-09-04 at 00.27.23.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\b96ee64b-ba04-4136-a382-b5de8b3c7e36WhatsApp Image 2022-09-04 at 00.27.23.jpeg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\banner_top_all.jpg",

@@ -57,5 +57,10 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             await _saladService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Detail(int id)
+        {
+            Salad salad = await _saladService.Detail(id);
+            return View(salad);
+        }
     }
 }

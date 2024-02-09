@@ -163,9 +163,11 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             await _saladRepository.SaveChangesAsync();
         }
 
-        public Task<Salad> Detail(int id)
+        public async Task<Salad> Detail(int id)
         {
-            throw new NotImplementedException();
+            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            Salad salad = await _saladRepository.GetByIdAsync(id, includes: new string[] {  nameof(Meal.Category) });
+            return salad;
         }
     }
 }
