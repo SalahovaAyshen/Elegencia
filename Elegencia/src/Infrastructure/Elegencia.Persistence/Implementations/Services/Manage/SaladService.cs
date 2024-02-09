@@ -153,5 +153,19 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             return true;
 
         }
+
+        public async Task Delete(int id)
+        {
+            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            Salad salad = await _saladRepository.GetByIdAsync(id);
+            if (salad is null) throw new Exception("Not found id");
+            salad.IsDeleted = true;
+            await _saladRepository.SaveChangesAsync();
+        }
+
+        public Task<Salad> Detail(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

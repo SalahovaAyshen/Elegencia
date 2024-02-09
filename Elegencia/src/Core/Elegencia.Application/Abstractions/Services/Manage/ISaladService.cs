@@ -16,5 +16,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
         Task<bool> PostCreate(CreateSaladVM saladVM, ModelStateDictionary modelState);
         Task<UpdateSaladVM> GetUpdate(int id);
         Task<bool> PostUpdate(int id, UpdateSaladVM saladVM, ModelStateDictionary modelState);
+        Task Delete(int id);
+        Task<Salad> Detail(int id);
     }
 }
