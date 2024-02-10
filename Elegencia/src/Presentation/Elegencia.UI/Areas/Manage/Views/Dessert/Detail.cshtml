@@ -1,0 +1,33 @@
+﻿@model Dessert
+
+<main class="app-content">
+    <div class="tile">
+        <p>@Model.Name</p>
+        <div class="row">
+            <div class="col-4">
+                <p>Primary image</p>
+                <img style="width:250px; height:250px" src="~/assets/img/@Model.DessertImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" />
+            </div>
+            <div class="col-4">
+                <p>Secondary image</p>
+                <img style="width:250px; height:250px" src="~/assets/img/@Model.DessertImages.FirstOrDefault(p=>p.IsPrimary==false)?.Image" />
+            </div>
+
+
+        </div>
+        <p>Price: $@Model.Price</p>
+        <p>Category: @Model.DessertCategory.Name</p>
+        <p>Created at: @Model.CreatedAt</p>
+        <p>Created by: @Model.CreatedBy</p>
+        @if (Model.ModifiedAt != null)
+        {
+            <p>Modified at: @Model.ModifiedAt</p>
+            <p>Modified by: @Model.ModifiedBy</p>
+        }
+        <p>Ingredients: @Model.Ingredients</p>
+        <div class="tile-footer">
+            <a class="btn btn-primary" asp-asp-controller="dessert" asp-action="update" asp-route-id="@Model.Id"><i class="mdi mdi-lead-pencil"></i>Update</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+        </div>
+    </div>
+
+</main>

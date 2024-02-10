@@ -31,7 +31,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
            if(await _mainMealService.PostCreate(mealVM, ModelState))
             {
-                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully created {mealVM.Name} product\r\n</div>";
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully created {mealVM.Name} \r\n</div>";
                 return RedirectToAction(nameof(Index));
 
             }
@@ -47,7 +47,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             if (await _mainMealService.PostUpdate(id, mealVM, ModelState))
             {
-                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully updated {mealVM.Name} product\r\n</div>";
+                TempData["Message"] = $"<div class=\"alert alert-success\" role=\"alert\">\r\n  Successfully updated {mealVM.Name} \r\n</div>";
                 return RedirectToAction(nameof(Index));
             }
             return View(mealVM);
@@ -55,7 +55,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _mainMealService.Delete(id);
-            TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted product\r\n</div>";
+            TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted \r\n</div>";
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Detail(int id)

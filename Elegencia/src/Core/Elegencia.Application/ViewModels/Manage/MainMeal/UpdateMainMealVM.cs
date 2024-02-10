@@ -15,7 +15,7 @@ namespace Elegencia.Application.ViewModels.Manage
         [MinLength(2)]
         [MaxLength(100)]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "The price can't be empty")]
         public decimal Price { get; set; }
         [Required(ErrorMessage = "The meal ingredients can't be empty")]
         public string Ingredients { get; set; }

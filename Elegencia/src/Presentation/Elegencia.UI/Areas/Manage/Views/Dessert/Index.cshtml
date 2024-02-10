@@ -1,0 +1,71 @@
+﻿
+@model PaginationVM<Dessert>
+@{
+    int count = 0;
+}
+<main class="app-content">
+    <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
+    <div class="tile">
+        <h3 class="tile-title">Desserts <a class="btn btn-inverse-success btn-fw" asp-controller="dessert" asp-action="create"><i class="mdi mdi-plus"></i></a></h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Dessert dessert in Model.Items)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td class="py-1">
+                            <img style="width:100px; height:100px" src="~/assets/img/@dessert.DessertImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" alt="@dessert.Name" />
+                        </td>
+                        <td>
+                            @dessert.Name
+                        </td>
+                        <td>
+                            $@dessert.Price
+                        </td>
+
+                        <td>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="dessert" asp-action="detail" asp-route-id="@dessert.Id"><i class="mdi mdi-book"></i></a>
+                            <a class="btn btn-inverse-warning btn-fw" asp-controller="dessert" asp-action="update" asp-route-id="@dessert.Id"><i class="mdi mdi-lead-pencil"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="dessert" asp-action="delete" asp-route-id="@dessert.Id"><i class="mdi mdi-delete"></i></a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item @(Model.CurrentPage<=1 ? "disabled" : "")">
+                    <a class="page-link" aria-label="Previous" asp-controller="dessert" asp-action="index" asp-route-page="@Model.CurrentPage-1">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                @for (int i = 0; i < Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage-1==i ? "disabled" : "")"><a class="page-link" asp-controller="dessert" asp-action="index" asp-route-page="@(i+1)">@(i + 1)</a></li>
+
+                }
+                <li class="page-item @(Model.CurrentPage>=Model.TotalPage ? "disabled" : "")">
+                    <a class="page-link" aria-label="Next" asp-controller="dessert" asp-action="index" asp-route-page="@(Model.CurrentPage+1)">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</main>
