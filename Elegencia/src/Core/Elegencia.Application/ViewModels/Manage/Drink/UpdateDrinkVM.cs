@@ -1,0 +1,27 @@
+﻿using Elegencia.Domain.Entities;
+using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Elegencia.Application.ViewModels.Manage
+{
+    public class UpdateDrinkVM
+    {
+
+        [Required(ErrorMessage = "The name can't be empty")]
+        [MinLength(2)]
+        [MaxLength(100)]
+        public string Name { get; set; } = null!;
+        [Required(ErrorMessage = "The price can't be empty")]
+        public decimal Price { get; set; }
+        public string? Image { get; set; }
+        public IFormFile? Photo { get; set; } = null!;
+        public string? Alternative { get; set; }
+        public int DrinkCategoryId { get; set; }
+        public ICollection<DrinkCategory>? DrinkCategories { get; set; }
+    }
+}

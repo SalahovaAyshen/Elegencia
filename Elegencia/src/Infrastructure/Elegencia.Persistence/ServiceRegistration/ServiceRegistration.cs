@@ -50,6 +50,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<IChefRepository, ChefRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IDessertCategoryRepository, DessertCategoryRepository>();
+            services.AddScoped<IDrinkCategoryRepository, DrinkCategoryRepository>();
 
             services.AddScoped<IHomeService, HomeService>();
             services.AddScoped<IMenuService, MenuService>();
@@ -59,6 +60,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<IMainMealService, MainMealService>();
             services.AddScoped<ISaladService, SaladService>();
             services.AddScoped<IDessertService, DessertService>();
+            services.AddScoped<IDrinkService, DrinkService>();
 
             return services;
         }

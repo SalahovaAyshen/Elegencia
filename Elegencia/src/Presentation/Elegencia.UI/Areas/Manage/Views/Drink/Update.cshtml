@@ -1,0 +1,40 @@
+﻿@model UpdateDrinkVM
+
+<main class="app-content">
+    <div class="card-body">
+        <div class="tile">
+            <h3 class="tile-title">Create</h3>
+            <div class="tile-body">
+                <form method="post" enctype="multipart/form-data">
+                    <img style="width:150px;height:150px" src="~/assets/img/@Model.Image"/>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Photo">Change image*</label>
+                        <input class="form-control" asp-for="Photo" placeholder="image/*">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Name*</label>
+                        <input class="form-control" asp-for="Name" placeholder="Enter meal name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Price">Price*</label>
+                        <input class="form-control" asp-for="Price" placeholder="Enter price">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="DrinkCategoryId">Category*</label>
+                        <select class="form-control" asp-for="DrinkCategoryId" asp-items="new SelectList(Model.DrinkCategories, nameof(DrinkCategory.Id), nameof(DrinkCategory.Name))">
+                        </select>
+                        <span asp-validation-for="DrinkCategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Register</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
