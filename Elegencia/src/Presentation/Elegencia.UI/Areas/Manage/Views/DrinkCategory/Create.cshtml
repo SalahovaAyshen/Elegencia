@@ -1,0 +1,24 @@
+﻿@model CreateDrinkCategoryVM
+
+<main class="app-content">
+    <div class="card-body">
+        <div class="tile">
+            <h3 class="tile-title">Create</h3>
+            <div class="tile-body">
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Name*</label>
+                        <input class="form-control" asp-for="Name" placeholder="Enter meal name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Create</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
