@@ -61,7 +61,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<ISaladService, SaladService>();
             services.AddScoped<IDessertService, DessertService>();
             services.AddScoped<IDrinkService, DrinkService>();
-
+            services.AddScoped<IMainCategoryService, MainCategoryService>();
             return services;
         }
     }
