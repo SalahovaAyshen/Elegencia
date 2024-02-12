@@ -51,6 +51,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<IDessertCategoryRepository, DessertCategoryRepository>();
             services.AddScoped<IDrinkCategoryRepository, DrinkCategoryRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IPositionRepository, PositionRepository>();
 
             services.AddScoped<IHomeService, HomeService>();
             services.AddScoped<IMenuService, MenuService>();

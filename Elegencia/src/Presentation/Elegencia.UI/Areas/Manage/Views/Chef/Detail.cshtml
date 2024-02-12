@@ -1,0 +1,33 @@
+﻿@model Chef
+
+<main class="app-content">
+    <div class="tile">
+        <p>@Model.Name @Model.Surname</p>
+        <div class="row">
+            <div class="col-4">
+                <img style="width:250px; height:250px" src="~/assets/img/@Model.Image" />
+            </div>
+        
+
+
+        </div>
+        <p>Name: @Model.Name</p>
+        <p>Surname: @Model.Surname</p>
+        <p>Position: @Model.Position</p>
+        <p>About chef: @Model.Info</p>
+        <p>Facebook link: <a>@Model.Facebook</a></p>
+        <p>Instagram link: <a>@Model.Instagram</a></p>
+        <p>Linkedin link: <a>@Model.Linkedin</a></p>
+        <p>Created at: @Model.CreatedAt</p>
+        <p>Created by: @Model.CreatedBy</p>
+        @if (Model.ModifiedAt != null)
+        {
+            <p>Modified at: @Model.ModifiedAt</p>
+            <p>Modified by: @Model.ModifiedBy</p>
+        }
+        <div class="tile-footer">
+            <a class="btn btn-primary" asp-action="update" asp-route-id="@Model.Id"><i class="mdi mdi-lead-pencil"></i>Update</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+        </div>
+    </div>
+
+</main>

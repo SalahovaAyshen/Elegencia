@@ -1,0 +1,58 @@
+﻿@model UpdateChefVM
+<main class="app-content">
+    <div class="card-body">
+        <div class="tile">
+            <h3 class="tile-title">Update</h3>
+            <div class="tile-body">
+                <form method="post" enctype="multipart/form-data">
+                    <img style="width:150px;height:150px" src="~/assets/img/@Model.Image"></img>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Photo">Change image*</label>
+                        <input class="form-control" asp-for="Photo" placeholder="image/*">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Name*</label>
+                        <input class="form-control" asp-for="Name" placeholder="Enter chef name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Surname">Surname*</label>
+                        <input class="form-control" asp-for="Surname" placeholder="Enter chef Surname">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Info">About chef*</label>
+                        <input class="form-control" asp-for="Info" placeholder="Enter information about chef">
+                        <span asp-validation-for="Info" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Facebook">Facebook*</label>
+                        <input class="form-control" asp-for="Facebook" placeholder="Enter Facebook link">
+                        <span asp-validation-for="Facebook" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Instagram">Instagram*</label>
+                        <input class="form-control" asp-for="Instagram" placeholder="Enter Instagram link">
+                        <span asp-validation-for="Instagram" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Linkedin">Linkedin*</label>
+                        <input class="form-control" asp-for="Linkedin" placeholder="Enter Linkedin link">
+                        <span asp-validation-for="Linkedin" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="PositionId">Position*</label>
+                        <select class="form-control" asp-for="PositionId" asp-items="new SelectList(Model.Positions, nameof(Position.Id), nameof(Position.Name))">
+                        </select>
+                        <span asp-validation-for="PositionId" class="text-danger"></span>
+                    </div>
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Update</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
