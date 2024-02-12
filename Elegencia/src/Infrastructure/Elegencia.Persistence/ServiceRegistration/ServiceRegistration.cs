@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Elegencia.Persistence.ServiceRegistration
 {
     public static class ServiceRegistration
@@ -51,12 +50,13 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IDessertCategoryRepository, DessertCategoryRepository>();
             services.AddScoped<IDrinkCategoryRepository, DrinkCategoryRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
 
             services.AddScoped<IHomeService, HomeService>();
             services.AddScoped<IMenuService, MenuService>();
             services.AddScoped<LayoutService>();
             services.AddScoped<IAboutService, AboutService>();
-            services.AddScoped<IChefService, ChefService>();
+            services.AddScoped<Application.Abstractions.Services.IChefService, Implementations.Services.ChefService>();
             services.AddScoped<IMainMealService, MainMealService>();
             services.AddScoped<ISaladService, SaladService>();
             services.AddScoped<IDessertService, DessertService>();
@@ -64,6 +64,8 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<IMainCategoryService, MainCategoryService>();
             services.AddScoped<IDessertCategoryService, DessertCategoryService>();
             services.AddScoped<IDrinkCategoryService, DrinkCategoryService>();
+            services.AddScoped<Application.Abstractions.Services.Manage.IChefService, Implementations.Services.Manage.ChefService>();
+            services.AddScoped<IContactService, ContactService>();
             return services;
         }
     }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elegencia.Persistence.Contexts.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240204183020_createdContactsTable")]
-    partial class createdContactsTable
+    [Migration("20240212082021_createdContactTable")]
+    partial class createdContactTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -218,10 +218,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.Property<string>("CommentText")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ContactUs")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
@@ -233,7 +229,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -250,9 +246,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.ToTable("Contacts");
                 });
@@ -381,45 +374,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("DessertId");
 
                     b.ToTable("DessertImages");
-                });
-
-            modelBuilder.Entity("Elegencia.Domain.Entities.DessertTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DessertId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DessertId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("DessertTags");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Drink", b =>
@@ -602,45 +556,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.ToTable("MealImages");
                 });
 
-            modelBuilder.Entity("Elegencia.Domain.Entities.MealTags", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MealId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MealId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("MealTags");
-                });
-
             modelBuilder.Entity("Elegencia.Domain.Entities.Position", b =>
                 {
                     b.Property<int>("Id")
@@ -754,43 +669,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Settings");
-                });
-
-            modelBuilder.Entity("Elegencia.Domain.Entities.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
-
-                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -959,25 +837,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.Navigation("Dessert");
                 });
 
-            modelBuilder.Entity("Elegencia.Domain.Entities.DessertTag", b =>
-                {
-                    b.HasOne("Elegencia.Domain.Entities.Dessert", "Dessert")
-                        .WithMany("DessertTags")
-                        .HasForeignKey("DessertId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Elegencia.Domain.Entities.Tag", "Tag")
-                        .WithMany()
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dessert");
-
-                    b.Navigation("Tag");
-                });
-
             modelBuilder.Entity("Elegencia.Domain.Entities.Drink", b =>
                 {
                     b.HasOne("Elegencia.Domain.Entities.DrinkCategory", "DrinkCategory")
@@ -1009,25 +868,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
                         .IsRequired();
 
                     b.Navigation("Meal");
-                });
-
-            modelBuilder.Entity("Elegencia.Domain.Entities.MealTags", b =>
-                {
-                    b.HasOne("Elegencia.Domain.Entities.Meal", "Meal")
-                        .WithMany("MealTags")
-                        .HasForeignKey("MealId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Elegencia.Domain.Entities.Tag", "Tag")
-                        .WithMany()
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Meal");
-
-                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Salad", b =>
@@ -1102,8 +942,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
             modelBuilder.Entity("Elegencia.Domain.Entities.Dessert", b =>
                 {
                     b.Navigation("DessertImages");
-
-                    b.Navigation("DessertTags");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DessertCategory", b =>
@@ -1119,8 +957,6 @@ namespace Elegencia.Persistence.Contexts.Migrations
             modelBuilder.Entity("Elegencia.Domain.Entities.Meal", b =>
                 {
                     b.Navigation("MealImages");
-
-                    b.Navigation("MealTags");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Position", b =>

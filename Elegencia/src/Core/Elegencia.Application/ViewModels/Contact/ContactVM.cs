@@ -10,14 +10,15 @@ namespace Elegencia.Application.ViewModels
 {
     public class ContactVM
     {
-        [Required]
+        [Required(ErrorMessage ="The name can't be empty")]
         [MinLength(3)]
         [MaxLength(25)]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "The email can't be empty")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Required]
-        public string ContactUs { get; set; }
+        [Required(ErrorMessage = "The comment text can't be empty")]
+        public string CommentText { get; set; }
+
     }
 }

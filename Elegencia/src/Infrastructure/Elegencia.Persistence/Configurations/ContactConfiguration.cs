@@ -14,8 +14,7 @@ namespace Elegencia.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
             builder.Property(x => x.Name).HasMaxLength(25).IsRequired();
-            builder.HasIndex(x => x.Email).IsUnique();
-            builder.Property(x => x.ContactUs).HasColumnType("text");
+            builder.Property(x => x.CommentText).HasColumnType("text");
         }
     }
 }
