@@ -68,6 +68,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<Application.Abstractions.Services.Manage.IChefService, Implementations.Services.Manage.ChefService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IPositionService, PositionService>();
+            services.AddScoped<IAccountService, AccountService>();
             return services;
         }
     }

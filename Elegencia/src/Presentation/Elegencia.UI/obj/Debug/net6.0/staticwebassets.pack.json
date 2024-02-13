@@ -633,6 +633,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\treacle-tarte.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\user-image.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user-image.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\video.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\video.jpg"
     },
@@ -811,6 +815,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\sass\\style.scss",
       "PackagePath": "staticwebassets\\assets\\sass\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\style.css",
+      "PackagePath": "staticwebassets\\assets\\style.css"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\main.css",

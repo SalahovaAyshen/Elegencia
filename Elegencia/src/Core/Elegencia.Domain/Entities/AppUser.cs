@@ -11,5 +11,6 @@ namespace Elegencia.Domain.Entities
     {
         public string Name { get; set; } = null!;
         public string Surname { get; set; } = null!;
+        public string? Image { get; set; }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elegencia.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b6a02a769848ae3546a5c00a0e5acd16ef29d8d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+498a28fc45ac903e91040e3e31ed8d19f35cf22d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elegencia.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elegencia.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

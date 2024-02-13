@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OFaj6TNJ6jhwfVkzog05hrRC5ckZlFTV1whDlFOIV2g=",
+  "Hash": "Bui1dZtEdvgCAo5lQ6zupElsDgFuWL6rbImR7PY/vX8=",
   "Source": "Elegencia.UI",
   "BasePath": "_content/Elegencia.UI",
   "Mode": "Default",
@@ -3019,6 +3019,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\treacle-tarte-2.jpg"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\user-image.jpg",
+      "SourceId": "Elegencia.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\",
+      "BasePath": "_content/Elegencia.UI",
+      "RelativePath": "assets/img/user-image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\user-image.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\video.jpg",
       "SourceId": "Elegencia.UI",
       "SourceType": "Discovered",
@@ -3872,6 +3891,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\sass\\style.scss"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\style.css",
+      "SourceId": "Elegencia.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\",
+      "BasePath": "_content/Elegencia.UI",
+      "RelativePath": "assets/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\style.css"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\css\\main.css",
