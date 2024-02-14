@@ -11,5 +11,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
     public interface IAccountService
     {
         Task<bool> Register(RegisterVM registerVM, ModelStateDictionary modelState);
+        Task<bool> Login(LoginVM loginVM, ModelStateDictionary modelState);
+        Task Logout();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Elegencia.Application.Abstractions.Services.Manage;
+﻿using Elegencia.Application.Abstractions.Services;
+using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,28 @@ namespace Elegencia.UI.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM loginVM, string? returnurl)
+        {
+            if (await _accountService.Login(loginVM, ModelState))
+            {
+                if(returnurl== null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                return Redirect(returnurl);
+            }
+            return View();
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _accountService.Logout();
+            return RedirectToAction("Index", "Home", new { area = ""});
         }
     }
 }

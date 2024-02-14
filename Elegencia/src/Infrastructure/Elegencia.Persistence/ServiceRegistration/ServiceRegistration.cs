@@ -26,7 +26,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 8;
-                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = true;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireDigit = true;
@@ -35,9 +35,9 @@ namespace Elegencia.Persistence.ServiceRegistration
                 options.User.RequireUniqueEmail = true;
 
                 options.Lockout.MaxFailedAccessAttempts = 3;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(7);
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
 
-                options.SignIn.RequireConfirmedEmail = true;
+                //options.SignIn.RequireConfirmedEmail = true;
             }
 
             ).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
