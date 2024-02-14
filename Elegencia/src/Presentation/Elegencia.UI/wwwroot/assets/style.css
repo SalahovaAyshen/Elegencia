@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Orelega+One&display=swap');
 section div {
     position: relative;
 }
@@ -51,7 +51,7 @@ section div {
     z-index: 999;
     text-align: center;
     padding: 60px 32px;
-    width: 370px;
+    width: 500px;
     transform: translate(-50%,-50%);
     background: rgba(255,255,255,0.04);
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
@@ -62,33 +62,33 @@ section div {
         font-size: 33px;
         font-weight: 600;
         margin: 0 0 35px 0;
-        font-family: 'Montserrat',sans-serif;
+        font-family: "Lora",sans-serif;
     }
 
-.field {
+/*.field {
     position: relative;
     height: 45px;
     width: 100%;
     display: flex;
-    background: rgba(255,255,255,0.94);
-}
+    background: #fff;
+}*/
 
     .field span {
-        color: #222;
+        color: #fff;
         width: 40px;
         line-height: 45px;
     }
 
-    .field input {
-        height: 100%;
-        width: 100%;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: #222;
-        font-size: 16px;
-        font-family: 'Poppins',sans-serif;
-    }
+.field input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 17px;
+    font-family: "Lora",sans-serif;
+}
 
 .space {
     margin-top: 16px;
@@ -102,7 +102,7 @@ section div {
     color: #222;
     display: none;
     cursor: pointer;
-    font-family: 'Montserrat',sans-serif;
+    font-family: "Lora",sans-serif;
 }
 
 .pass-key:valid ~ .show {
@@ -117,7 +117,7 @@ section div {
     .pass a {
         color: white;
         text-decoration: none;
-        font-family: 'Poppins',sans-serif;
+        font-family: "Lora",sans-serif;
     }
 
     .pass:hover a {
@@ -125,24 +125,24 @@ section div {
     }
 
 .field input[type="submit"] {
-    background: #3498db;
+    background: #222;
     border: 1px solid #2691d9;
     color: white;
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
-    font-family: 'Montserrat',sans-serif;
+    font-family: "Lora",sans-serif;
 }
 
     .field input[type="submit"]:hover {
-        background: #2691d9;
+        background: #222;
     }
 
 .login {
     color: white;
     margin: 20px 0;
-    font-family: 'Poppins',sans-serif;
+    font-family: "Lora",sans-serif;
 }
 
 .links {
@@ -152,31 +152,6 @@ section div {
     margin: 0 0 20px 0;
 }
 
-.facebook, .instagram {
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    margin-left: 10px;
-}
-
-.facebook {
-    margin-left: 0;
-    background: #4267B2;
-    border: 1px solid #3e61a8;
-}
-
-.instagram {
-    background: #E1306C;
-    border: 1px solid #df2060;
-}
-
-.facebook:hover {
-    background: #3e61a8;
-}
-
-.instagram:hover {
-    background: #df2060;
-}
 
 .links i {
     font-size: 17px;
@@ -187,13 +162,13 @@ i span {
     font-weight: 500;
     letter-spacing: 1px;
     font-size: 16px;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'RomanC',sans-serif;
 }
 
 .signup {
     font-size: 15px;
     color: white;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'RomanC',sans-serif;
 }
 
     .signup a {

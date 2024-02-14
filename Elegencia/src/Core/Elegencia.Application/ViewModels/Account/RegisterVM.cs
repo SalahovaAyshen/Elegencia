@@ -18,7 +18,7 @@ namespace Elegencia.Application.ViewModels
         [MaxLength(25, ErrorMessage = "The length of the surname can't be more than 25")]
         public string Surname { get; set; }
         [Required(ErrorMessage = "The username can't be empty")]
-        [MinLength(4, ErrorMessage = "The length of the username can't be less than 3")]
+        [MinLength(4, ErrorMessage = "The length of the username can't be less than 4")]
         [MaxLength(240, ErrorMessage = "The length of the username can't be more than 40")]
         public string Username { get; set; }
         [Required(ErrorMessage = "The email can't be empty")]
