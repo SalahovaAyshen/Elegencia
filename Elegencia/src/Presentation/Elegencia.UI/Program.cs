@@ -1,4 +1,5 @@
 using Elegencia.Application.ServiceRegistration;
+using Elegencia.Persistence.Contexts;
 using Elegencia.Persistence.ServiceRegistration;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -6,6 +7,13 @@ builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+    initializer.InitializeDbContext().Wait();
+    initializer.CreateRoleAsync().Wait();
+    initializer.InitializeAdmin().Wait();
+}
 
 app.UseHttpsRedirection();
 
