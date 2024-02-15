@@ -10,8 +10,6 @@ namespace Elegencia.Application.ViewModels.Manage
     public class UpdateMainCategoryVM
     {
         [Required(ErrorMessage = "The name can't be empty")]
-        [MinLength(2)]
-        [MaxLength(50)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
     }
 }

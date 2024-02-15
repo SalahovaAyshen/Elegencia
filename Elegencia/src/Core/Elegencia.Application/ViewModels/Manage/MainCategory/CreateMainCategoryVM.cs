@@ -9,9 +9,7 @@ namespace Elegencia.Application.ViewModels.Manage
 {
     public class CreateMainCategoryVM
     {
-        [Required(ErrorMessage ="The name can't be empty")]
-        [MinLength(2)]
-        [MaxLength(50)]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "The name can't be empty")]
+        public string Name { get; set; } = null!;
     }
 }

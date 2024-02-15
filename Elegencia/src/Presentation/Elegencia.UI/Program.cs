@@ -1,7 +1,9 @@
+using Elegencia.Application.ServiceRegistration;
 using Elegencia.Persistence.ServiceRegistration;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 

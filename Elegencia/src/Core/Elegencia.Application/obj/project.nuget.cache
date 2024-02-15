@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SgY3W4wyVAtvfYEpqkxMeSfw133t4+jPREcY8UhqKTlWSYrHfCgjPbbwGtqiSsbJglPiOVLvPAuP7Q+xnaRW9A==",
+  "dgSpecHash": "frzJ2WKjylcmbVHHtdrzmgv+VdcfRsb10FRRfZTC5EqobM5luNKLP0tBeVDKnoCsxN4nEUlhAR7H6YPk5Ndy7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Core\\Elegencia.Application\\Elegencia.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.25\\microsoft.aspnetcore.cryptography.keyderivation.6.0.25.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

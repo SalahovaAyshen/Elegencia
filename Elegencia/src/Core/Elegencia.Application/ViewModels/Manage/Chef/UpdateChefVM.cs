@@ -12,21 +12,17 @@ namespace Elegencia.Application.ViewModels.Manage
     public class UpdateChefVM
     {
         [Required(ErrorMessage = "The name can't be empty")]
-        [MinLength(3, ErrorMessage = "The name length can't be less than 3")]
-        [MaxLength(25, ErrorMessage = "The name length can't be more than 25")]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         [Required(ErrorMessage = "The surname can't be empty")]
-        [MinLength(3, ErrorMessage = "The surname length can't be less than 3")]
-        [MaxLength(25, ErrorMessage = "The surname length can't be more than 25")]
-        public string Surname { get; set; }
+        public string Surname { get; set; } = null!;
         [Required(ErrorMessage = "The information about chef can't be empty")]
-        public string Info { get; set; }
+        public string Info { get; set; } = null!;
         [Required(ErrorMessage = "The facebook link can't be empty")]
-        public string Facebook { get; set; }
+        public string Facebook { get; set; } = null!;
         [Required(ErrorMessage = "The instagram link can't be empty")]
-        public string Instagram { get; set; }
+        public string Instagram { get; set; } = null!;
         [Required(ErrorMessage = "The linkedin link can't be empty")]
-        public string Linkedin { get; set; }
+        public string Linkedin { get; set; } = null!;
         public string? Image { get; set; }
         public IFormFile? Photo { get; set; } = null!;
         public int PositionId { get; set; }

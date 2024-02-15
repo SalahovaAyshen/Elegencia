@@ -9,13 +9,9 @@ namespace Elegencia.Application.ViewModels
 {
     public class LoginVM
     {
-        [Required(ErrorMessage ="Username or email can't be empty")]
-        [MinLength(4,ErrorMessage ="Username or email can't be less than 4")]
-        [MaxLength(320, ErrorMessage = "Username or email can't be more than 320")]
-        public string UsernameOrEmail { get; set; }
-        [Required(ErrorMessage = "You must entire password")]
+        public string UsernameOrEmail { get; set; } = null!;
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Password { get; set; } = null!;
         public bool IsRemembered { get; set; }
     }
 }
