@@ -833,6 +833,34 @@
       "PackagePath": "staticwebassets\\manage\\images\\banner.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\dessert-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\dessert-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\drink-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\drink-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\main-category.png",
+      "PackagePath": "staticwebassets\\manage\\images\\main-category.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\main-meal-2.png",
+      "PackagePath": "staticwebassets\\manage\\images\\main-meal-2.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\meal-icon.jpg",
+      "PackagePath": "staticwebassets\\manage\\images\\meal-icon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\menu-icon-3.png",
+      "PackagePath": "staticwebassets\\manage\\images\\menu-icon-3.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\salad-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\salad-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\manage\\js\\bootstrap.min.js"
     },

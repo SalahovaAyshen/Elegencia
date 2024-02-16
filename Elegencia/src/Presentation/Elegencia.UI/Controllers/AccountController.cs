@@ -1,7 +1,10 @@
 ﻿using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Security.Claims;
 
 namespace Elegencia.UI.Controllers
 {

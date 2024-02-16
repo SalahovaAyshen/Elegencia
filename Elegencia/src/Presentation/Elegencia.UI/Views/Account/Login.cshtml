@@ -21,17 +21,27 @@
                 <header>Login</header>
                 <form method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <div class="field space">
+                    <div class="field space">
                         <input asp-for="UsernameOrEmail" required placeholder="Username or Email">
-                                </div>
-                                <span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
+                    </div>
+                    <span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
 
 
-                                <div class="field space">
-                                    <input asp-for="Password" type="password" class="pass-key" required placeholder="Password">
+                    <div class="field space">
+                        <input asp-for="Password" type="password" class="pass-key" required placeholder="Password">
 
-                                </div>
-                                <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <div class="field space">
+                        <div class="form-check">
+                           
+                            <label asp-for="IsRemembered" class="text-light login">
+                                <input asp-for="IsRemembered"  style="width:15px; height:15px"  />
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="pass" style="padding-left:300px">
                         <a href="#">Forgot Password?</a>
                     </div>
@@ -39,7 +49,7 @@
                         <input class="rounded-pill" type="submit" value="LOGIN">
                     </div>
                     <div class="pass d-flex justify-content-center">
-                        <p class="text-light">Don't have an account? <a asp-controller="account" asp-action="register">Register Now</a></p>
+                        <p class="text-light login">Don't have an account? <a asp-controller="account" asp-action="register">Register Now</a></p>
                     </div>
                 </form>
             </div>

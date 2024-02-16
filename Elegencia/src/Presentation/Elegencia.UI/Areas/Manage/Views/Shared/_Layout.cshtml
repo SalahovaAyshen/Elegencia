@@ -25,11 +25,12 @@
     <link rel="stylesheet" href="~/manage/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="~/manage/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/manage/vendors/base/vendor.bundle.base.css">
+
 </head>
-<body class="app sidebar-mini">
+<body class="app sidebar-mini body">
     <!-- Navbar-->
     <header class="app-header">
-        <a class="app-header__logo" href="index.html">Elegencia</a>
+        <a class="app-header__logo" asp-controller="dashboard" asp-action="index">Elegencia</a>
         <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
         <!-- Navbar Right Menu-->
         <ul class="app-nav">
@@ -98,6 +99,7 @@
                         </a>
                     </li>
                     </div>
+
                     <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
                 </ul>
             </li>
@@ -115,28 +117,30 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user">
-            <img class="app-sidebar__user-avatar" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
-            <div>
-                <p class="app-sidebar__user-name">John Doe</p>
-                <p class="app-sidebar__user-designation">Frontend Developer</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="app-sidebar__user">
+                <img class="app-sidebar__user-avatar" src="~/assets/img/user-image.jpg" alt="User Image">
+                <div>
+                    <a asp-controller="user" asp-action="index" class="app-sidebar__user-name text-light" style="inline-size:none">@User.Identity.Name</a>
+                </div>
             </div>
-        </div>
+        }
         <ul class="app-menu">
             <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><i class="mdi mdi-home menu-icon"></i><span class="app-menu__label">Dashboard</span></a></li>
-          
+
             <li class="treeview">
-                <a class ="app-menu__item" data-bs-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth">
-                    <i class="mdi mdi-view-headline menu-icon"></i>
-                    <span class="menu-title">Menu</span>
+                <a class="app-menu__item" data-bs-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth">
+                    
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/menu-icon-3.png" />Menu</span>
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth1">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="mainmeal" asp-action="index"> Main meals </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="salad" asp-action="index"> Salads </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessert" asp-action="index"> Desserts </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drink" asp-action="index"> Drinks  </a></li>
+                    <ul class="nav flex-column sub-menu ps-4">
+                        <li class="nav-item">  <a class="app-menu__item" asp-controller="mainmeal" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/main-meal-2.png" /> Main meals </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="salad" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/salad-icon.png" /> Salads </a></li>
+                        <li class="nav-item"><a class="app-menu__item" asp-controller="dessert" asp-action="index"><img style="width:24px;height:24px" src="~/manage/images/dessert-icon.png" /> Desserts </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drink" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/drink-icon.png" /> Drinks  </a></li>
                     </ul>
                 </div>
             </li>
@@ -147,15 +151,15 @@
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth2">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="maincategory"> Main category </a></li>
+                    <ul class="nav flex-column sub-menu ps-4">
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="maincategory"><img style="width:25px;height:25px" src="~/manage/images/main-category.png" /> Main category </a></li>
                         <li class="nav-item"> <a class="app-menu__item" asp-controller="dessertcategory"> Dessert categories </a></li>
                         <li class="nav-item"> <a class="app-menu__item" asp-controller="drinkcategory"> Drink categories </a></li>
                     </ul>
                 </div>
             </li>
             <li class="treeview">
-                <a class ="app-menu__item" data-bs-toggle="collapse" href="#auth3" aria-expanded="false" aria-controls="auth">
+                <a class="app-menu__item" data-bs-toggle="collapse" href="#auth3" aria-expanded="false" aria-controls="auth">
                     <i class="mdi mdi-view-headline menu-icon"></i>
                     <span class="menu-title">Our chefs</span>
                     <i class="menu-arrow"></i>
@@ -174,10 +178,10 @@
                     <span class="menu-title">Contact</span>
                 </a>
             </li>
-           
+
         </ul>
     </aside>
-        @RenderBody()
+    @RenderBody()
     <!-- Essential javascripts for application to work-->
     <script src="~/manage/js/jquery-3.7.0.min.js"></script>
     <script src="~/manage/js/bootstrap.min.js"></script>

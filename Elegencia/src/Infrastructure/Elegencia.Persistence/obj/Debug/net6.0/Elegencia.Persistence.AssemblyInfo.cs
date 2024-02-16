@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elegencia.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+621d2f77be9eca823afb7c5637d1b0755232f007")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elegencia.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elegencia.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
