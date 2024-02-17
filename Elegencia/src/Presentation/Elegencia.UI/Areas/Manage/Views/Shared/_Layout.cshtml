@@ -127,7 +127,7 @@
             </div>
         }
         <ul class="app-menu">
-            <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><i class="mdi mdi-home menu-icon"></i><span class="app-menu__label">Dashboard</span></a></li>
+            <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><span class="app-menu__label"><img style="width:30px;height:30px" src="~/manage/images/dash-icon.png" />Dashboard</span></a></li>
 
             <li class="treeview">
                 <a class="app-menu__item" data-bs-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth">
@@ -146,36 +146,33 @@
             </li>
             <li class="treeview">
                 <a class="app-menu__item" data-bs-toggle="collapse" href="#auth2" aria-expanded="false" aria-controls="auth">
-                    <i class="mdi mdi-view-headline menu-icon"></i>
-                    <span class="menu-title">Category</span>
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/category-icon.png" />Category</span>
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth2">
                     <ul class="nav flex-column sub-menu ps-4">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="maincategory"><img style="width:25px;height:25px" src="~/manage/images/main-category.png" /> Main category </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessertcategory"> Dessert categories </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drinkcategory"> Drink categories </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="maincategory" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/main-category.png" /> Main category </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessertcategory" asp-action="index"> Dessert categories </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drinkcategory" asp-action="index"> Drink categories </a></li>
                     </ul>
                 </div>
             </li>
             <li class="treeview">
                 <a class="app-menu__item" data-bs-toggle="collapse" href="#auth3" aria-expanded="false" aria-controls="auth">
-                    <i class="mdi mdi-view-headline menu-icon"></i>
-                    <span class="menu-title">Our chefs</span>
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/our-chef-icon-2.png" />Our chefs</span>
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth3">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="chef"> Chefs </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="position"> Chef position </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="chef" asp-action="index"> Chefs </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="position" asp-action="index"> Chef position </a></li>
                     </ul>
                 </div>
             </li>
 
             <li class="treeview">
-                <a class="app-menu__item" asp-controller="contact">
-                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                    <span class="menu-title">Contact</span>
+                <a class="app-menu__item" asp-controller="setting" asp-action="index">
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/contact-icon.png"/>Settings</span>
                 </a>
             </li>
 

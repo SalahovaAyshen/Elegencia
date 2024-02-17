@@ -833,6 +833,18 @@
       "PackagePath": "staticwebassets\\manage\\images\\banner.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\category-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\category-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\contact-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\contact-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\dash-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\dash-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\dessert-icon.png",
       "PackagePath": "staticwebassets\\manage\\images\\dessert-icon.png"
     },
@@ -855,6 +867,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\menu-icon-3.png",
       "PackagePath": "staticwebassets\\manage\\images\\menu-icon-3.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\our-chef-icon-2.png",
+      "PackagePath": "staticwebassets\\manage\\images\\our-chef-icon-2.png"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\salad-icon.png",

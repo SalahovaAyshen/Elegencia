@@ -1,0 +1,53 @@
+﻿@model ICollection<Setting>
+@{
+    int count = 0;
+}
+<main class="app-content">
+    <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
+    <div class="tile">
+        <h3 class="tile-title">Settings</h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Created By</th>
+                    <th>Modified By</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Setting setting in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+
+                        <td>
+                            @setting.Key
+                        </td>
+                        <td>
+                            @setting.Value
+                        </td>
+                        <td>
+                            @setting.CreatedBy in @setting.CreatedAt
+                        </td>
+
+                        <td>
+                            @setting.ModifiedBy  @setting.ModifiedAt
+                        </td>
+
+                        <td>
+                            <a class="btn btn-inverse-warning btn-fw" asp-controller="setting" asp-action="update" asp-route-id="@setting.Id"><i class="mdi mdi-lead-pencil"></i></a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    </main>

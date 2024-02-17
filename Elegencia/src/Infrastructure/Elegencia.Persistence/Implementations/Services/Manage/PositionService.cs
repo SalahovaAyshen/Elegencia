@@ -34,7 +34,10 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The position name is existed");
                 return false;
             }
-            await _positionRepository.AddAsync(new Position { Name = positionVM.Name });
+            await _positionRepository.AddAsync(new Position 
+            { 
+                Name = positionVM.Name,
+            });
             await _positionRepository.SaveChangesAsync();
             return true;
         }
