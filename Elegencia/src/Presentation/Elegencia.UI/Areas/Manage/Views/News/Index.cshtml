@@ -1,0 +1,45 @@
+﻿@model ICollection<News>
+@{
+    int count = 0;
+}
+<main class="app-content">
+    <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
+    <div class="tile">
+        <h3 class="tile-title">News <a class="btn btn-inverse-success btn-fw" asp-controller="news" asp-action="create"><i class="mdi mdi-plus"></i></a></h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (News news in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img style="width:200px;height:200px" src="~/assets/img/@news.Image"/>
+                        </td>
+                        <td>
+                            @news.Name
+                        </td>
+                      
+                        <td>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><i class="mdi mdi-book"></i></a>
+                            <a class="btn btn-inverse-warning btn-fw" asp-controller="news" asp-action="update" asp-route-id="@news.Id"><i class="mdi mdi-lead-pencil"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="news" asp-action="delete" asp-route-id="@news.Id"><i class="mdi mdi-delete"></i></a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

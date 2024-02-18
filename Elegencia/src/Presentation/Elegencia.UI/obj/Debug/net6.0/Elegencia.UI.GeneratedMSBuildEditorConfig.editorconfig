@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\hp\Desktop\Elegencia\Elegencia\src\Presentation\Elegencia.UI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhc2tldFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/Chef/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENoZWZcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,6 +124,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/MainMeal/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE1haW5NZWFsXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/News/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE5ld3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE5ld3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/News/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE5ld3NcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hp/Desktop/Elegencia/Elegencia/src/Presentation/Elegencia.UI/Areas/Manage/Views/Position/Create.cshtml]

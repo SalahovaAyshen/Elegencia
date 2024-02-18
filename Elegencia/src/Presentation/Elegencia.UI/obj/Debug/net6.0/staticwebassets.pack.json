@@ -45,8 +45,16 @@
       "PackagePath": "staticwebassets\\assets\\fonts\\lg.woff"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\03f0ad99-3200-428f-ad33-466cb19d6589WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\03f0ad99-3200-428f-ad33-466cb19d6589WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\08722c54-2fe5-4efa-989f-c608dc6c8082WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\08722c54-2fe5-4efa-989f-c608dc6c8082WhatsApp Image 2022-09-04 at 00.27.25.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\0bb5231c-8e82-405c-9b11-e51c2a3afa91WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\0bb5231c-8e82-405c-9b11-e51c2a3afa91WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\0c2913ec-55e0-4fc8-99bf-e025b8c7c50fWhatsApp Image 2022-09-04 at 00.27.26.jpeg",
@@ -55,6 +63,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\1234b365-bd4b-40ee-ab83-27445eae2437WhatsApp Image 2022-09-04 at 00.27.23.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\1234b365-bd4b-40ee-ab83-27445eae2437WhatsApp Image 2022-09-04 at 00.27.23.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\1339104b-c902-466c-9812-8667afe8e2ecWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\1339104b-c902-466c-9812-8667afe8e2ecWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\1a86418d-ed51-43a2-8267-4dbec8fd94fbWhatsApp Image 2022-09-04 at 00.29.23.jpeg",
@@ -73,6 +85,22 @@
       "PackagePath": "staticwebassets\\assets\\img\\21328e3c-1c01-4666-97fe-7771b9548da4WhatsApp Image 2022-09-04 at 00.27.25.jpeg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\32d6a167-908e-481e-b14f-934d9970b4adWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\32d6a167-908e-481e-b14f-934d9970b4adWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\3a255209-0f0f-4a2f-a1dd-eb58568c416bWhatsApp Image 2022-12-31 at 2.36.14 PM (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\3a255209-0f0f-4a2f-a1dd-eb58568c416bWhatsApp Image 2022-12-31 at 2.36.14 PM (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\3d893749-ec71-441c-b71a-1c2b99420672WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\3d893749-ec71-441c-b71a-1c2b99420672WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\424035e0-7e70-41b7-92cc-e2510a74a22eWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\424035e0-7e70-41b7-92cc-e2510a74a22eWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\42ae91f1-4165-4fa1-968c-bf6d43bb4293WhatsApp Image 2022-09-04 at 00.27.16.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\42ae91f1-4165-4fa1-968c-bf6d43bb4293WhatsApp Image 2022-09-04 at 00.27.16.jpeg"
     },
@@ -83,6 +111,18 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\4c89352a-5256-4775-bf46-a60fdb89d723WhatsApp Image 2022-09-04 at 00.27.23.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\4c89352a-5256-4775-bf46-a60fdb89d723WhatsApp Image 2022-09-04 at 00.27.23.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\51accede-4c86-4e20-9ddc-15639919682eWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\51accede-4c86-4e20-9ddc-15639919682eWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\5af87fe1-da43-43a3-a570-b9f1c9215fd5WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\5af87fe1-da43-43a3-a570-b9f1c9215fd5WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\5e692ee1-b12d-470b-ab66-07b5bf60eeacWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\5e692ee1-b12d-470b-ab66-07b5bf60eeacWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\600f90e4-834a-4515-9b39-45a599810599WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
@@ -105,12 +145,24 @@
       "PackagePath": "staticwebassets\\assets\\img\\650a1dc5-6e59-437e-ac2c-5e81850bff86WhatsApp Image 2022-09-04 at 00.27.21.jpeg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\6aa38e61-eea3-4120-a57d-030ebece78e2WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\6aa38e61-eea3-4120-a57d-030ebece78e2WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\6e11987b-770a-4229-a7ff-cd13846ccb19WhatsApp Image 2022-09-04 at 00.27.26.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\6e11987b-770a-4229-a7ff-cd13846ccb19WhatsApp Image 2022-09-04 at 00.27.26.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\6f76a4af-849c-48ea-bef7-02d630e9f678WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\6f76a4af-849c-48ea-bef7-02d630e9f678WhatsApp Image 2022-09-04 at 00.27.25.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\71c7f968-bed9-4c9e-b345-ec509c254c54WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\71c7f968-bed9-4c9e-b345-ec509c254c54WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\723564a5-813c-4823-9805-042b005bae7cWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\723564a5-813c-4823-9805-042b005bae7cWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\7478a352-3a25-418c-881d-97c5d6c29490WhatsApp Image 2022-09-04 at 00.27.26.jpeg",
@@ -133,12 +185,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\94cbf1d6-9b6e-467c-a384-6e2b58faa96eWhatsApp Image 2022-09-04 at 00.27.23.jpeg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\95e263ac-0b02-45e1-9f11-327c937f1db3WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\95e263ac-0b02-45e1-9f11-327c937f1db3WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\98bcbbea-b34d-4196-9b3a-7fd9f64f2623WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\98bcbbea-b34d-4196-9b3a-7fd9f64f2623WhatsApp Image 2022-09-04 at 00.27.25.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\Elegencia.png",
       "PackagePath": "staticwebassets\\assets\\img\\Elegencia.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\a0b0ed8d-0af1-46ca-8ed8-0ac4b03ff4a9WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\a0b0ed8d-0af1-46ca-8ed8-0ac4b03ff4a9WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\a300f1da-357b-4b9a-9f34-c41e4ab23761WhatsApp Image 2022-09-04 at 00.27.25.jpeg",
@@ -203,10 +263,6 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bestItem2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\bestItem2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-1(slider).jpeg",
-      "PackagePath": "staticwebassets\\assets\\img\\bg-1(slider).jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\bg-2(slider).jpg",
@@ -331,6 +387,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\d6fa829c-194b-4d94-ba26-f9a025559a50WhatsApp Image 2022-09-04 at 00.27.26.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\d6fa829c-194b-4d94-ba26-f9a025559a50WhatsApp Image 2022-09-04 at 00.27.26.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\d7c383ac-cd84-4385-a1cf-013275e45656WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\d7c383ac-cd84-4385-a1cf-013275e45656WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\desserts.jpeg",
@@ -833,6 +893,10 @@
       "PackagePath": "staticwebassets\\manage\\images\\banner.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\basket-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\basket-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\category-icon.png",
       "PackagePath": "staticwebassets\\manage\\images\\category-icon.png"
     },
@@ -867,6 +931,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\menu-icon-3.png",
       "PackagePath": "staticwebassets\\manage\\images\\menu-icon-3.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\news-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\news-icon.png"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\our-chef-icon-2.png",

@@ -169,14 +169,24 @@
                     </ul>
                 </div>
             </li>
-
+            <li class="treeview">
+                <a class="app-menu__item" asp-controller="news" asp-action="index">
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/news-icon.png" />News</span>
+                </a>
+            </li>
             <li class="treeview">
                 <a class="app-menu__item" asp-controller="setting" asp-action="index">
                     <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/contact-icon.png"/>Settings</span>
                 </a>
             </li>
-
+         <hr>
+            <li class="treeview">
+                <a class="app-menu__item" asp-controller="basket" asp-action="index">
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/basket-icon.png" />Basket</span>
+                </a>
+            </li>
         </ul>
+
     </aside>
     @RenderBody()
     <!-- Essential javascripts for application to work-->

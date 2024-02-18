@@ -1,0 +1,131 @@
+﻿@model BasketVM
+@{
+    int count = 0;
+}
+<main class="app-content">
+    <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
+    <div class="tile">
+        <h3 class="tile-title">News <a class="btn btn-inverse-success btn-fw" asp-controller="news" asp-action="create"><i class="mdi mdi-plus"></i></a></h3>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Meal meal in Model.Meals)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img style="width:80;height:80px" src="~/assets/img/@meal.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" />
+                        </td>
+                        <td>
+                            @meal.Name
+                        </td>
+
+                        <td>
+                            
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+            <tbody>
+                @foreach (Salad salad in Model.Salads)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img style="width:80;height:80px" src="~/assets/img/@salad.Image" />
+                        </td>
+                        <td>
+                            @salad.Name
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+            <tbody>
+                @foreach (Dessert dessert in Model.Desserts)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img style="width:80;height:80px" src="~/assets/img/@dessert.DessertImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image" />
+                        </td>
+                        <td>
+                            @dessert.Name
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+            <tbody>
+                @foreach (Drink drink in Model.Drinks)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img style="width:80;height:80px" src="~/assets/img/@drink.Image" />
+                        </td>
+                        <td>
+                            @drink.Name
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+            <tbody>
+                @foreach (Category category in Model.MainCategories)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            @category.Name
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</main>
