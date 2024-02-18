@@ -28,6 +28,7 @@ namespace Elegencia.Persistence.Contexts
         public DbSet<Drink> Drinks { get; set; }
         public DbSet<DrinkCategory> DrinkCategories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<News> News { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

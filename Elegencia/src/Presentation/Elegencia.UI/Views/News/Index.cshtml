@@ -1,0 +1,74 @@
+﻿@model NewsVM
+<div id="scrollsmoother-container">
+    <!-- Start Hero -->
+    <Section>
+        <div class="ak-commmon-hero ak-style1 ak-bg">
+            <img class="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg" />
+            <div class="ak-commmon-heading">
+                <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                    <div class="ak-section-subtitle">
+                        <a asp-controller="home">Home</a> / News
+                    </div>
+                    <h2 class="ak-section-title page-title-anim">News</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- End Hero -->
+    <!-- Start About Content -->
+    <section>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        @foreach (News news in Model.News)
+        {
+
+            @if (news.Id / 2 == 1)
+            {
+                <div class="container">
+                    <div class="meet-the-content-about-section">
+                        <div class="about-img">
+                            <img style="width:400px;height:400px" src="~/assets/img/@news.Image" class="imagesZoom" data-speed="1.1" alt="meetAbout">
+                        </div>
+                        <div class="about-info">
+                            <div class="ak-section-heading ak-style-1 ak-color-1">
+                                <h3>@news.Name</h3>
+                            </div>
+                            <div class="ak-height-25 ak-height-lg-25"></div>
+                            <p>
+                                @news.Description
+                            </p>
+
+                            <div class="ak-height-45 ak-height-lg-30"></div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+            else
+            {
+                <div class="container">
+                    <div class="meet-the-content-about-section">
+                        <div class="about-info">
+                            <div class="ak-section-heading ak-style-1 ak-color-1">
+                                <h3>@news.Name</h3>
+                            </div>
+                            <div class="ak-height-25 ak-height-lg-25"></div>
+                            <p>
+                                @news.Description
+                            </p>
+
+                            <div class="ak-height-45 ak-height-lg-30"></div>
+                        </div>
+                        <div class="about-img">
+                            <img style="width:400px;height:400px" src="~/assets/img/@news.Image" class="imagesZoom" data-speed="1.1" alt="meetAbout">
+                        </div>
+                    </div>
+
+                </div>
+            }
+            <div class="ak-height-150 ak-height-lg-60"></div>
+
+        }
+    </section>
+    <!-- End About Content -->
+
