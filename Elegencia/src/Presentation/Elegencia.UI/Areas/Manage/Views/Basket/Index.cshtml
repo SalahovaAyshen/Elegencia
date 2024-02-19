@@ -44,8 +44,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@meal.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="mealdelete" asp-route-id="@meal.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoremeal" asp-route-id="@meal.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletemeal" asp-route-id="@meal.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -68,8 +68,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@salad.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="saladdelete" asp-route-id="@salad.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoresalad" asp-route-id="@salad.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletesalad" asp-route-id="@salad.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -92,8 +92,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@dessert.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="dessertdelete" asp-route-id="@dessert.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoredessert" asp-route-id="@dessert.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletedessert" asp-route-id="@dessert.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -116,8 +116,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@drink.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="drinkdelete" asp-route-id="@drink.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoredrink" asp-route-id="@drink.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletedrink" asp-route-id="@drink.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -140,8 +140,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@chef.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="chefdelete" asp-route-id="@chef.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restorechef" asp-route-id="@chef.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletechef" asp-route-id="@chef.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -164,8 +164,8 @@
                             @news.Name
                         </td>
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@news.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="newsdelete" asp-route-id="@news.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restorenews" asp-route-id="@news.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletenews" asp-route-id="@news.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -187,8 +187,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="mcatndelete" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restorecategory" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletecategory" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -210,8 +210,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="dcatdelete" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoredessertcategory" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletedessertcategory" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -233,8 +233,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="drcatdelete" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoredrinkcategory" asp-route-id="@category.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deletedrinkcategory" asp-route-id="@category.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 
@@ -257,8 +257,8 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="reverse" asp-route-id="@position.Id"><i class="mdi mdi-backup-restore"></i></a>
-                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="positiondelete" asp-route-id="@position.Id"><i class="mdi mdi-delete"></i></a>
+                            <a class="btn btn-inverse-secondary btn-fw" asp-controller="basket" asp-action="restoreposition" asp-route-id="@position.Id"><i class="mdi mdi-backup-restore"></i></a>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="basket" asp-action="deleteposition" asp-route-id="@position.Id"><i class="mdi mdi-delete"></i></a>
                         </td>
                     </tr>
 

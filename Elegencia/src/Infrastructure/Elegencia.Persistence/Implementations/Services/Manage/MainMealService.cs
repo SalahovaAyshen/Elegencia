@@ -131,7 +131,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Name = meal.Name,
                 Price = meal.Price,
                 Ingredients = meal.Ingredients,
-                CategoryId = meal.CategoryId,
+                CategoryId = (int)meal.CategoryId,
                 Categories = await _categoryRepository.GetAll().ToListAsync(),
                 MealImages = meal.MealImages,
                 MainImage = meal.MealImages.FirstOrDefault(mi=>mi.IsPrimary==true)?.Image,
