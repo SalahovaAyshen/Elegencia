@@ -9,6 +9,6 @@ namespace Elegencia.Application.Abstractions.Services.Manage
 {
     public interface IBasketService
     {
-        Task<BasketVM> GetAll();
+        Task<BasketVM> GetAll(string? search);
     }
 }

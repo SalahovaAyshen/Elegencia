@@ -13,9 +13,9 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _basketService = basketService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search)
         {
-            BasketVM basketVM = await _basketService.GetAll();
+            BasketVM basketVM = await _basketService.GetAll(search);
             return View(basketVM);
         }
     }
