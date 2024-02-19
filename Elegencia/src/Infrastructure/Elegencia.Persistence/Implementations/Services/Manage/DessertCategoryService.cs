@@ -1,7 +1,9 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,16 +11,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace Elegencia.Persistence.Implementations.Services.Manage
 {
     public class DessertCategoryService : IDessertCategoryService
     {
         private readonly IDessertCategoryRepository _categoryRepository;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public DessertCategoryService(IDessertCategoryRepository categoryRepository)
+        public DessertCategoryService(IDessertCategoryRepository categoryRepository, IHttpContextAccessor http, IAccountService user)
         {
             _categoryRepository = categoryRepository;
+            _http = http;
+            _user = user;
         }
 
         public async Task<PaginationVM<DessertCategory>> GetAll(int page, int take)
@@ -35,7 +42,13 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The category name is existed");
                 return false;
             }
-            await _categoryRepository.AddAsync(new DessertCategory { Name = categoryVM.Name });
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+            await _categoryRepository.AddAsync(new DessertCategory 
+            {
+                Name = categoryVM.Name,
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = user.Name + " " + user.Surname
+            });
             await _categoryRepository.SaveChangesAsync();
             return true;
         }
@@ -60,9 +73,10 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The category name is existed");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             existed.Name = categoryVM.Name;
             existed.ModifiedAt = DateTime.UtcNow;
-            existed.ModifiedBy = "ayshen";
+            existed.ModifiedBy = user.Name + " " + user.Surname;
             _categoryRepository.Update(existed);
             await _categoryRepository.SaveChangesAsync();
             return true;

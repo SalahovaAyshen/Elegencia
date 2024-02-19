@@ -1,8 +1,10 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,10 +18,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
     public class MainCategoryService : IMainCategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public MainCategoryService(ICategoryRepository categoryRepository)
+        public MainCategoryService(ICategoryRepository categoryRepository, IHttpContextAccessor http, IAccountService user)
         {
             _categoryRepository = categoryRepository;
+            _http = http;
+            _user = user;
         }
         public async Task<PaginationVM<Category>> GetAll(int page, int take)
         {
@@ -37,7 +43,13 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The category name is existed");
                 return false;
             }
-            await _categoryRepository.AddAsync(new Category { Name = categoryVM.Name });
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+            await _categoryRepository.AddAsync(new Category 
+            {
+                Name = categoryVM.Name,
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = user.Name + " " + user.Surname
+            });
             await _categoryRepository.SaveChangesAsync();
             return true;
         }
@@ -62,9 +74,10 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The category name is existed");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             existed.Name = categoryVM.Name;
             existed.ModifiedAt = DateTime.UtcNow;
-            existed.ModifiedBy = "ayshen";
+            existed.ModifiedBy = user.Name + " " + user.Surname;
              _categoryRepository.Update(existed);
             await _categoryRepository.SaveChangesAsync();
             return true;

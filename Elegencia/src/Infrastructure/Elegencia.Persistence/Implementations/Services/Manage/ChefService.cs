@@ -7,11 +7,14 @@ using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,12 +25,20 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         private readonly IChefRepository _chefRepository;
         private readonly IPositionRepository _positionRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public ChefService(IChefRepository chefRepository, IPositionRepository positionRepository, IWebHostEnvironment env)
+        public ChefService(IChefRepository chefRepository,
+            IPositionRepository positionRepository, 
+            IWebHostEnvironment env, 
+            IHttpContextAccessor http,
+            IAccountService user)
         {
             _chefRepository = chefRepository;
             _positionRepository = positionRepository;
             _env = env;
+            _http = http;
+            _user = user;
         }
 
        
@@ -66,6 +77,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Photo", "The image size is too large");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             await _chefRepository.AddAsync(new Chef
             {
                 Name = chefVM.Name,
@@ -75,7 +87,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Instagram = chefVM.Instagram,
                 Linkedin = chefVM.Linkedin,
                 PositionId = chefVM.PositionId,
-                Image = await chefVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img")
+                Image = await chefVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
+                CreatedBy = user.Name + " " + user.Surname,
+                CreatedAt = DateTime.UtcNow,
             });
             await _chefRepository.SaveChangesAsync();
             return true;
@@ -125,6 +139,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 chef.Image.DeleteFile(_env.WebRootPath, "assets", "img");
                 chef.Image = await chefVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img");
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             chef.Name = chefVM.Name;
             chef.Surname = chefVM.Surname;
             chef.Facebook = chefVM.Facebook;
@@ -133,7 +148,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             chef.Linkedin = chefVM.Linkedin;
             chef.PositionId = chefVM.PositionId;
             chef.ModifiedAt = DateTime.UtcNow;
-            chef.ModifiedBy = "ayshen";
+            chef.ModifiedBy = user.Name + " " + user.Surname;
             await _chefRepository.SaveChangesAsync();
             return true;
 

@@ -1,10 +1,12 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,12 +22,20 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         private readonly IDrinkRepository _drinkRepository;
         private readonly IDrinkCategoryRepository _drinkCategoryRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public DrinkService(IDrinkRepository drinkRepository, IDrinkCategoryRepository drinkCategoryRepository, IWebHostEnvironment env)
+        public DrinkService(IDrinkRepository drinkRepository, 
+            IDrinkCategoryRepository drinkCategoryRepository, 
+            IWebHostEnvironment env,
+            IHttpContextAccessor http,
+            IAccountService user)
         {
            _drinkRepository = drinkRepository;
            _drinkCategoryRepository = drinkCategoryRepository;
            _env = env;
+           _http = http;
+           _user = user;
         }
 
        
@@ -74,13 +84,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Image", "The image size is too large");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             await _drinkRepository.AddAsync(new Drink
             {
                 Name = drinkVM.Name,
                 Price = drinkVM.Price,
                 DrinkCategoryId = drinkVM.DrinkCategoryId,
                 CreatedAt = DateTime.UtcNow,
-                CreatedBy = "ayshen",
+                CreatedBy = user.Name + " " + user.Surname,
                 Image = await drinkVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative = drinkVM.Name
             });
@@ -138,13 +149,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 drink.Image.DeleteFile(_env.WebRootPath, "assets", "manage");
                 drink.Image = await drinkVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img");
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
 
             drink.Name = drinkVM.Name;
             drink.Price = drinkVM.Price;
             drink.DrinkCategoryId = drinkVM.DrinkCategoryId;
             drink.Alternative = drinkVM.Name;
             drink.ModifiedAt = DateTime.UtcNow;
-            drink.ModifiedBy = "ayshen";
+            drink.ModifiedBy = user.Name + " " + user.Surname;
             await _drinkRepository.SaveChangesAsync();
             return true; 
         }

@@ -1,4 +1,5 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
@@ -6,6 +7,7 @@ using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -22,12 +24,20 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         private readonly ISaladRepository _saladRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public SaladService(ISaladRepository saladRepository, ICategoryRepository categoryRepository, IWebHostEnvironment env)
+        public SaladService(ISaladRepository saladRepository, 
+            ICategoryRepository categoryRepository, 
+            IWebHostEnvironment env,
+            IHttpContextAccessor http,
+            IAccountService user)
         {
             _saladRepository = saladRepository;
             _categoryRepository = categoryRepository;
             _env = env;
+            _http = http;
+            _user = user;
         }
         public async Task<PaginationVM<Salad>> GetAll(int page, int take)
         {
@@ -73,6 +83,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Image", "The image size is too large");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             await _saladRepository.AddAsync(new Salad
             {
                 Name = saladVM.Name,
@@ -80,7 +92,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Ingredients = saladVM.Ingredients,
                 CategoryId = saladVM.CategoryId,
                 CreatedAt = DateTime.UtcNow,
-                CreatedBy = "ayshen",
+                CreatedBy = user.Name + " " + user.Surname,
                 Image = await saladVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative=saladVM.Name
             });
@@ -141,14 +153,16 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 salad.Image.DeleteFile(_env.WebRootPath, "assets", "manage");
                 salad.Image = await saladVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img");
             }
-            
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
+
             salad.Name = saladVM.Name;
             salad.Price = saladVM.Price;
             salad.Ingredients  = saladVM.Ingredients;
             salad.CategoryId = saladVM.CategoryId;
             salad.Alternative = saladVM.Name;
             salad.ModifiedAt = DateTime.UtcNow;
-            salad.ModifiedBy = "ayshen";
+            salad.ModifiedBy = user.Name + " " + user.Surname;
             await _saladRepository.SaveChangesAsync();
             return true;
 

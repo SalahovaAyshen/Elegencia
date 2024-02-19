@@ -1,7 +1,9 @@
-﻿using Elegencia.Application.Abstractions.Services.Manage;
+﻿using Elegencia.Application.Abstractions.Services;
+using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Contexts;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,10 +17,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
     public class SettingService : ISettingService
     {
         private readonly AppDbContext _context;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public SettingService(AppDbContext context)
+        public SettingService(AppDbContext context, IHttpContextAccessor http, IAccountService user)
         {
             _context = context;
+            _http = http;
+            _user = user;
         }
 
 
@@ -46,9 +52,11 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             Setting setting = await _context.Settings.FirstOrDefaultAsync(s => s.Id == id);
             if (setting == null) throw new Exception("Id not found");
             if (!modelState.IsValid) return false;
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             setting.Value = settingVM.Value;
             setting.ModifiedAt = DateTime.UtcNow;
-            setting.ModifiedBy = "ayshen";
+            setting.ModifiedBy = user.Name + " " + user.Surname;
             await _context.SaveChangesAsync();
             return true;
         }

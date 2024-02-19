@@ -1,8 +1,9 @@
-﻿using Elegencia.Application.Abstractions.Services.Manage;
+﻿using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.ViewModels;
 using Elegencia.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,6 +92,9 @@ namespace Elegencia.Persistence.Implementations.Services
             await _signInManager.SignOutAsync();
         }
 
-
+        public async Task<AppUser> GetUser(string username)
+        {
+            return await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == username);
+        }
     }
 }

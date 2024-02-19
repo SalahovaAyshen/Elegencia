@@ -1,9 +1,11 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,12 +21,20 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         private readonly IMealRepository _mealRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public MainMealService(IMealRepository mealRepository, ICategoryRepository categoryRepository, IWebHostEnvironment env)
+        public MainMealService(IMealRepository mealRepository, 
+            ICategoryRepository categoryRepository, 
+            IWebHostEnvironment env,
+            IHttpContextAccessor http,
+            IAccountService user)
         {
             _mealRepository = mealRepository;
             _categoryRepository = categoryRepository;
             _env = env;
+            _http = http;
+            _user = user;
         }
         public async Task<PaginationVM<Meal>> GetAll(int page, int take)
         {
@@ -94,6 +104,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Image = await mealVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative = mealVM.Name
             };
+
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             Meal meal = new Meal
             {
                 Name = mealVM.Name,
@@ -101,7 +114,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Ingredients = mealVM.Ingredients,
                 CategoryId = mealVM.CategoryId,
                 MealImages = new List<MealImages> { mainPhoto, hoverPhoto },
-                CreatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = user.Name + " " + user.Surname
             };
             await _mealRepository.AddAsync(meal);
             await _mealRepository.SaveChangesAsync();
@@ -204,12 +218,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                     Alternative = mealVM.Name
                 });
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             existed.Name = mealVM.Name;
             existed.Price = mealVM.Price;
             existed.Ingredients = mealVM.Ingredients;
             existed.CategoryId = mealVM.CategoryId;
-            existed.ModifiedAt = DateTime.Now;
-            existed.ModifiedBy = "aysh";
+            existed.ModifiedAt = DateTime.UtcNow;
+            existed.ModifiedBy = user.Name + " " + user.Surname;
              _mealRepository.Update(existed);
             await _mealRepository.SaveChangesAsync();
             return true;

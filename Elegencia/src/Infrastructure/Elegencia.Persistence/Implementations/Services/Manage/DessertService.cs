@@ -1,4 +1,5 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
@@ -6,6 +7,7 @@ using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,12 +23,20 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         private readonly IDessertRepository _dessertRepository;
         private readonly IDessertCategoryRepository _categoryRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public DessertService(IDessertRepository dessertRepository, IDessertCategoryRepository categoryRepository, IWebHostEnvironment env)
+        public DessertService(IDessertRepository dessertRepository, 
+            IDessertCategoryRepository categoryRepository, 
+            IWebHostEnvironment env,
+            IHttpContextAccessor http,
+            IAccountService user)
         {
             _dessertRepository = dessertRepository;
             _categoryRepository = categoryRepository;
             _env = env;
+            _http = http;
+            _user = user;
         }
 
        
@@ -97,6 +107,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Image = await dessertVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative = dessertVM.Name
             };
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             await _dessertRepository.AddAsync(new Dessert
             {
                 Name = dessertVM.Name,
@@ -104,7 +115,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Ingredients = dessertVM.Ingredients,
                 DessertCategoryId = dessertVM.DessertCategoryId,
                 DessertImages = new List<DessertImage> { mainPhoto, hoverPhoto },
-                CreatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = user.Name + " " + user.Surname
             });
             await _dessertRepository.SaveChangesAsync();
             return true;
@@ -204,12 +216,13 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                     Alternative = dessertVM.Name
                 });
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             existed.Name = dessertVM.Name;
             existed.Price = dessertVM.Price;
             existed.Ingredients = dessertVM.Ingredients;
             existed.DessertCategoryId = dessertVM.DessertCategoryId;
-            existed.ModifiedAt = DateTime.Now;
-            existed.ModifiedBy = "aysh";
+            existed.ModifiedAt = DateTime.UtcNow;
+            existed.ModifiedBy = user.Name + " " + user.Surname;
             _dessertRepository.Update(existed);
             await _dessertRepository.SaveChangesAsync();
             return true;

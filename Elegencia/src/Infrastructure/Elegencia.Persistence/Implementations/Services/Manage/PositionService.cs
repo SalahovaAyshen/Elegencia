@@ -1,8 +1,10 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,10 +18,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
     public class PositionService : IPositionService
     {
         private readonly IPositionRepository _positionRepository;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public PositionService(IPositionRepository positionRepository)
+        public PositionService(IPositionRepository positionRepository, IHttpContextAccessor http, IAccountService user)
         {
             _positionRepository = positionRepository;
+            _http = http;
+            _user = user;
         }
         public async Task<PaginationVM<Position>> GetAll(int page, int take)
         {
@@ -34,9 +40,13 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The position name is existed");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             await _positionRepository.AddAsync(new Position 
             { 
                 Name = positionVM.Name,
+                CreatedBy = user.Name + " " + user.Surname,
+                CreatedAt = DateTime.UtcNow
             });
             await _positionRepository.SaveChangesAsync();
             return true;
@@ -61,9 +71,11 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Name", "The category name is existed");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             existed.Name = positionVM.Name;
             existed.ModifiedAt = DateTime.UtcNow;
-            existed.ModifiedBy = "ayshen";
+            existed.ModifiedBy = user.Name + " " + user.Surname;
             _positionRepository.Update(existed);
             await _positionRepository.SaveChangesAsync();
             return true;

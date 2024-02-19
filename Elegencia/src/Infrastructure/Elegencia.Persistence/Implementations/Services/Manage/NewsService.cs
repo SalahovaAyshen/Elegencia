@@ -1,4 +1,5 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
+using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
@@ -6,6 +7,7 @@ using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using INewsService = Elegencia.Application.Abstractions.Services.Manage.INewsService;
 
 namespace Elegencia.Persistence.Implementations.Services.Manage
 {
@@ -20,11 +23,15 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
     {
         private readonly INewsRepository _newsRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
+        private readonly IAccountService _user;
 
-        public NewsService(INewsRepository newsRepository, IWebHostEnvironment env)
+        public NewsService(INewsRepository newsRepository, IWebHostEnvironment env, IHttpContextAccessor http, IAccountService user)
         {
             _newsRepository = newsRepository;
             _env = env;
+            _http = http;
+            _user = user;
         }
         async Task<ICollection<News>> INewsService.GetAll()
         {
@@ -49,12 +56,14 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Photo", "The image size is too large");
                 return false;
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             await _newsRepository.AddAsync(new News
             {
                 Name = newsVM.Name,
                 Description = newsVM.Description,
-                CreatedAt = DateTime.Now,
-                CreatedBy = "ayshen",
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = user.Name + " " + user.Surname,
                 Image = await newsVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
             });
             await _newsRepository.SaveChangesAsync();
@@ -100,10 +109,12 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 news.Image.DeleteFile(_env.WebRootPath, "assets", "img");
                 news.Image = await updateVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img");
             }
+            AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
+
             news.Name = updateVM.Name;
             news.Description = updateVM.Description;
             news.ModifiedAt = DateTime.Now;
-            news.ModifiedBy = "ayshen";
+            news.ModifiedBy = user.Name + " " + user.Surname;
             await _newsRepository.SaveChangesAsync();
             return true;
         }
