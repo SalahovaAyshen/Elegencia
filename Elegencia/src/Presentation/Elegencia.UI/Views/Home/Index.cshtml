@@ -27,7 +27,7 @@
                                         </p>
                                     </div>
                                     <div class="ak-height-70 ak-height-lg-30"></div>
-                                    <a href="reservations.html" class="hero-btn style-1">
+                                    <a asp-controller="reservation" asp-action="create" class="hero-btn style-1">
                                         <div class="ak-btn style-5 color-yellow-bg">
                                             Reservations
                                         </div>
@@ -313,7 +313,7 @@
 
         <div class="ak-height-150 ak-height-lg-60"></div>
         <!-- Start Testimonial -->
-        <section class="container">
+       @*  <section class="container">
             <div class="ak-slider ak-slider-3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -433,7 +433,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> *@
         <!-- End Testimonial -->
 
 
@@ -470,12 +470,18 @@
                                 </div>
                                 <div class="ak-height-60 ak-height-lg-30"></div>
                                 <div class="booking-system-form">
-                                    <form>
+                                    <form method="post">
                                         <div class="select">
-                                            <select class="ak-form-select">
-                                                <option selected value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            @* @Html.DropDownListFor(d => d.NumberOfPeople, new SelectList(ViewBag.people, "Value", "Text")) *@
+                                            <select class="ak-form-select" asp-for="@Model.reservationVM.NumberOfPeople">
+                                                <option disabled selected value="0">Number of people</option>
+                                                <option value="1">1 person</option>
+                                                <option value="2">2 people</option>
+                                                <option value="3">3people</option>
+                                                <option value="4">4 people</option>
+                                                <option value="5">5 people</option>
+                                                <option value="6">6 people</option>
+                                                <option value="7">More</option>
                                             </select>
                                             <div class="select-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10"
@@ -487,8 +493,9 @@
                                         </div>
                                         <div class="ak-form-time-date">
                                             <div class="ak-time">
-                                                <input value="03:45" class="time-input" type="time" name="time"
+                                                <input value="10:00" class="time-input" type="time" name="time" asp-for="@Model.reservationVM.ArrivalTime"
                                                        id="time">
+
                                                 <div class="time-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                                                          viewBox="0 0 24 25" fill="none">
@@ -510,9 +517,10 @@
                                                         </defs>
                                                     </svg>
                                                 </div>
+
                                             </div>
                                             <div class="ak-date">
-                                                <input class="date-input" value="2023-07-22" type="date" name="date"
+                                                <input class="date-input" value="@DateTime.UtcNow" type="date" name="date" asp-for="@Model.reservationVM.ArrivalDate"
                                                        id="date">
                                                 <div class="date-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -531,15 +539,27 @@
                                                     </svg>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="ak-height-80 ak-height-lg-50"></div>
+                                        <div class="ak-form-time-date">
+                                            <div class="ak-time">
+                                                <input placeholder="Name" asp-for="@Model.reservationVM.Name" class="time-input" type="text" name="name">
+                                                <span asp-validation-for="@Model.reservationVM.Name" class="text-danger"></span>
+                                            </div>
+                                            <div class="ak-date">
+                                                <input placeholder="Email" asp-for="@Model.reservationVM.Email" class="date-input" type="email" name="email">
+                                                <span asp-validation-for="@Model.reservationVM.Email" class="text-danger"></span>
+                                            </div>
 
                                         </div>
                                         <div class="ak-height-110 ak-height-lg-90"></div>
-                                        <div class="ak-btn style-5 color-yellow-bg">
-                                            <button type="submit">
-                                                Reservations
-                                            </button>
-                                        </div>
+
                                     </form>
+                                    <div class="ak-btn style-5">
+                                        <button type="submit">
+                                            Reservations
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

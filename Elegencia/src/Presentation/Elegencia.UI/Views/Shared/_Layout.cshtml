@@ -75,7 +75,7 @@
         <div class="header-top">
             <div class="wrapper">
                 <div class="header-logo">
-                    <a href="reservations.html" class="logo">Reservation</a>
+                    <a asp-controller="reservation" asp-action="create" class="logo">Reservation</a>
                 </div>
                 <div class="center-log">
                     <a asp-controller="home" asp-action="index"><img src="~/assets/img/logo.png" alt="..."></a>
@@ -128,7 +128,7 @@
             <div class="container">
                 <div class="ak-main_header_in">
                     <div class="ak-main_header_left">
-                        <a class="ak-site_branding" href="index.html">
+                        <a class="ak-site_branding" asp-controller="home" asp-action="index">
                             <img src="~/assets/img/logo.png" alt="...">
                         </a>
                     </div>
@@ -225,7 +225,7 @@
                             <p>SATURDAY & SUNDAY: @settings["Weekend"]</p>
                         </div>
                         <div class="footer-btn">
-                            <a href="reservations.html">
+                            <a asp-controller="reservation" asp-action="create">
                                 <div class="ak-btn style-5 color-yellow-bg">
                                     Reservations
                                 </div>

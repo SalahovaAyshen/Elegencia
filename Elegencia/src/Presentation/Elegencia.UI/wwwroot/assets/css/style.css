@@ -2246,12 +2246,12 @@ select:focus {
     margin-top: 7px
 }
 
-.ak-best-item,
+/*.ak-best-item,
 .booking-system-form .ak-form-time-date,
 .location-card {
     display: flex;
     justify-content: space-between
-}
+}*/
 
 .ak-best-item .best-item-section-1,
 .booking-system-map .booking-system-map-second {

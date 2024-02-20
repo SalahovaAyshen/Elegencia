@@ -10,5 +10,6 @@ namespace Elegencia.Application.Abstractions.Services
     public interface IHomeService
     {
         Task<HomeVM> GetAll(); 
+
     }
 }

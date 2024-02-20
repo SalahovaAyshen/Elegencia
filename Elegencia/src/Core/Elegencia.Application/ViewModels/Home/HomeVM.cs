@@ -11,5 +11,6 @@ namespace Elegencia.Application.ViewModels
     {
         public ICollection<Meal> Meals { get; set; }
         public Dictionary<string,string> Service {  get; set; }
+        public ReservationVM reservationVM { get; set; }
     }
 }
