@@ -119,5 +119,10 @@ namespace Elegencia.Persistence.Implementations.Repositories
             return query;
 
         }
+        public async Task<int> CountAsync()
+        {
+            int count  = await _table.CountAsync();
+            return count;
+        }
     }
 }

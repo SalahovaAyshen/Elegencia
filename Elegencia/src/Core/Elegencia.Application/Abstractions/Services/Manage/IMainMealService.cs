@@ -11,7 +11,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
 {
     public interface IMainMealService
     {
-        Task<PaginationVM<Meal>> GetAll(int page, int take);
+        Task<PaginationVM<Meal>> GetAll( int page, int take);
         Task<CreateMainMealVM> GetCreate();
         Task<bool> PostCreate(CreateMainMealVM mealVM, ModelStateDictionary modelState);
         Task<UpdateMainMealVM> GetUpdate(int id);

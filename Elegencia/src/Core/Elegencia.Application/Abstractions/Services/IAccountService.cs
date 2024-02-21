@@ -15,5 +15,6 @@ namespace Elegencia.Application.Abstractions.Services
         Task<bool> Login(LoginVM loginVM, ModelStateDictionary modelState);
         Task Logout();
         Task<AppUser> GetUser(string username);
+        Task<int> UserCount();
     }
 }

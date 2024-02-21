@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Elegencia.Persistence.Implementations.Services.Manage
+
+
+@inject UserService service
+@{
+    AppUser user = await service.Get();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 5, SASS and PUG.js. It's fully customizable and modular.">
@@ -117,14 +125,14 @@
         @if (User.Identity.IsAuthenticated)
         {
             <div class="app-sidebar__user">
-                <img class="app-sidebar__user-avatar" src="~/assets/img/user-image.jpg" alt="User Image">
+                <img class="app-sidebar__user-avatar" src="~/assets/img/@user.Image" alt="User Image">
                 <div>
-                    <a asp-controller="user" asp-action="index" class="app-sidebar__user-name text-light" style="inline-size:none">@User.Identity.Name</a>
+                    <a asp-controller="user" asp-action="index" class="app-sidebar__user-name text-light" style="inline-size:none">@user.Name  @user.Surname</a>
                 </div>
             </div>
         }
         <ul class="app-menu">
-            <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><span class="app-menu__label"><img style="width:30px;height:30px" src="~/manage/images/dash-icon.png" />Dashboard</span></a></li>
+            <li><a class="app-menu__item active" asp-controller="dashboard" asp-action="index"><span class="app-menu__label"><img style="width:30px;height:30px" src="~/manage/images/home-2-icon.png"> Dashboard</span></a></li>
 
             <li class="treeview">
                 <a class="app-menu__item" data-bs-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth">
@@ -149,8 +157,8 @@
                 <div class="collapse" id="auth2">
                     <ul class="nav flex-column sub-menu ps-4">
                         <li class="nav-item"> <a class="app-menu__item" asp-controller="maincategory" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/main-category.png" /> Main category </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessertcategory" asp-action="index"> Dessert categories </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drinkcategory" asp-action="index"> Drink categories </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="dessertcategory" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/des-cat-icon.png" /> Dessert categories </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="drinkcategory" asp-action="index"> <img style="width:25px;height:25px" src="~/manage/images/dr-cat-icon.png" />Drink categories </a></li>
                     </ul>
                 </div>
             </li>
@@ -160,9 +168,9 @@
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth3">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="chef" asp-action="index"> Chefs </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="position" asp-action="index"> Chef position </a></li>
+                    <ul class="nav flex-column sub-menu ps-4">
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="chef" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/chef-icon.png" /> Chefs </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="position" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/chef-position-icon.png" /> Chef position </a></li>
                     </ul>
                 </div>
             </li>
@@ -177,9 +185,14 @@
                 </a>
             </li>
          <hr>
+         <hr>
+         <hr>
+         <hr>
+
+
             <li class="treeview">
                 <a class="app-menu__item" asp-controller="basket" asp-action="index">
-                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/basket-icon.png" />Basket</span>
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/basket-icon.png" />Trash</span>
                 </a>
             </li>
         </ul>

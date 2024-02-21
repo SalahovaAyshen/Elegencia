@@ -2,6 +2,8 @@
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -15,12 +17,14 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _mainMealService = mainMealService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index(int page=1)
         {
           
            PaginationVM<Meal> mainMeal = await _mainMealService.GetAll(page, take:3);
             return View(mainMeal);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Create()
         {
             CreateMainMealVM createMainMealVM = await _mainMealService.GetCreate();
@@ -37,6 +41,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(mealVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateMainMealVM meal = await _mainMealService.GetUpdate(id);
@@ -52,12 +57,14 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(mealVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Delete(int id)
         {
             await _mainMealService.Delete(id);
             TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted \r\n</div>";
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Detail(int id)
         {
             Meal meal = await _mainMealService.Detail(id);

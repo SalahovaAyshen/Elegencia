@@ -28,7 +28,8 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             ICategoryRepository categoryRepository, 
             IWebHostEnvironment env,
             IHttpContextAccessor http,
-            IAccountService user)
+            IAccountService user
+           )
         {
             _mealRepository = mealRepository;
             _categoryRepository = categoryRepository;

@@ -1,7 +1,9 @@
 ﻿using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Elegencia.Persistence.Implementations.Services.Manage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -15,11 +17,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _dessertService = dessertService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index(int page = 1)
         {
             PaginationVM<Dessert> pagination = await _dessertService.GetAll(page: page, take: 3);
             return View(pagination);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Create()
         {
             CreateDessertVM createDessertVM = await _dessertService.GetCreate();
@@ -36,6 +40,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(dessertVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateDessertVM dessert = await _dessertService.GetUpdate(id);
@@ -51,12 +56,14 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(dessertVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Delete(int id)
         {
             await _dessertService.Delete(id);
             TempData["Message"] = $"<div class=\"alert alert-danger\" role=\"alert\">\r\n  Successfully deleted \r\n</div>";
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Detail(int id)
         {
             Dessert dessert = await _dessertService.Detail(id);

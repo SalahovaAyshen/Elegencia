@@ -2,7 +2,9 @@
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Elegencia.Persistence.Implementations.Services.Manage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -16,11 +18,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _newsService = newsService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index()
         {
             ICollection<News> news = await _newsService.GetAll();
             return View(news);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public IActionResult Create()
         {
             return View();
@@ -36,6 +40,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(newsVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateNewsVM newsVM = await _newsService.GetUpdate(id);
@@ -52,6 +57,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(newsVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Delete(int id)
         {
             await _newsService.Delete(id);

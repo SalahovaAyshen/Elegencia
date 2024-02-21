@@ -76,6 +76,9 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<Application.Abstractions.Services.Manage.INewsService, Implementations.Services.Manage.NewsService>();
             services.AddScoped<IBasketService, BasketService>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<UserService>();
+            services.AddScoped<IMessageService, MessageService>();
 
             services.AddScoped<AppDbContextInitializer>();
             return services;

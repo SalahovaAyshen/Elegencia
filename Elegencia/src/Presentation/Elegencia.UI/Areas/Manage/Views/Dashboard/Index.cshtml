@@ -1,12 +1,16 @@
-﻿<main class="app-content">
+﻿@model DashboardVM
+
+<main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="bi bi-speedometer"></i> Dashboard</h1>
-            <p>A free and open source Bootstrap 5 admin template</p>
+            <h1> Elegencia</h1>
+            <p>
+                Embark on a gastronomic adventure, guided by our exquisite dishes
+            </p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a asp-controller="home" asp-action="index" asp-area="">Home</a></li>
         </ul>
     </div>
     <div class="row">
@@ -15,54 +19,86 @@
                 <i class="icon bi bi-people fs-1"></i>
                 <div class="info">
                     <h4>Users</h4>
-                    <p><b>5</b></p>
+                    <p><b>@Model.UserCount</b></p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="widget-small info coloured-icon">
-                <i class="icon bi bi-heart fs-1"></i>
-                <div class="info">
-                    <h4>Likes</h4>
-                    <p><b>25</b></p>
-                </div>
-            </div>
+        @*  <div class="col-md-6 col-lg-3">
+        <div class="widget-small info coloured-icon">
+        <i class="icon bi bi-heart fs-1"></i>
+        <div class="info">
+        <h4>Likes</h4>
+        <p><b>25</b></p>
+        </div>
+        </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="widget-small warning coloured-icon">
-                <i class="icon bi bi-folder2 fs-1"></i>
-                <div class="info">
-                    <h4>Uploades</h4>
-                    <p><b>10</b></p>
-                </div>
-            </div>
+        <div class="widget-small warning coloured-icon">
+        <i class="icon bi bi-folder2 fs-1"></i>
+        <div class="info">
+        <h4>Uploades</h4>
+        <p><b>10</b></p>
+        </div>
+        </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="widget-small danger coloured-icon">
-                <i class="icon bi bi-star fs-1"></i>
-                <div class="info">
-                    <h4>Stars</h4>
-                    <p><b>500</b></p>
-                </div>
-            </div>
+        <div class="widget-small danger coloured-icon">
+        <i class="icon bi bi-star fs-1"></i>
+        <div class="info">
+        <h4>Stars</h4>
+        <p><b>500</b></p>
+        </div>
+        </div>
+        </div> *@
+    </div>
+    @*  <div class="row">
+    <div class="col">
+    <div class="tile">
+    <h3 class="tile-title">Users messages</h3>
+    <div class="ratio ratio-16x9"> *@
+    <div class="tile">
+        <h3 class="tile-title">@(Model.MessageCount > 10 ? "10+" : Model.MessageCount) @(Model.MessageCount <= 0 ? "Message" : "Messages")  </h3>
+        <div class="table-responsive col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Unreaded messages   
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Contact item in Model.Contacts)
+                    {
+                        <tr>
+
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Name: @item.Name</li>
+                                    <li class="list-group-item">Email: <a href="mailto:@item.Email">@item.Email</a></li>
+                                    <li class="list-group-item">Message:@item.CommentText</li>
+
+                                </ul>
+                            </td>
+                                <td >
+                                <a class="d-flex justify-content-center pt-5" asp-controller="dashboard" asp-action="read" asp-route-id="@item.Id">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+
+
+                </tbody>
+            </table>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="tile">
-                <h3 class="tile-title">Weekly Sales - Last week</h3>
-                <div class="ratio ratio-16x9">
-                    <div id="salesChart"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="tile">
-                <h3 class="tile-title">Support Requests</h3>
-                <div class="ratio ratio-16x9">
-                    <div id="supportRequestChart"></div>
-                </div>
-            </div>
-        </div>
+    @*                </div>
     </div>
+    </div>
+    </div> *@
+
 </main>

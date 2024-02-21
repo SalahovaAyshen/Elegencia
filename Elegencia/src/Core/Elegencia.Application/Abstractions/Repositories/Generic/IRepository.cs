@@ -26,6 +26,7 @@ namespace Elegencia.Application.Abstractions.Repositories
         void Update(T entity);
         void Delete(T entity);
         Task SaveChangesAsync();
+        Task<int> CountAsync();
 
 
     }

@@ -12,6 +12,5 @@ namespace Elegencia.Application.ViewModels.Manage
         public double TotalPage { get; set; }
         public int CurrentPage { get; set; }
         public IQueryable<T> Items { get; set; }
-
     }
 }

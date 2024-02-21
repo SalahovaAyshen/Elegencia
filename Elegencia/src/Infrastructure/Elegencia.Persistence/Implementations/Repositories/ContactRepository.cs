@@ -11,6 +11,9 @@ namespace Elegencia.Persistence.Implementations.Repositories
 {
     public class ContactRepository:Repository<Contact>, IContactRepository
     {
-        public ContactRepository(AppDbContext context):base(context) { }
+        public ContactRepository(AppDbContext context):base(context) 
+        {
+        
+        }
     }
 }

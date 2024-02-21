@@ -141,10 +141,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\6aa02565-df6c-423a-9fe4-7babe85d4b0aWhatsApp Image 2022-09-04 at 00.27.16.jpeg"
     },
     {
-      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\6aa38e61-eea3-4120-a57d-030ebece78e2WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg",
-      "PackagePath": "staticwebassets\\assets\\img\\6aa38e61-eea3-4120-a57d-030ebece78e2WhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg"
-    },
-    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\6e11987b-770a-4229-a7ff-cd13846ccb19WhatsApp Image 2022-09-04 at 00.27.26.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\6e11987b-770a-4229-a7ff-cd13846ccb19WhatsApp Image 2022-09-04 at 00.27.26.jpeg"
     },
@@ -227,6 +223,14 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\adf04ad4-732c-4fad-8622-c0f26d303501WhatsApp Image 2022-09-04 at 00.27.23.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\adf04ad4-732c-4fad-8622-c0f26d303501WhatsApp Image 2022-09-04 at 00.27.23.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\admin-image-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\admin-image-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\admin-image.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\admin-image.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\arrow-down-outline.svg",
@@ -897,6 +901,14 @@
       "PackagePath": "staticwebassets\\manage\\images\\category-icon.png"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\chef-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\chef-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\chef-position-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\chef-position-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\contact-icon.png",
       "PackagePath": "staticwebassets\\manage\\images\\contact-icon.png"
     },
@@ -905,12 +917,24 @@
       "PackagePath": "staticwebassets\\manage\\images\\dash-icon.png"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\des-cat-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\des-cat-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\dessert-icon.png",
       "PackagePath": "staticwebassets\\manage\\images\\dessert-icon.png"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\dr-cat-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\dr-cat-icon.png"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\drink-icon.png",
       "PackagePath": "staticwebassets\\manage\\images\\drink-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\home-2-icon.png",
+      "PackagePath": "staticwebassets\\manage\\images\\home-2-icon.png"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\manage\\images\\main-category.png",

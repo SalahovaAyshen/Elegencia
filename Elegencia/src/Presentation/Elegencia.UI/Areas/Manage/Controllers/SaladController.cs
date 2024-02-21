@@ -2,7 +2,9 @@
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Elegencia.Persistence.Implementations.Services.Manage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -16,11 +18,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _saladService = saladService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index(int page=1)
         {
             PaginationVM<Salad> paginationVM = await _saladService.GetAll(page:page, take:3);
             return View(paginationVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Create()
         {
             CreateSaladVM createSaladVM = await _saladService.GetCreate();
@@ -37,6 +41,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(saladVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateSaladVM updateSaladVM = await _saladService.GetUpdate(id);
@@ -52,11 +57,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(saladVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Delete(int id)
         {
             await _saladService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Detail(int id)
         {
             Salad salad = await _saladService.Detail(id);

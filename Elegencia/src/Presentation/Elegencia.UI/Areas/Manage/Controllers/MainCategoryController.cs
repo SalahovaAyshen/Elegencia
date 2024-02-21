@@ -1,7 +1,9 @@
 ﻿using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Elegencia.Persistence.Implementations.Services.Manage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -15,11 +17,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _mainCategoryService = mainCategoryService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index(int page = 1)
         {
             PaginationVM<Category> paginationVM = await _mainCategoryService.GetAll(page: page, take: 3);
             return View(paginationVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public IActionResult Create()
         {
             return View();
@@ -35,6 +39,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(categoryVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateMainCategoryVM categoryVM = await _mainCategoryService.GetUpdate(id);
@@ -51,6 +56,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             }
             return View(categoryVM);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Delete(int id)
         {
             await _mainCategoryService.Delete(id);

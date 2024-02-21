@@ -1,7 +1,9 @@
 ﻿using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Elegencia.Persistence.Implementations.Services.Manage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
@@ -15,11 +17,13 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         {
             _settingService = settingService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Index()
         {
             ICollection<Setting> settings = await _settingService.GetAll();
             return View(settings);
         }
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> Update(int id)
         {
             UpdateSettingVM settingVM = await _settingService.GetUpdate(id);

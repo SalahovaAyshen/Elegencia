@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.ViewModels;
 using Elegencia.Domain.Entities;
+using Elegencia.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +57,7 @@ namespace Elegencia.Persistence.Implementations.Services
                     return false;
                 }
             }
+            await _userManager.AddToRoleAsync(user, UserRole.Member.ToString());
             await _signInManager.SignInAsync(user, false);
             return true;
         }
@@ -95,6 +97,12 @@ namespace Elegencia.Persistence.Implementations.Services
         public async Task<AppUser> GetUser(string username)
         {
             return await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == username);
+        }
+
+        public async Task<int> UserCount()
+        {
+            int count = await _userManager.Users.CountAsync();
+            return count;
         }
     }
 }
