@@ -75,29 +75,29 @@
         <div class="header-top">
             <div class="wrapper">
                 <div class="header-logo">
-                    <a asp-controller="reservation" asp-action="create" class="logo">Reservation</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.Identity.Name == "admin")
+                        {
+                            <a asp-area="manage" asp-controller="dashboard" asp-action="index" class="logo">@User.Identity.Name</a>
+                        }
+                        else
+                        {
+                            <a asp-controller="user" asp-action="index" class="logo">@User.Identity.Name</a>
+                        }
+
+                    }
+                    else
+                    {
+                        <a asp-controller="account" asp-action="login" class="logo">LOGIN</a>
+                    }
                 </div>
                 <div class="center-log">
                     <a asp-controller="home" asp-action="index"><img src="~/assets/img/logo.png" alt="..."></a>
                 </div>
 
                 <button class="ak-menu-toggle" id="akMenuToggle" type="button">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        @if (User.Identity.Name == "admin")
-                        {
-                            <a asp-area="manage" asp-controller="dashboard" asp-action="index">@User.Identity.Name</a>
-                        }
-                        else
-                        {
-                            <a asp-controller="user" asp-action="index">@User.Identity.Name</a>
-                        }
-
-                    }
-                    else
-                    {
-                        <a asp-controller="account" asp-action="login">LOGIN</a>
-                    }
+                    
                     <svg viewBox="0 0 20 15" width="40px" height="30px" class="ak-menu-icon">
                         <path d="M20,2 L2,2" class="bar-1"></path>
                         <path d="M2,7 L20,7" class="bar-2"></path>

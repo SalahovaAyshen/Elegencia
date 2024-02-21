@@ -44,6 +44,7 @@
     return $(selector).length > 0;
   };
 
+  
   $(window).on("load", function () {
     $(window).trigger("scroll");
     $(window).trigger("resize");

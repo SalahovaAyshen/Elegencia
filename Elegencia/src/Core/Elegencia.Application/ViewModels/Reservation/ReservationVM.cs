@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -17,8 +18,13 @@ namespace Elegencia.Application.ViewModels
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public int NumberOfPeople { get; set; }
-        public string ArrivalDate {get; set;}
-        public string ArrivalTime { get; set; }
-        public DateTime ArrivalDateTime => DateTime.ParseExact($"{ArrivalDate} {ArrivalTime}", "MM/dd/yyyy h:mm tt", CultureInfo.GetCultureInfo("en-US"));
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
+        [DataType(DataType.Time)]
+        public DateTime Time { get; set; }
+
+        //public string ArrivalDate {get; set;}
+        //public string ArrivalTime { get; set; }
+        //public DateTime ArrivalDateTime => ArrivalTime.Length==7? DateTime.ParseExact($"{ArrivalDate} {ArrivalTime}", "MM/dd/yyyy h:mm tt", CultureInfo.GetCultureInfo("en-US")): DateTime.ParseExact($"{ArrivalDate} {ArrivalTime}", "MM/dd/yyyy h:mm tt", CultureInfo.GetCultureInfo("en-US"));
     }
 }

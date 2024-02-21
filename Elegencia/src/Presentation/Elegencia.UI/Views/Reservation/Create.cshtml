@@ -3,7 +3,7 @@
 <div id="scrollsmoother-container">
     <!-- Start Hero -->
     <Section>
-        <div class="ak-commmon-hero ak-style1 ak-bg" >
+        <div class="ak-commmon-hero ak-style1 ak-bg">
             <img class="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg" />
             <div class="ak-commmon-heading">
                 <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
@@ -18,8 +18,31 @@
     <!-- End Hero -->
     <!-- Start Booking System -->
     <section>
-        <div class="ak-height-150 ak-height-lg-60"></div>
-        <div class="container-fluid">
+        <div class="ak-height-200 ak-height-lg-100 ">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 d-flex justify-content-center pt-3">
+                        <div class="col-5">
+
+                            <h4> A note from the restaurant</h4>
+                            <p>
+                                Age restrictions apply. Because the bar sells alcoholic beverages and allows the use of tobacco products, state law prohibits entry to persons under 18 years of age.
+                            </p>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5 ">
+                            <h4> Important dining information</h4>
+                            <p>
+                                We have a 20 minute grace period. Please call us if you are running later than 20 minutes after your booked time.
+
+                                We may contact you about this booking, so please ensure your email.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
             <div class="ak-booking-system-map-from">
                 <div class="booking-system-map">
                     <div class="booking-system-map-frist">
@@ -61,9 +84,10 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
                                     <div class="ak-form-time-date">
                                         <div class="ak-time">
-                                            <input value="10:00" class="time-input" type="time" name="time" asp-for="ArrivalTime"
+                                            <input value="10:00" class="time-input" asp-for="Time"
                                                    id="time">
 
                                             <div class="time-icon">
@@ -88,9 +112,11 @@
                                                 </svg>
                                             </div>
 
+
                                         </div>
+
                                         <div class="ak-date">
-                                            <input class="date-input" value="@DateTime.UtcNow" type="date" name="date" asp-for="ArrivalDate"
+                                            <input class="date-input" asp-for="Date"
                                                    id="date">
                                             <div class="date-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -108,28 +134,38 @@
                                                     </g>
                                                 </svg>
                                             </div>
+
                                         </div>
                                     </div>
-                                    <div class="ak-height-80 ak-height-lg-50"></div>
+
+                                    <div class="ak-height-50 ak-height-lg-40"></div>
+                                    <div class="ak-height-50 ak-height-lg-40"></div>
+                                    <span asp-validation-for="Time" class="text-danger"></span>
+                                    <span asp-validation-for="Date" class="text-danger"></span>
                                     <div class="ak-form-time-date">
                                         <div class="ak-time">
                                             <input placeholder="Name" asp-for="Name" class="time-input" type="text" name="name">
-                                            <span asp-validation-for="Name" class="text-danger"></span>
-                                            </div>
-                                            <div class="ak-date">
+
+                                        </div>
+                                        <div class="ak-date">
                                             <input placeholder="Email" asp-for="Email" class="date-input" type="email" name="email">
-                                            <span asp-validation-for="Email" class="text-danger"></span>
-                                            </div>
-                                        
+                                        </div>
+
                                     </div>
-                                    <div class="ak-height-110 ak-height-lg-90"></div>
-                                   
+
+                                    <div class="ak-height-50 ak-height-lg-40"></div>
+                                    <div class="ak-height-50 ak-height-lg-40"></div>
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+
+
+                                    <div>
+                                        <button class="ak-btn style-5 color-yellow-bg" type="submit" formmethod="post">
+                                            Reservations
+                                        </button>
+                                    </div>
                                 </form>
-                                <div class="ak-btn style-5">
-                                    <button type="submit">
-                                        Reservations
-                                    </button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -138,131 +174,6 @@
         </div>
     </section>
     <!-- End Booking System -->
-    <!-- Start Nearby Location -->
-   @*  <section>
-        <div class="ak-height-150 ak-height-lg-60"></div>
-        <div class="container">
-            <div class="ak-section-heading ak-style-1 ak-type-1">
-                <div class="ak-section-subtitle">
-                    Visit Us
-                </div>
-                <h2 class="ak-section-title anim-title">Nearby Find Us</h2>
-            </div>
-        </div>
-        <div class="ak-height-65 ak-height-lg-30"></div>
-        <div class="container">
-            <div class="location-card location-card-style-1">
-                <div class="location-card-item style-1">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        New York
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-                <div class="location-card-item style-1">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        Los Angeles
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-                <div class="location-card-item">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        Chicago
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-            </div>
-        </div>
-        <div class="ak-loaction-hr"></div>
-        <div class="container">
-            <div class="location-card location-card-style-1">
-                <div class="location-card-item style-1">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        Houston
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-                <div class="location-card-item style-1">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        Phoenix
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-                <div class="location-card-item">
-                    <a href="#">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 40 41" height="41" width="40" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z"
-                                      fill="white" />
-                            </svg>
-                        </div>
-                    </a>
-                    <h6 class="card-title">
-                        San Diego
-                    </h6>
-                    <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                    <p> Alexandria, NY, USA</p>
-                    <p> info@example.com </p>
-                </div>
-            </div>
-        </div>
-
-    </section> *@
-    <!-- End Nearby Location -->
+   
 
 
