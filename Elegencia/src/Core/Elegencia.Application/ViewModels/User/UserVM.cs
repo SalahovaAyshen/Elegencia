@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Elegencia.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,12 +27,7 @@ namespace Elegencia.Application.ViewModels
         public string Email { get; set; }
         public string? Image { get; set; }
         public IFormFile? Photo { get; set; }
-        [MinLength(8, ErrorMessage ="The password can't less than 8 characters")]
-        [DataType(DataType.Password)]
-        public string? NewPassword { get; set; }
-
-        [Compare(nameof(NewPassword))]
-        public string? ConfirmPassword { get; set; }
         public int MessagesCount { get; set; }
+        public IQueryable<Contact> Contacts { get; set; }
     }
 }

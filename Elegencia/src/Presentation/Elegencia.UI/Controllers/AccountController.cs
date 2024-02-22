@@ -50,5 +50,6 @@ namespace Elegencia.UI.Controllers
             await _accountService.Logout();
             return RedirectToAction("Index", "Home", new { area = ""});
         }
+      
     }
 }

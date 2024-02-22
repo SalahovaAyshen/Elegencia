@@ -104,5 +104,7 @@ namespace Elegencia.Persistence.Implementations.Services
             int count = await _userManager.Users.CountAsync();
             return count;
         }
+
+
     }
 }

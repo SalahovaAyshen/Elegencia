@@ -33,11 +33,6 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             };
             return View(dashboard);
         }
-        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
-        public async Task<IActionResult> Read(int id)
-        {
-            await _messageService.Readed(id);
-            return RedirectToAction(nameof(Index));
-        }
+      
     }
 }
