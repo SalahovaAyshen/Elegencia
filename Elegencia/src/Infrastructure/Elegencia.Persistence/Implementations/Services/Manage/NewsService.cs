@@ -62,7 +62,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             {
                 Name = newsVM.Name,
                 Description = newsVM.Description,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 CreatedBy = user.Name + " " + user.Surname,
                 Image = await newsVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
             });

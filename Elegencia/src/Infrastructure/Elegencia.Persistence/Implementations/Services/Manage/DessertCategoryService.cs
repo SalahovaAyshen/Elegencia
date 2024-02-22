@@ -46,7 +46,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             await _categoryRepository.AddAsync(new DessertCategory 
             {
                 Name = categoryVM.Name,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 CreatedBy = user.Name + " " + user.Surname
             });
             await _categoryRepository.SaveChangesAsync();
@@ -75,7 +75,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             }
             AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
             existed.Name = categoryVM.Name;
-            existed.ModifiedAt = DateTime.UtcNow;
+            existed.ModifiedAt = DateTime.Now;
             existed.ModifiedBy = user.Name + " " + user.Surname;
             _categoryRepository.Update(existed);
             await _categoryRepository.SaveChangesAsync();

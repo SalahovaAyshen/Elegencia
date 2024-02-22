@@ -91,7 +91,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Price = saladVM.Price,
                 Ingredients = saladVM.Ingredients,
                 CategoryId = saladVM.CategoryId,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 CreatedBy = user.Name + " " + user.Surname,
                 Image = await saladVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative=saladVM.Name
@@ -161,7 +161,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             salad.Ingredients  = saladVM.Ingredients;
             salad.CategoryId = saladVM.CategoryId;
             salad.Alternative = saladVM.Name;
-            salad.ModifiedAt = DateTime.UtcNow;
+            salad.ModifiedAt = DateTime.Now;
             salad.ModifiedBy = user.Name + " " + user.Surname;
             await _saladRepository.SaveChangesAsync();
             return true;

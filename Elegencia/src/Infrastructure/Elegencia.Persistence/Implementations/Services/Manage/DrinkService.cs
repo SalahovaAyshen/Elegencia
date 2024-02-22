@@ -90,7 +90,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 Name = drinkVM.Name,
                 Price = drinkVM.Price,
                 DrinkCategoryId = drinkVM.DrinkCategoryId,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 CreatedBy = user.Name + " " + user.Surname,
                 Image = await drinkVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 Alternative = drinkVM.Name
@@ -155,7 +155,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             drink.Price = drinkVM.Price;
             drink.DrinkCategoryId = drinkVM.DrinkCategoryId;
             drink.Alternative = drinkVM.Name;
-            drink.ModifiedAt = DateTime.UtcNow;
+            drink.ModifiedAt = DateTime.Now;
             drink.ModifiedBy = user.Name + " " + user.Surname;
             await _drinkRepository.SaveChangesAsync();
             return true; 

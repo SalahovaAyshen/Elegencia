@@ -55,7 +55,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
 
             setting.Value = settingVM.Value;
-            setting.ModifiedAt = DateTime.UtcNow;
+            setting.ModifiedAt = DateTime.Now;
             setting.ModifiedBy = user.Name + " " + user.Surname;
             await _context.SaveChangesAsync();
             return true;

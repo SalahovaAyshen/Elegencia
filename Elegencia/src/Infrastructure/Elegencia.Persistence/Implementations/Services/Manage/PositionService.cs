@@ -46,7 +46,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             { 
                 Name = positionVM.Name,
                 CreatedBy = user.Name + " " + user.Surname,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.Now
             });
             await _positionRepository.SaveChangesAsync();
             return true;
@@ -74,7 +74,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             AppUser user = await _user.GetUser(_http.HttpContext.User.Identity.Name);
 
             existed.Name = positionVM.Name;
-            existed.ModifiedAt = DateTime.UtcNow;
+            existed.ModifiedAt = DateTime.Now;
             existed.ModifiedBy = user.Name + " " + user.Surname;
             _positionRepository.Update(existed);
             await _positionRepository.SaveChangesAsync();

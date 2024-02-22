@@ -89,7 +89,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 PositionId = chefVM.PositionId,
                 Image = await chefVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),
                 CreatedBy = user.Name + " " + user.Surname,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
             });
             await _chefRepository.SaveChangesAsync();
             return true;
@@ -147,7 +147,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
             chef.Instagram = chefVM.Instagram;
             chef.Linkedin = chefVM.Linkedin;
             chef.PositionId = chefVM.PositionId;
-            chef.ModifiedAt = DateTime.UtcNow;
+            chef.ModifiedAt = DateTime.Now;
             chef.ModifiedBy = user.Name + " " + user.Surname;
             await _chefRepository.SaveChangesAsync();
             return true;

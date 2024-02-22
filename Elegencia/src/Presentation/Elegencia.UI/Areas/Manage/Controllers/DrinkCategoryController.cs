@@ -20,7 +20,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
         [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index(int page = 1)
         {
-            PaginationVM<DrinkCategory> pagination = await _drinkCategoryService.GetAll(page: page, take: 3);
+            PaginationVM<DrinkCategory> pagination = await _drinkCategoryService.GetAll(page: page, take: 6);
             return View(pagination);
         }
         [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
