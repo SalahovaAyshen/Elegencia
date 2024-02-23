@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
@@ -72,9 +73,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task<UpdateNewsVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             News news = await _newsRepository.GetByIdAsync(id);
-            if (news == null) throw new Exception("Not found id");
+            if (news == null) throw new NotFoundException("Not found id");
             UpdateNewsVM newsVM = new UpdateNewsVM
             {
                 Name = news.Name,
@@ -86,9 +87,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task<bool> PostUpdate(int id, UpdateNewsVM updateVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             News news = await _newsRepository.GetByIdAsync(id);
-            if (news == null) throw new Exception("Not found id");
+            if (news == null) throw new NotFoundException("Not found id");
             if (await _newsRepository.GetAll().AnyAsync(c => c.Name.ToLower() == updateVM.Name.ToLower()))
             {
                 modelState.AddModelError("Name", "The meal name is existed");
@@ -121,9 +122,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             News news = await _newsRepository.GetByIdAsync(id);
-            if (news == null) throw new Exception("Not found id");
+            if (news == null) throw new NotFoundException("Not found id");
             news.IsDeleted = true;
             await _newsRepository.SaveChangesAsync();
         }

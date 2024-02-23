@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ReservationService = Elegencia.Persistence.Implementations.Services.Manage.ReservationService;
 namespace Elegencia.Persistence.ServiceRegistration
 {
     public static class ServiceRegistration
@@ -76,10 +77,11 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<Application.Abstractions.Services.INewsService, Implementations.Services.NewsService>();
             services.AddScoped<Application.Abstractions.Services.Manage.INewsService, Implementations.Services.Manage.NewsService>();
             services.AddScoped<IBasketService, BasketService>();
-            services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<Application.Abstractions.Services.IReservationService, Implementations.Services.ReservationService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<UserService>();
             services.AddScoped<IMessageService, MessageService>();
+            services.AddScoped<Application.Abstractions.Services.Manage.IReservationService, Implementations.Services.Manage.ReservationService>();
 
 
             services.AddScoped<AppDbContextInitializer>();

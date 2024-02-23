@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
@@ -96,8 +97,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateChefVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id, includes: nameof(Chef.Position));
+            if (chef == null) throw new NotFoundException("Not found id");
             UpdateChefVM updateChefVM = new UpdateChefVM
             {
                 Name = chef.Name,
@@ -115,8 +117,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         public async Task<bool> PostUpdate(int id, UpdateChefVM chefVM, ModelStateDictionary modelState)
         {
             chefVM.Positions = await _positionRepository.GetAll().ToListAsync();
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id, includes: nameof(Chef.Position));
+            if (chef == null) throw new NotFoundException("Not found id");
             chefVM.Image = chef.Image;
             if (!modelState.IsValid) return false;
             if (!await _positionRepository.GetAll().AnyAsync(c => c.Id == chefVM.PositionId))
@@ -155,17 +158,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id);
-            if (chef is null) throw new Exception("Not found id");
+            if (chef is null) throw new NotFoundException("Not found id");
             chef.IsDeleted = true;
             await _chefRepository.SaveChangesAsync();
         }
 
         public async Task<Chef> Detail(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id, includes: new string[] { nameof(Chef.Position) });
+            if (chef is null) throw new NotFoundException("Not found id");
             return chef;
         }
     }

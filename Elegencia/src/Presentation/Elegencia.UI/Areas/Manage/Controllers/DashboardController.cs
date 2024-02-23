@@ -5,6 +5,7 @@ using Elegencia.Domain.Entities;
 using Elegencia.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using IReservationService = Elegencia.Application.Abstractions.Services.Manage.IReservationService;
 
 namespace Elegencia.UI.Areas.Manage.Controllers
 {
@@ -12,26 +13,31 @@ namespace Elegencia.UI.Areas.Manage.Controllers
     public class DashboardController : Controller
     {
         private readonly IAccountService _service;
-        private readonly IMessageService _messageService;
+        private readonly Application.Abstractions.Services.Manage.IReservationService _reservationService;
 
-        public DashboardController(IAccountService service, IMessageService messageService)
+        public DashboardController(IAccountService service, IReservationService reservationService)
         {
             _service = service;
-            _messageService = messageService;
+            _reservationService = reservationService;
         }
         [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> Index()
         {
             int count = await _service.UserCount();
-            int mesCount = await _messageService.MessagesCount();
-            IQueryable<Contact> contacts = await _messageService.GetAll();
+            int resCount = await _reservationService.ReservationCount();
+            IQueryable<Reservation> reservations = await _reservationService.GetAll();
             DashboardVM dashboard = new DashboardVM
             {
                 UserCount = count,
-                Contacts = contacts,
-                MessageCount = mesCount
+                Reservations = reservations,
+                ReservationCount = resCount
             };
             return View(dashboard);
+        }
+        public async Task<IActionResult> Read(int id)
+        {
+            await _reservationService.Readed(id);
+            return RedirectToAction(nameof(Index));
         }
       
     }

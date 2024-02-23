@@ -57,18 +57,16 @@
     <h3 class="tile-title">Users messages</h3>
     <div class="ratio ratio-16x9"> *@
     <div class="tile">
-        <h3 class="tile-title">@(Model.MessageCount > 10 ? "10+" : Model.MessageCount) @(Model.MessageCount <= 0 ? "Message" : "Messages")  </h3>
+        <h3 class="tile-title">@(Model.ReservationCount > 10 ? "10+" : Model.ReservationCount) @(Model.ReservationCount <= 0 ? "Reservation" : "Reservations")  </h3>
         <div class="table-responsive col-12">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Unreaded messages   
-                        </th>
-
+                   
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Contact item in Model.Contacts)
+                    @foreach (Reservation item in Model.Reservations)
                     {
                         <tr>
 
@@ -76,7 +74,8 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">Name: @item.Name</li>
                                     <li class="list-group-item">Email: <a href="mailto:@item.Email">@item.Email</a></li>
-                                    <li class="list-group-item">Message:@item.CommentText</li>
+                                    <li class="list-group-item">Number of people:@item.NumberOfPeople</li>
+                                    <li class="list-group-item">Arrival date time:@item.ArrivalDateTime</li>
 
                                 </ul>
                             </td>

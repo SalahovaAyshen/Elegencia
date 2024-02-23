@@ -142,7 +142,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Chef", b =>
@@ -206,7 +206,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("PositionId");
 
-                    b.ToTable("Chefs");
+                    b.ToTable("Chefs", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Contact", b =>
@@ -248,7 +248,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Dessert", b =>
@@ -297,7 +297,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Desserts");
+                    b.ToTable("Desserts", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DessertCategory", b =>
@@ -330,7 +330,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DessertCategories");
+                    b.ToTable("DessertCategories", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DessertImage", b =>
@@ -374,7 +374,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("DessertId");
 
-                    b.ToTable("DessertImages");
+                    b.ToTable("DessertImages", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Drink", b =>
@@ -427,7 +427,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Drinks");
+                    b.ToTable("Drinks", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DrinkCategory", b =>
@@ -460,7 +460,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrinkCategories");
+                    b.ToTable("DrinkCategories", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Meal", b =>
@@ -509,7 +509,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Meals");
+                    b.ToTable("Meals", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.MealImages", b =>
@@ -554,7 +554,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("MealId");
 
-                    b.ToTable("MealImages");
+                    b.ToTable("MealImages", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.News", b =>
@@ -595,7 +595,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("News");
+                    b.ToTable("News", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Position", b =>
@@ -632,7 +632,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Positions");
+                    b.ToTable("Positions", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Reservation", b =>
@@ -675,7 +675,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Salad", b =>
@@ -732,7 +732,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Salads");
+                    b.ToTable("Salads", (string)null);
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Setting", b =>
@@ -766,44 +766,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
-                });
-
-            modelBuilder.Entity("Elegencia.Domain.Entities.Slider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sliders");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
@@ -53,18 +54,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdatePositionVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Position position = await _positionRepository.GetByIdAsync(id);
-            if (position is null) throw new Exception("Not found id");
+            if (position is null) throw new NotFoundException("Not found id");
             UpdatePositionVM updatePositionVM = new UpdatePositionVM
             { Name = position.Name };
             return updatePositionVM;
         }
         public async Task<bool> PostUpdate(int id, UpdatePositionVM positionVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Position existed = await _positionRepository.GetByIdAsync(id);
-            if (existed is null) throw new Exception("Not found id");
+            if (existed is null) throw new NotFoundException("Not found id");
             if (!modelState.IsValid) return false;
             if (await _positionRepository.GetAll().AnyAsync(c => c.Name.ToLower() == positionVM.Name.ToLower() && c.Id != id))
             {
@@ -82,9 +83,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Position position = await _positionRepository.GetByIdAsync(id);
-            if (position == null) throw new Exception("Not found id");
+            if (position == null) throw new NotFoundException("Not found id");
             position.IsDeleted = true;
             await _positionRepository.SaveChangesAsync();
         }

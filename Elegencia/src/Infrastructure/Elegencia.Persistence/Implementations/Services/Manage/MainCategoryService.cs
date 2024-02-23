@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Implementations.Repositories;
@@ -55,8 +56,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateMainCategoryVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Category category = await _categoryRepository.GetByIdAsync(id);
+            if(category==null) throw new NotFoundException("Not found id");
             UpdateMainCategoryVM categoryVM = new UpdateMainCategoryVM
             {
                 Name = category.Name,
@@ -65,9 +67,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<bool> PostUpdate(int id, UpdateMainCategoryVM categoryVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Category existed = await _categoryRepository.GetByIdAsync(id);
-            if (existed == null) throw new Exception("Not found id");
+            if (existed == null) throw new NotFoundException("Not found id");
             if (!modelState.IsValid) return false;
             if (await _categoryRepository.GetAll().AnyAsync(c => c.Name.ToLower() == categoryVM.Name.ToLower() && c.Id!=id))
             {
@@ -85,8 +87,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task Delete(int id)
         {
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Category category = await _categoryRepository.GetByIdAsync(id);
-            if (category == null) throw new Exception("Not found id");
+            if (category == null) throw new NotFoundException("Not found id");
             category.IsDeleted = true;
             await _categoryRepository.SaveChangesAsync();
         }

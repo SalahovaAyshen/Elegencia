@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
@@ -102,8 +103,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task<UpdateSaladVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Not found id");
             Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            if (salad == null) throw new NotFoundException("Not found id");
             UpdateSaladVM updateSaladVM = new UpdateSaladVM
             {
                 Name = salad.Name,
@@ -119,8 +121,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         public async Task<bool> PostUpdate(int id, UpdateSaladVM saladVM, ModelStateDictionary modelState)
         {
             saladVM.Categories = await _categoryRepository.GetAll().ToListAsync();
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Not found id");
             Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            if (salad == null) throw new NotFoundException("Not found id");
             saladVM.Image = salad.Image;
             if (!modelState.IsValid) return false;
             if (await _saladRepository.GetAll().AnyAsync(c => c.Name.ToLower() == saladVM.Name.ToLower() && c.Id != id))
@@ -170,17 +173,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
-            Salad salad = await _saladRepository.GetByIdAsync(id);
-            if (salad is null) throw new Exception("Not found id");
+            if (id <= 0) throw new WrongRequestException("Not found id");
+            Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            if (salad == null) throw new NotFoundException("Not found id");
             salad.IsDeleted = true;
             await _saladRepository.SaveChangesAsync();
         }
 
         public async Task<Salad> Detail(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
-            Salad salad = await _saladRepository.GetByIdAsync(id, includes: new string[] {  nameof(Meal.Category) });
+            if (id <= 0) throw new WrongRequestException("Not found id");
+            Salad salad = await _saladRepository.GetByIdAsync(id, includes: nameof(Meal.Category));
+            if (salad == null) throw new NotFoundException("Not found id");
             return salad;
         }
     }

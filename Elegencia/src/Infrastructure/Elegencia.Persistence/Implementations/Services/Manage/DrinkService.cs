@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
@@ -100,8 +101,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateDrinkVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number ");
             Drink drink = await _drinkRepository.GetByIdAsync(id, includes: nameof(Drink.DrinkCategory));
+            if(drink==null) throw new NotFoundException("Not found id");
             UpdateDrinkVM updateDrinkVM = new UpdateDrinkVM
             {
                 Name = drink.Name,
@@ -115,8 +117,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         public async Task<bool> PostUpdate(int id, UpdateDrinkVM drinkVM, ModelStateDictionary modelState)
         {
             drinkVM.DrinkCategories = await _drinkCategoryRepository.GetAll().ToListAsync();
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number ");
             Drink drink = await _drinkRepository.GetByIdAsync(id, includes: nameof(Drink.DrinkCategory));
+            if (drink == null) throw new NotFoundException("Not found id");
             drinkVM.Image = drink.Image;
             if (!modelState.IsValid) return false;
             if (await _drinkRepository.GetAll().AnyAsync(c => c.Name.ToLower() == drinkVM.Name.ToLower() && c.Id != id))
@@ -162,17 +165,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Drink drink = await _drinkRepository.GetByIdAsync(id);
-            if (drink is null) throw new Exception("Not found id");
+            if (drink is null) throw new NotFoundException("Not found id");
             drink.IsDeleted = true;
             await _drinkRepository.SaveChangesAsync();
         }
 
         public async Task<Drink> Detail(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Drink drink = await _drinkRepository.GetByIdAsync(id, includes: new string[] { nameof(Drink.DrinkCategory) });
+            if (drink == null) throw new NotFoundException("Not found id");
             return drink;
         }
     }

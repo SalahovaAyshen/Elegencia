@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels;
 using Elegencia.Application.ViewModels.Manage;
@@ -123,8 +124,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateDessertVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number ");
             Dessert dessert = await _dessertRepository.GetByIdAsync(id, includes: nameof(Dessert.DessertImages));
+            if (dessert == null) throw new NotFoundException("Not found id");
             UpdateDessertVM updateDessertVM = new UpdateDessertVM
             {
                 Name = dessert.Name,
@@ -140,10 +142,10 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<bool> PostUpdate(int id, UpdateDessertVM dessertVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number ");
             dessertVM.DessertCategories = await _categoryRepository.GetAll().ToListAsync();
             Dessert existed = await _dessertRepository.GetByIdAsync(id, includes: nameof(Dessert.DessertImages));
-            if (existed == null) throw new Exception("Not found id");
+            if (existed == null) throw new NotFoundException("Not found id");
             dessertVM.DessertImages = existed.DessertImages;
             dessertVM.MainImage = existed.DessertImages.FirstOrDefault(mi => mi.IsPrimary == true)?.Image;
             dessertVM.HoverImage = existed.DessertImages.FirstOrDefault(mi => mi.IsPrimary == false)?.Image;
@@ -230,17 +232,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Dessert dessert = await _dessertRepository.GetByIdAsync(id);
-            if (dessert is null) throw new Exception("Not found id");
+            if (dessert is null) throw new NotFoundException("Not found id");
             dessert.IsDeleted = true;
             await _dessertRepository.SaveChangesAsync();
         }
 
         public async Task<Dessert> Detail(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Dessert dessert = await _dessertRepository.GetByIdAsync(id, includes: new string[] { nameof(Dessert.DessertImages), nameof(Dessert.DessertCategory) });
+            if (dessert is null) throw new NotFoundException("Not found id");
             return dessert;
         }
     }

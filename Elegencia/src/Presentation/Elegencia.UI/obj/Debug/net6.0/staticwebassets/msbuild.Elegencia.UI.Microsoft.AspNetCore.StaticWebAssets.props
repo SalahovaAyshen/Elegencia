@@ -464,22 +464,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\5e692ee1-b12d-470b-ab66-07b5bf60eeacWhatsApp Image 2022-12-31 at 2.36.14 PM.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\5fb0c99f-3293-42ee-aa66-b56955e524adadmin-image-2.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Elegencia.UI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Elegencia.UI</BasePath>
-      <RelativePath>assets/img/5fb0c99f-3293-42ee-aa66-b56955e524adadmin-image-2.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\5fb0c99f-3293-42ee-aa66-b56955e524adadmin-image-2.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\600f90e4-834a-4515-9b39-45a599810599WhatsApp Image 2022-09-04 at 00.27.25.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Elegencia.UI</SourceId>
@@ -656,6 +640,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\7782a43a-0f5a-4d94-86f0-ddacbc583838WhatsApp Image 2022-09-04 at 00.27.26.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\7b3946a0-6718-49e3-bbb1-78f1a12bc46edessert-2.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Elegencia.UI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Elegencia.UI</BasePath>
+      <RelativePath>assets/img/7b3946a0-6718-49e3-bbb1-78f1a12bc46edessert-2.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\7b3946a0-6718-49e3-bbb1-78f1a12bc46edessert-2.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\7bd4652e-3940-4fcf-a637-ac3fb367e16aWhatsApp Image 2022-09-04 at 00.29.36 (1).jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Elegencia.UI</SourceId>
@@ -671,6 +671,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\7bd4652e-3940-4fcf-a637-ac3fb367e16aWhatsApp Image 2022-09-04 at 00.29.36 (1).jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\834ea381-a395-4b01-80a5-4a028b193fe7admin-image-2.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Elegencia.UI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Elegencia.UI</BasePath>
+      <RelativePath>assets/img/834ea381-a395-4b01-80a5-4a028b193fe7admin-image-2.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\834ea381-a395-4b01-80a5-4a028b193fe7admin-image-2.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\8d0eb321-d9c2-4b96-9157-2dfa5c96e209WhatsApp Image 2022-09-04 at 00.27.26.jpeg))">
       <SourceType>Package</SourceType>

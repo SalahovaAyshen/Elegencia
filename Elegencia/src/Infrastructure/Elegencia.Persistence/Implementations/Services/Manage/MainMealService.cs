@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
@@ -125,8 +126,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateMainMealVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Meal meal = await _mealRepository.GetByIdAsync(id, includes: nameof(Meal.MealImages));
+            if(meal==null) throw new NotFoundException("Not found id");
             UpdateMainMealVM updateMainMealVM = new UpdateMainMealVM
             {
                 Name = meal.Name,
@@ -143,11 +145,10 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task<bool> PostUpdate(int id, UpdateMainMealVM mealVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             mealVM.Categories = await _categoryRepository.GetAll().ToListAsync();
             Meal existed = await _mealRepository.GetByIdAsync(id, includes: nameof(Meal.MealImages));
-            if (existed == null) throw new Exception("Not found id");
-            mealVM.MealImages = existed.MealImages;
+            if (existed == null) throw new NotFoundException("Not found id");
             mealVM.MainImage = existed.MealImages.FirstOrDefault(mi => mi.IsPrimary == true)?.Image;
             mealVM.HoverImage = existed.MealImages.FirstOrDefault(mi => mi.IsPrimary == false)?.Image;
             if (!modelState.IsValid) return false;
@@ -235,17 +236,18 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Meal meal = await _mealRepository.GetByIdAsync(id);
-            if (meal is null) throw new Exception("Not found id");
+            if (meal is null) throw new NotFoundException("Not found id");
             meal.IsDeleted = true;
             await _mealRepository.SaveChangesAsync();
 
         }
         public async Task<Meal> Detail(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Meal meal = await _mealRepository.GetByIdAsync(id, includes: new string[] { nameof(Meal.MealImages), nameof(Meal.Category) });
+            if (meal is null) throw new NotFoundException("Not found id");
             return meal;
         }
     }

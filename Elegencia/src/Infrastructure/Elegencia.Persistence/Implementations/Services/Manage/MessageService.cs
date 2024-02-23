@@ -1,5 +1,6 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task Readed(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Contact contact = await _contactRepository.GetByIdAsync(id);
-            if (contact == null) throw new Exception("Not found id");
+            if (contact == null) throw new NotFoundException("Not found id");
             _contactRepository.Delete(contact);
             await _contactRepository.SaveChangesAsync();
         }

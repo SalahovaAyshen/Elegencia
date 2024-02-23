@@ -1,5 +1,6 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.Utilities.Extensions;
 using Elegencia.Application.Validators.Manage;
 using Elegencia.Application.ViewModels.Manage;
@@ -83,17 +84,17 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task RestoreMeal(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Meal meal = await _mealRepository.GetByIdAsync(id);
-            if (meal is null) throw new Exception("Not found id");
+            if (meal is null) throw new NotFoundException("Not found id");
             meal.IsDeleted = false;
             await _mealRepository.SaveChangesAsync();
         }
         public async Task DeleteMeal(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Meal meal = await _mealRepository.GetByIdAsync(id);
-            if (meal is null) throw new Exception("Not found id");
+            if (meal is null) throw new NotFoundException("Not found id");
             if (meal.MealImages != null)
             {
                 foreach (MealImages item in meal.MealImages)
@@ -109,35 +110,35 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         public async Task RestoreSalad(int id)
         {
 
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Salad salad = await _saladRepository.GetByIdAsync(id);
-            if (salad is null) throw new Exception("Not found id");
+            if (salad is null) throw new NotFoundException("Not found id");
             salad.IsDeleted = false;
             await _saladRepository.SaveChangesAsync();
         }
         public async Task DeleteSalad(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Salad salad = await _saladRepository.GetByIdAsync(id);
-            if (salad is null) throw new Exception("Not found id");
+            if (salad is null) throw new NotFoundException("Not found id");
             salad.Image.DeleteFile(_env.WebRootPath, "assets", "img");
             _saladRepository.Delete(salad);
             await _saladRepository.SaveChangesAsync();
         }
         public async Task RestoreDessert(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Dessert dessert = await _dessertRepository.GetByIdAsync(id);
-            if (dessert is null) throw new Exception("Not found id");
+            if (dessert is null) throw new NotFoundException("Not found id");
             dessert.IsDeleted = false;
             await _dessertRepository.SaveChangesAsync();
         }
         public async Task DeleteDessert(int id)
         {
 
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Dessert dessert = await _dessertRepository.GetByIdAsync(id);
-            if (dessert is null) throw new Exception("Not found id");
+            if (dessert is null) throw new NotFoundException("Not found id");
             if (dessert.DessertImages != null)
             {
                 foreach (DessertImage item in dessert.DessertImages)
@@ -152,119 +153,119 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task RestoreDrink(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Drink drink = await _drinkRepository.GetByIdAsync(id);
-            if (drink is null) throw new Exception("Not found id");
+            if (drink is null) throw new NotFoundException("Not found id");
             drink.IsDeleted = false;
             await _drinkRepository.SaveChangesAsync();
         }
         public async Task DeleteDrink(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Drink drink = await _drinkRepository.GetByIdAsync(id);
-            if (drink is null) throw new Exception("Not found id");
+            if (drink is null) throw new NotFoundException("Not found id");
             drink.Image.DeleteFile(_env.WebRootPath, "assets", "img");
             _drinkRepository.Delete(drink);
             await _drinkRepository.SaveChangesAsync();
         }
         public async Task RestoreChef(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id);
-            if (chef is null) throw new Exception("Not found id");
+            if (chef is null) throw new NotFoundException("Not found id");
             chef.IsDeleted = false;
             await _chefRepository.SaveChangesAsync();
         }
         public async Task DeleteChef(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Chef chef = await _chefRepository.GetByIdAsync(id);
-            if (chef is null) throw new Exception("Not found id");
+            if (chef is null) throw new NotFoundException("Not found id");
             chef.Image.DeleteFile(_env.WebRootPath, "assets", "img");
             _chefRepository.Delete(chef);
             await _chefRepository.SaveChangesAsync();
         }
         public async Task RestoreNews(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             News news = await _newsRepository.GetByIdAsync(id);
-            if (news is null) throw new Exception("Not found id");
+            if (news is null) throw new NotFoundException("Not found id");
             news.IsDeleted = false;
             await _newsRepository.SaveChangesAsync();
         }
         public async Task DeleteNews(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             News news = await _newsRepository.GetByIdAsync(id);
-            if (news is null) throw new Exception("Not found id");
+            if (news is null) throw new NotFoundException("Not found id");
             news.Image.DeleteFile(_env.WebRootPath, "assets", "img");
             _newsRepository.Delete(news);
             await _newsRepository.SaveChangesAsync();
         }
         public async Task RestoreCategory(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Category category = await _categoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             category.IsDeleted = false;
             await _categoryRepository.SaveChangesAsync();
         }
         public async Task DeleteCategory(int id)
         {
 
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Category category = await _categoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             _categoryRepository.Delete(category);
             await _categoryRepository.SaveChangesAsync();
         }
         public async Task RestoreDessertCategory(int id)
         {
 
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DessertCategory category = await _dessertCategoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             category.IsDeleted = false;
             await _dessertCategoryRepository.SaveChangesAsync();
 
         }
         public async Task DeleteDessertCategory(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DessertCategory category = await _dessertCategoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             _dessertCategoryRepository.Delete(category);
             await _dessertCategoryRepository.SaveChangesAsync();
         }
         public async Task RestoreDrinkCategory(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DrinkCategory category = await _drinkCategoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             category.IsDeleted = false;
             await _drinkCategoryRepository.SaveChangesAsync();
         }
         public async Task DeleteDrinkCategory(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DrinkCategory category = await _drinkCategoryRepository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Not found id");
+            if (category is null) throw new NotFoundException("Not found id");
             _drinkCategoryRepository.Delete(category);
             await _drinkCategoryRepository.SaveChangesAsync();
         }
         public async Task RestorePosition(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Position position = await _positionRepository.GetByIdAsync(id);
-            if (position is null) throw new Exception("Not found id");
+            if (position is null) throw new NotFoundException("Not found id");
             position.IsDeleted = false;
             await _positionRepository.SaveChangesAsync();
         }
         public async Task DeletePosition(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number ");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             Position position = await _positionRepository.GetByIdAsync(id);
-            if (position is null) throw new Exception("Not found id");
+            if (position is null) throw new NotFoundException("Not found id");
             _positionRepository.Delete(position);
             await _positionRepository.SaveChangesAsync();
         }

@@ -1,6 +1,7 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
 using Elegencia.Application.Abstractions.Services.Manage;
+using Elegencia.Application.Utilities.Exceptions;
 using Elegencia.Application.ViewModels.Manage;
 using Elegencia.Domain.Entities;
 using Microsoft.AspNetCore.Http;
@@ -54,9 +55,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task<UpdateDessertCategoryVM> GetUpdate(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DessertCategory dessertCategory = await _categoryRepository.GetByIdAsync(id);
-            if (dessertCategory is null) throw new Exception("Not found id");
+            if (dessertCategory is null) throw new NotFoundException("Not found id");
             UpdateDessertCategoryVM updateDessertCategoryVM = new UpdateDessertCategoryVM
             {Name = dessertCategory.Name };
             return updateDessertCategoryVM;
@@ -64,9 +65,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
 
         public async Task<bool> PostUpdate(int id, UpdateDessertCategoryVM categoryVM, ModelStateDictionary modelState)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DessertCategory existed = await _categoryRepository.GetByIdAsync(id);
-            if (existed is null) throw new Exception("Not found id");
+            if (existed is null) throw new NotFoundException("Not found id");
             if (!modelState.IsValid) return false;
             if (await _categoryRepository.GetAll().AnyAsync(c => c.Name.ToLower() == categoryVM.Name.ToLower() && c.Id!=id))
             {
@@ -83,9 +84,9 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
         }
         public async Task Delete(int id)
         {
-            if (id <= 0) throw new Exception("Id can't be zero or negative number");
+            if (id <= 0) throw new WrongRequestException("Id can't be zero or negative number");
             DessertCategory category = await _categoryRepository.GetByIdAsync(id);
-            if (category == null) throw new Exception("Not found id");
+            if (category == null) throw new NotFoundException("Not found id");
             category.IsDeleted = true;
             await _categoryRepository.SaveChangesAsync();
         }

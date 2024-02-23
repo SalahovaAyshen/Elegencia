@@ -10,7 +10,7 @@ namespace Elegencia.Application.ViewModels.Manage
     public class DashboardVM
     {
         public int UserCount { get; set; }
-        public int MessageCount { get; set; }
-        public IQueryable<Contact> Contacts { get; set; }
+        public int ReservationCount { get; set; }
+        public IQueryable<Reservation> Reservations { get; set; }
     }
 }

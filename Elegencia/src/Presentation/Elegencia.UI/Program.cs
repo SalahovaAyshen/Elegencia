@@ -1,5 +1,6 @@
 using Elegencia.Application.ServiceRegistration;
 using Elegencia.Persistence.Contexts;
+using Elegencia.Persistence.Middlewares;
 using Elegencia.Persistence.ServiceRegistration;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -21,6 +22,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<GlobalExceptionMiddleWare>();
 
 app.UseEndpoints(endpoints =>
 {

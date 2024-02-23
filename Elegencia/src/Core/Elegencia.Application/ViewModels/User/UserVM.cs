@@ -27,7 +27,7 @@ namespace Elegencia.Application.ViewModels
         public string Email { get; set; }
         public string? Image { get; set; }
         public IFormFile? Photo { get; set; }
-        public int MessagesCount { get; set; }
-        public IQueryable<Contact> Contacts { get; set; }
+        public int MessagesCount { get; set; } = 0;
+        public IQueryable<Contact>? Contacts { get; set; }
     }
 }
