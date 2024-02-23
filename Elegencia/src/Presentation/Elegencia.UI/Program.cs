@@ -1,4 +1,5 @@
 using Elegencia.Application.ServiceRegistration;
+using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Contexts;
 using Elegencia.Persistence.Middlewares;
 using Elegencia.Persistence.ServiceRegistration;
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
@@ -22,7 +24,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<GlobalExceptionMiddleWare>();
+//app.UseMiddleware<GlobalExceptionMiddleWare>();
 
 app.UseEndpoints(endpoints =>
 {

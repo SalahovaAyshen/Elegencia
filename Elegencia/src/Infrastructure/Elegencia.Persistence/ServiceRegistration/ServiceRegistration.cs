@@ -1,10 +1,12 @@
 ﻿using Elegencia.Application.Abstractions.Repositories;
 using Elegencia.Application.Abstractions.Services;
+using Elegencia.Application.Abstractions.Services.MailService;
 using Elegencia.Application.Abstractions.Services.Manage;
 using Elegencia.Domain.Entities;
 using Elegencia.Persistence.Contexts;
 using Elegencia.Persistence.Implementations.Repositories;
 using Elegencia.Persistence.Implementations.Services;
+using Elegencia.Persistence.Implementations.Services.MailService;
 using Elegencia.Persistence.Implementations.Services.Manage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,7 @@ namespace Elegencia.Persistence.ServiceRegistration
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Default")));
+            services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
 
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
@@ -82,6 +85,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<UserService>();
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<Application.Abstractions.Services.Manage.IReservationService, Implementations.Services.Manage.ReservationService>();
+            services.AddTransient<IMailService, MailService>();
 
 
             services.AddScoped<AppDbContextInitializer>();

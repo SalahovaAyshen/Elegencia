@@ -116,7 +116,8 @@
                                         </div>
 
                                         <div class="ak-date">
-                                            <input class="date-input" asp-for="Date"
+                                            <input class="date-input" asp-for="Date" min="{{ DateTime.Now.ToString(" yyyy-MM-dd") }}"
+
                                                    id="date">
                                             <div class="date-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -139,9 +140,10 @@
                                     </div>
 
                                     <div class="ak-height-50 ak-height-lg-40"></div>
-                                    <div class="ak-height-50 ak-height-lg-40"></div>
                                     <span asp-validation-for="Time" class="text-danger"></span>
                                     <span asp-validation-for="Date" class="text-danger"></span>
+                                    <div class="ak-height-50 ak-height-lg-40"></div>
+                                  
                                     <div class="ak-form-time-date">
                                         <div class="ak-time">
                                             <input placeholder="Name" asp-for="Name" class="time-input" type="text" name="name">
@@ -176,4 +178,32 @@
     <!-- End Booking System -->
    
 
+    <script>
+        document.getElementById('date').addEventListener('input', function () {
+            var selectedDate = new Date(this.value);
+            var currentDate = new Date();
 
+            if (selectedDate < currentDate) {
+                alert('You cannot choose a past date!');
+
+                var today = new Date();
+                var formattedToday = today.toISOString().split('T')[0];
+
+                this.value = formattedToday;
+
+                if (this.min !== formattedToday) {
+                    this.min = formattedToday;
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var today = new Date();
+            var formattedToday = today.toISOString().split('T')[0];
+            var deadlineInput = document.getElementById('date');
+
+            if (deadlineInput.min !== formattedToday) {
+                deadlineInput.min = formattedToday;
+            }
+        });
+    </script>
