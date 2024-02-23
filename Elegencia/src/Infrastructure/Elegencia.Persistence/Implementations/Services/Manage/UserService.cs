@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Elegencia.Persistence.Implementations.Services.Manage
 {
-    public class UserService : IUserService
+    public class UserService : Application.Abstractions.Services.Manage.IUserService
     {
         private readonly IHttpContextAccessor _http;
         private readonly IAccountService _service;

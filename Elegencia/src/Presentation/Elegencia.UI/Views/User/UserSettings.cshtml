@@ -1,0 +1,63 @@
+﻿@model MemberVM
+<div id="scrollsmoother-container">
+    <!-- Start Hero -->
+    <Section>
+        <div class="ak-commmon-hero ak-style1 ak-bg">
+            <img lass="ak-commmon-hero ak-style1 ak-bg" src="~/assets/img/menu-bg-3.jpg" />
+            <div class="ak-commmon-heading">
+                <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                    <div class="ak-section-subtitle">
+                        <a href="index.html">Home</a> / Profile
+                    </div>
+                    <h2 class="ak-section-title page-title-anim">Settings</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+    <!-- End Hero -->
+    <!-- Start Booking System -->
+    <section>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h2 class="contact-form-title anim-title-3">Profile</h2>
+                    <form method="post">
+                        <div class="from-input">
+                            <input placeholder="Name" asp-for="Name" class="col-md-5 col-12" >
+                            <span asp-validation-for="Name" class="text-danger"></span>
+
+                            <input placeholder="Surname" asp-for="Surname" class="col-md-5 col-12" >
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                       <div class="from-input">
+                            <div class="col-md-12">
+                                <input rows="5" asp-for="Username" class="col-12 col-md-10" placeholder="Username"></input>
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <input rows="5" asp-for="Email" class="col-12 col-md-10" placeholder="Email"></input>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                       </div>
+                        <div class="ak-height-40 ak-height-lg-20"></div>
+                        <button type="submit" class="ak-btn style-5 color-yellow-bg">
+                           Update
+                        </button>
+
+                    </form>
+
+                </div>
+                <div class="contact-map">
+                    <div class="booking-system-map-frist">
+                        <div class="ak-google-map ak-bg">
+                            <img src="~/assets/img/user-view.jpg"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>

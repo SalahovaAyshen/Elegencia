@@ -24,7 +24,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-//app.UseMiddleware<GlobalExceptionMiddleWare>();
+app.UseMiddleware<GlobalExceptionMiddleWare>();
 
 app.UseEndpoints(endpoints =>
 {

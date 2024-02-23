@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XM+2jL78QDK+XUO0+92CY3JvDHsYNTbFH3MZlpR6OdE=",
+  "Hash": "wHevnMMUwZpZAipC7VSofce++U6OnXd+LWS287Qp8jw=",
   "Source": "Elegencia.UI",
   "BasePath": "_content/Elegencia.UI",
   "Mode": "Default",
@@ -3340,6 +3340,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\treacle-tarte-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\user-view.jpg",
+      "SourceId": "Elegencia.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\",
+      "BasePath": "_content/Elegencia.UI",
+      "RelativePath": "assets/img/user-view.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\user-view.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Elegencia\\Elegencia\\src\\Presentation\\Elegencia.UI\\wwwroot\\assets\\img\\video.jpg",
