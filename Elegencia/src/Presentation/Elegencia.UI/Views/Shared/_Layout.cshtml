@@ -78,12 +78,12 @@
                     <a asp-controller="home" asp-action="index"><img src="~/assets/img/logo.png" alt="..."></a>
                 </div>
 
-              
+                <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
 
                 <div class="header-logo">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @if (User.Identity.Name == "admin")
+                        @if (User.Identity.Name == "admin" || User.Identity.Name=="moderator")
                         {
                             <a asp-area="manage" asp-controller="dashboard" asp-action="index" class="logo">@User.Identity.Name</a>
                         }
@@ -167,7 +167,7 @@
 
                 <div class="footer-main">
                     <div class="footer-eamil-menu">
-                        <div style="line-height: 6.6rem" class="footer-email">
+                        <div style="line-height: 3.6rem" class="footer-email">
                             <a href="mailto:elegencea@gmail.com">
                                 @settings["Email"]
                             </a>
@@ -217,10 +217,7 @@
 
                 <div class="copy-right-section">
 
-                    <div class="d-flex justify-content-center pt-2 ">
-                        <img style="width:150px;height:150px" src="~/assets/img/qr-code.jpg" />
-
-                    </div>
+                    <div class="ak-height-45 ak-height-lg-30"></div>
 
                     <p class="text-uppercase text-md-center text-white">
 
@@ -229,7 +226,6 @@
 
                 </div>
 
-                <div class="ak-height-45 ak-height-lg-30"></div>
             </div>
         </div>
     </footer>

@@ -18,6 +18,7 @@ namespace Elegencia.UI.Areas.Manage.Controllers
             _service = service;
             _messageService = messageService;
         }
+        [Authorize(Roles = nameof(UserRole.Admin) + "," + nameof(UserRole.Moderator))]
         public async Task<IActionResult> UserSettings()
         {
             UserVM user = await _service.GetUser();

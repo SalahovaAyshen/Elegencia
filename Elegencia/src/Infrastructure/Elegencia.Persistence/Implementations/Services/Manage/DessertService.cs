@@ -80,7 +80,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("MainPhoto", "The image type should be img");
                 return false;
             }
-            if (!dessertVM.MainPhoto.VaidateSize(500))
+            if (!dessertVM.MainPhoto.VaidateSize(5000))
             {
                 modelState.AddModelError("MainPhoto", "The image size is too large");
                 return false;
@@ -90,7 +90,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("HoverPhoto", "The image type should be img");
                 return false;
             }
-            if (!dessertVM.HoverPhoto.VaidateSize(500))
+            if (!dessertVM.HoverPhoto.VaidateSize(5000))
             {
                 modelState.AddModelError("HoverPhoto", "The image size is too large");
                 return false;

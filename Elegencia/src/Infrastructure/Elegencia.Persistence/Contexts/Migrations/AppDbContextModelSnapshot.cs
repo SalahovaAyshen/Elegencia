@@ -142,7 +142,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Chef", b =>
@@ -206,7 +206,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("PositionId");
 
-                    b.ToTable("Chefs", (string)null);
+                    b.ToTable("Chefs");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Contact", b =>
@@ -248,7 +248,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Dessert", b =>
@@ -297,7 +297,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Desserts", (string)null);
+                    b.ToTable("Desserts");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DessertCategory", b =>
@@ -330,7 +330,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DessertCategories", (string)null);
+                    b.ToTable("DessertCategories");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DessertImage", b =>
@@ -374,7 +374,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("DessertId");
 
-                    b.ToTable("DessertImages", (string)null);
+                    b.ToTable("DessertImages");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Drink", b =>
@@ -427,7 +427,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Drinks", (string)null);
+                    b.ToTable("Drinks");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.DrinkCategory", b =>
@@ -460,7 +460,56 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrinkCategories", (string)null);
+                    b.ToTable("DrinkCategories");
+                });
+
+            modelBuilder.Entity("Elegencia.Domain.Entities.Famous", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Opinion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Famous");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Meal", b =>
@@ -509,7 +558,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Meals", (string)null);
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.MealImages", b =>
@@ -554,7 +603,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasIndex("MealId");
 
-                    b.ToTable("MealImages", (string)null);
+                    b.ToTable("MealImages");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.News", b =>
@@ -595,7 +644,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("News", (string)null);
+                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Position", b =>
@@ -632,7 +681,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Positions", (string)null);
+                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Reservation", b =>
@@ -675,7 +724,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Salad", b =>
@@ -732,7 +781,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Salads", (string)null);
+                    b.ToTable("Salads");
                 });
 
             modelBuilder.Entity("Elegencia.Domain.Entities.Setting", b =>
@@ -766,7 +815,7 @@ namespace Elegencia.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings", (string)null);
+                    b.ToTable("Settings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

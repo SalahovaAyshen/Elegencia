@@ -1,0 +1,53 @@
+﻿@model IQueryable<Famous>
+@{
+    int count = 0;
+}
+<main class="app-content">
+    <div class="d-flex justify-content-center">@Html.Raw(TempData["Message"])</div>
+    <div class="tile">
+        <h3 class="tile-title">Famous <a class="btn btn-inverse-success btn-fw" asp-controller="famous" asp-action="create"><i class="mdi mdi-plus"></i></a></h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Fullname</th>
+                    <th>Opinion</th>
+                    <th>Country</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Famous famous in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td class="py-1">
+                            <img style="width:100px; height:100px" src="~/assets/img/@famous.Image" alt="@famous.Name" />
+                        </td>
+                        <td>
+                            @famous.Name @famous.Surname
+                        </td>
+                        <td>
+                            @famous.Opinion
+                        </td>
+                        <td>
+                            @famous.Country
+                        </td>
+
+                        <td>
+                            <a class="btn btn-inverse-danger btn-fw" asp-controller="famous" asp-action="delete" asp-route-id="@famous.Id"><i class="mdi mdi-delete"></i></a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+   
+    </div>
+</main>

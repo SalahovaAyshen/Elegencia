@@ -23,6 +23,7 @@ namespace Elegencia.UI.Controllers
         {
             if (await _reservationService.Post(reservationVM, ModelState))
             {
+                TempData["Message"] = $"<div class=\"alert alert-light\" role=\"alert\">\r\n  Check the email you entered within 20 minutes \r\n</div>";
                 return RedirectToAction("Index", "Home");
             }
             return View(reservationVM);

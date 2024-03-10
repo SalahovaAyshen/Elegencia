@@ -13,7 +13,7 @@ namespace Elegencia.UI.Controllers
         {
             _service = service;
         }
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             return View();
         }

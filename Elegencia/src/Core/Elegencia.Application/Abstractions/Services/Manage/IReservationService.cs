@@ -11,6 +11,7 @@ namespace Elegencia.Application.Abstractions.Services.Manage
     {
         Task<int> ReservationCount();
         Task<IQueryable<Reservation>> GetAll();
-        Task Readed(int id);
+        Task Accept(int id);
+        Task Reject(int id);
     }
 }

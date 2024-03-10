@@ -1,0 +1,43 @@
+﻿@model CreateFamousVM
+
+<main class="app-content">
+    <div class="card-body">
+        <div class="tile">
+            <h3 class="tile-title">Create</h3>
+            <div class="tile-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Photo">Choose image*</label>
+                        <input class="form-control" asp-for="Photo" placeholder="image/*">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Name*</label>
+                        <input class="form-control" asp-for="Name" placeholder="Enter name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Surname">Surname*</label>
+                        <input class="form-control" asp-for="Surname" placeholder="Enter Surname">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Country">Country*</label>
+                        <input class="form-control" asp-for="Country" placeholder="Enter Country">
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Opinion">Opinion*</label>
+                        <textarea class="form-control" asp-for="Opinion" placeholder="Enter Opinion"></textarea>
+                        <span asp-validation-for="Opinion" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Create</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" asp-action="index"><i class="bi bi-x-circle-fill me-2"></i>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>

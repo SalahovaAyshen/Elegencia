@@ -55,81 +55,32 @@
         <div class="ak-height-150 ak-height-lg-60"></div>
         <div class="ak-slider ak-slider-3">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="testimonial-section">
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_l.svg" alt="...">
-                            </div>
-                            <div class="testimonial-info-section">
-                                <div class="testimonial-info">
-                                    <img src="~/assets/img/steven.jpg" class="testimonial-info-img" alt="...">
-                                    <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                    <p class="short-title">From USA</p>
-                                    <p class="testimonial-info-subtitle">
-                                        “Their talented team of passionate chefs
-                                        masterfully crafts each dish, combining the finest ingredients with
-                                        innovative techniques to present culinary creations that are as visually
-                                        stunning as they are delicious.”
-                                    </p>
+                @foreach (var item in Model.Famous)
+                {
+                    <div class="swiper-slide">
+                        <div class="container">
+                            <div class="testimonial-section">
+                                <div class="testimonial-icon-1">
+                                    <img src="~/assets/img/testimonial_icon_r.svg" alt="...">
                                 </div>
-                            </div>
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_r.svg" alt="...">
+                                <div class="testimonial-info-section">
+                                    <div class="testimonial-info">
+                                        <img src="~/assets/img/@item.Image" class="testimonial-info-img" alt="...">
+                                        <h6 class="testimonial-info-title">@item.Name @item.Surname</h6>
+                                        <p class="short-title">From @item.Country</p>
+                                        <p class="testimonial-info-subtitle">
+                                            “@item.Opinion”
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-icon-1">
+                                    <img src="~/assets/img/testimonial_icon_r.svg" alt="...">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="testimonial-section">
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_l.svg" alt="...">
-                            </div>
-                            <div class="testimonial-info-section">
-                                <div class="testimonial-info">
-                                    <img src="~/assets/img/robert.jpg" class="testimonial-info-img" alt="...">
-                                    <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                    <p class="short-title">From USA</p>
-                                    <p class="testimonial-info-subtitle">
-                                        “Their talented team of passionate chefs
-                                        masterfully crafts each dish, combining the finest ingredients with
-                                        innovative techniques to present culinary creations that are as visually
-                                        stunning as they are delicious.”
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_r.svg" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="testimonial-section">
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_l.svg" alt="...">
-                            </div>
-                            <div class="testimonial-info-section">
-                                <div class="testimonial-info">
-                                    <img src="~/assets/img/steven.jpg" class="testimonial-info-img" alt="...">
-                                    <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                    <p class="short-title">From USA</p>
-                                    <p class="testimonial-info-subtitle">
-                                        “Their talented team of passionate chefs
-                                        masterfully crafts each dish, combining the finest ingredients with
-                                        innovative techniques to present culinary creations that are as visually
-                                        stunning as they are delicious.”
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-icon-1">
-                                <img src="~/assets/img/testimonial_icon_r.svg" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                }
             </div>
         </div>
         <div class="container">

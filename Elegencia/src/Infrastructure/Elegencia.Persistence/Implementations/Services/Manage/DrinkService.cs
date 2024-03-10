@@ -80,7 +80,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                 modelState.AddModelError("Image", "The image type should be img");
                 return false;
             }
-            if (!drinkVM.Photo.VaidateSize(500))
+            if (!drinkVM.Photo.VaidateSize(5000))
             {
                 modelState.AddModelError("Image", "The image size is too large");
                 return false;
@@ -144,7 +144,7 @@ namespace Elegencia.Persistence.Implementations.Services.Manage
                     modelState.AddModelError("Image", "The image type should be img");
                     return false;
                 }
-                if (!drinkVM.Photo.VaidateSize(500))
+                if (!drinkVM.Photo.VaidateSize(5000))
                 {
                     modelState.AddModelError("Image", "The image size is too large");
                     return false;

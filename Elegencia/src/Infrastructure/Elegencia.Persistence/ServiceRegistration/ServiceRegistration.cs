@@ -58,6 +58,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<INewsRepository, NewsRepository>();
             services.AddScoped<IReservationRepository, ReservationRepository>();
+            services.AddScoped<IFamousRepository, FamousRepository>();
 
 
             services.AddScoped<IHomeService, HomeService>();
@@ -87,7 +88,7 @@ namespace Elegencia.Persistence.ServiceRegistration
             services.AddScoped<Application.Abstractions.Services.Manage.IReservationService, Implementations.Services.Manage.ReservationService>();
             services.AddTransient<IMailService, MailService>();
             services.AddScoped<Application.Abstractions.Services.IUserService, Implementations.Services.UserService>();
-
+            services.AddScoped<IFamousService, FamousService>();
 
             services.AddScoped<AppDbContextInitializer>();
             return services;

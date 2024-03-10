@@ -66,7 +66,7 @@
                 <div class="collapse" id="auth1">
                     <ul class="nav flex-column sub-menu ps-4">
                         <li class="nav-item">  <a class="app-menu__item" asp-controller="mainmeal" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/main-meal-2.png" /> Main meals </a></li>
-                        <li class="nav-item"> <a class="app-menu__item" asp-controller="salad" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/salad-icon.png" /> Salads </a></li>
+                        <li class="nav-item"> <a class="app-menu__item" asp-controller="salad" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/salad-icon.png" />Soups and Salads </a></li>
                         <li class="nav-item"><a class="app-menu__item" asp-controller="dessert" asp-action="index"><img style="width:24px;height:24px" src="~/manage/images/dessert-icon.png" /> Desserts </a></li>
                         <li class="nav-item"> <a class="app-menu__item" asp-controller="drink" asp-action="index"><img style="width:25px;height:25px" src="~/manage/images/drink-icon.png" /> Drinks  </a></li>
                     </ul>
@@ -103,12 +103,15 @@
                 </a>
             </li>
             <li class="treeview">
+                <a class="app-menu__item" asp-controller="famous" asp-action="index">
+                    <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/fame.png" />Famous</span>
+                </a>
+            </li>
+            <li class="treeview">
                 <a class="app-menu__item" asp-controller="setting" asp-action="index">
                     <span class="menu-title"><img style="width:30px;height:30px" src="~/manage/images/contact-icon.png"/>Settings</span>
                 </a>
             </li>
-         <hr>
-         <hr>
          <hr>
          <hr>
 

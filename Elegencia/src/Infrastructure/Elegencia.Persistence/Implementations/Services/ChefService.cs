@@ -22,7 +22,7 @@ namespace Elegencia.Persistence.Implementations.Services
         }
         public async Task<ChefVM> GetAll()
         {
-            ICollection<Chef> chefs = await _repository.GetAllWithOrder(includes: nameof(Chef.Position)).ToListAsync();
+            ICollection<Chef> chefs = await _repository.GetAllWithOrder(expression: m => m.IsDeleted == false,includes: nameof(Chef.Position)).ToListAsync();
             ChefVM chefVM = new ChefVM
             {
                 Chefs = chefs,

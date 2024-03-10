@@ -23,6 +23,7 @@ namespace Elegencia.UI.Controllers
         {
             if (await _userService.UpdateUser(user, ModelState))
             {
+                TempData["Message"] = $"<div class=\"alert alert-secondary\" role=\"alert\">\r\n Your profile successfully updated \r\n</div>";
                 return RedirectToAction("Index", "Home");
             }
             return View(user);
